@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@1,300;1,400;1,500;1,600;1,700");
+@import "../../fonts/space/space.css";
+* {
+  word-spacing: normal !important;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+}
+
+em {
+  font-family: "IBM Plex Serif", serif;
+}
+
+body,
+.lead,
+blockquote,
+.counter-wrapper p,
+.nav-tabs.nav-tabs-bg .nav-link p {
+  font-weight: 400;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6,
+.nav-link,
+.dropdown-item,
+.btn,
+.btn.btn-circle .number,
+.badge,
+.accordion-wrapper .card-header button,
+.collapse-link,
+.more,
+.meta,
+.post-category,
+.filter:not(.basic-filter),
+.filter:not(.basic-filter) ul li a {
+  font-weight: 600;
+}
+
+.nav-link,
+.dropdown-item,
+.btn .more {
+  letter-spacing: normal;
+}
+
+.btn,
+.navbar .btn-sm,
+.nav-link,
+.nav-link p,
+.lg-sub-html p {
+  font-size: 0.85rem;
+}
+
+.dropdown-menu {
+  font-size: 0.8rem;
+}
+
+.share-dropdown .dropdown-menu .dropdown-item,
+.btn-sm,
+.btn-group-sm > .btn,
+.post-meta {
+  font-size: 0.75rem;
+}
+
+.nav-tabs .nav-link,
+.accordion-wrapper .card-header button,
+.collapse-link {
+  font-size: 0.9rem !important;
+}
+
+.btn {
+  padding-top: 0.55rem;
+  padding-bottom: 0.45rem;
+}
+
+.btn-group-sm > .btn, .btn-sm {
+  padding-top: 0.45rem;
+  padding-bottom: 0.35rem;
+}
+
+.btn-group-lg > .btn, .btn-lg {
+  padding-top: 0.7rem;
+  padding-bottom: 0.6rem;
+}
+
+blockquote.icon:before {
+  top: -0.9rem;
+}
+
+.counter-wrapper p {
+  font-size: 0.85rem;
+}
+.counter-wrapper .counter {
+  font-size: calc(1.33rem + 0.96vw);
+}
+@media (min-width: 1200px) {
+  .counter-wrapper .counter {
+    font-size: 2.05rem;
+  }
+}
+.counter-wrapper .counter.counter-lg {
+  font-size: calc(1.35rem + 1.2vw);
+}
+@media (min-width: 1200px) {
+  .counter-wrapper .counter.counter-lg {
+    font-size: 2.25rem;
+  }
+}
+
+.lead {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.lead.fs-lg {
+  line-height: 1.55;
+}
+
+.display-1 {
+  line-height: 1.15;
+}
+
+.display-2 {
+  line-height: 1.2;
+}
+
+.display-3 {
+  line-height: 1.2;
+}
+
+.display-4 {
+  line-height: 1.25;
+}
+
+.display-5 {
+  line-height: 1.25;
+}
+
+.display-6 {
+  line-height: 1.3;
+}
