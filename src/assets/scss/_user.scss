@@ -1,1 +1,24 @@
 // Use this to write your custom SCSS
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Pretendard-Regular', sans-serif !important;
+}
+
+.dots-main-post-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dots-main-post-detail {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
