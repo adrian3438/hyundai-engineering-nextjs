@@ -177,32 +177,62 @@ export default function Main() {
             <div className="container pb-17 pt-15">
                 <div className="row">
                     <h1 className="display-1 mb-3 text-center">소식지</h1>
-                    <p className="lead text-center mb-10">현대엔지니어링의 최신 소식을 확인하세요</p>
-                    <div className="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-                        <div className="col-lg-6 order-lg-2 position-relative">
-                            <div
-                                className="shape rounded-circle bg-line leaf rellax w-18 h-18"
-                                style={{bottom: "-2.5rem", right: "-1.5rem"}}
-                            />
-
+                    <p className="lead text-center mb-5">현대엔지니어링의 최신 소식을 확인하세요</p>
+                    <hr className="my-10 p-0"/>
+                    <div className="row gx-lg-8 gx-xl-12 align-items-center">
+                        <div className="col-lg-4">
                             <figure className="rounded">
                                 <img src="/img/photos/about19.jpg" srcSet="/img/photos/about19@2x.jpg 2x" alt=""/>
                             </figure>
                         </div>
-
-                        <div className="col-lg-6">
-                            <h3 className="display-6 mb-4">Why Choose Us?</h3>
+                        <div className="col-lg-8">
+                            <h3 className="display-6 mb-4">제목</h3>
                             <p className="mb-5">
-                                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus
-                                ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-                                Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius.
+                                <i className="uil uil-calendar-alt"></i> 2024. 06. 26
                             </p>
-
-                            <ListColumn list={aboutList1} bulletColor="primary"/>
-
-                            <NextLink title="More Details" href="#" className="btn btn-soft-primary rounded-pill mt-6 mb-0"/>
+                            <p className="mb-5 dots-main-post-detail overflow-hidden">
+                                OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.
+                            </p>
+                            <NextLink title="소식 보러가기" href="#" className="btn btn-soft-primary rounded-pill mt-6 mb-0"/>
                         </div>
                     </div>
+                    <hr className="my-10 p-0"/>
+                    <div className="row gx-lg-8 gx-xl-12 align-items-center">
+                        <div className="col-lg-4">
+                            <figure className="rounded">
+                                <img src="/img/photos/about19.jpg" srcSet="/img/photos/about19@2x.jpg 2x" alt=""/>
+                            </figure>
+                        </div>
+                        <div className="col-lg-8">
+                            <h3 className="display-6 mb-4">제목</h3>
+                            <p className="mb-5">
+                                <i className="uil uil-calendar-alt"></i> 2024. 06. 26
+                            </p>
+                            <p className="mb-5 dots-main-post-detail overflow-hidden">
+                                OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.
+                            </p>
+                            <NextLink title="소식 보러가기" href="#" className="btn btn-soft-primary rounded-pill mt-6 mb-0"/>
+                        </div>
+                    </div>
+                    <hr className="my-10 p-0"/>
+                    <div className="row gx-lg-8 gx-xl-12 align-items-center">
+                        <div className="col-lg-4">
+                            <figure className="rounded">
+                                <img src="/img/photos/about19.jpg" srcSet="/img/photos/about19@2x.jpg 2x" alt=""/>
+                            </figure>
+                        </div>
+                        <div className="col-lg-8">
+                            <h3 className="display-6 mb-4">제목</h3>
+                            <p className="mb-5">
+                                <i className="uil uil-calendar-alt"></i> 2024. 06. 26
+                            </p>
+                            <p className="mb-5 dots-main-post-detail overflow-hidden">
+                                OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.
+                            </p>
+                            <NextLink title="소식 보러가기" href="#" className="btn btn-soft-primary rounded-pill mt-6 mb-0"/>
+                        </div>
+                    </div>
+                    <hr className="my-10 p-0"/>
                 </div>
             </div>
         </main>

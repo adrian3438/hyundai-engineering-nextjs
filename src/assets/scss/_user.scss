@@ -22,3 +22,162 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.container {
+  max-width: 1480px;
+}
+
+.dots-dongpae-point-title {
+  font-size: 36px;
+  font-weight: 700;
+  color:black;
+  line-height: 1.4em;
+  margin-bottom:20px;
+}
+
+.dots-dongpae-point {
+  display:flex;
+  justify-content: space-between;
+}
+.dots-dongpae-point > div {
+  width: 49%;
+}
+.dots-dongpae-point-left > div:first-child {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 10px;
+  padding: 25px 25px 40px 25px;
+  background: url('/img/dongpae/quality-assurance.png') no-repeat calc(100% - 20px) calc(100% - 20px)
+}
+.dots-dongpae-point-left .customer-service {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.dots-dongpae-point-left .customer-service > div {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 10px;
+  padding: 25px 25px 40px 25px;
+  width: 49%
+}
+.dots-dongpae-point-left .customer-service > .customer-service-left {
+  background: url('/img/dongpae/customer-satiffication.png') no-repeat calc(100% - 20px) calc(100% - 20px)
+}
+.dots-dongpae-point-left .customer-service > .customer-service-right {
+  background: url('/img/dongpae/product-maintenance.png') no-repeat calc(100% - 20px) calc(100% - 20px)
+}
+.dots-dongpae-point-right {
+  position: relative;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 10px;
+  padding: 20px;
+}
+.dots-dongpae-point-right > a {
+  display: inline-block;
+  border: 1px solid var(--bs-border-color);
+  padding: 7px 15px;
+  border-radius: 30px;
+}
+.dots-dongpae-point-right > a:hover, .dots-dongpae-point-right > a:focus{
+  color: var(--medium-gray);
+}
+.dots-dongpae-point-right img {
+  position: absolute;
+  bottom: -130px;
+  right: 0;
+}
+@media (max-width: 992px) {
+  .dots-dongpae-point {
+    display: block;
+  }
+  .dots-dongpae-point > div {
+    width: auto;
+  }
+  .dots-dongpae-point-right {
+    margin-top: 20px;
+  }
+  .dots-dongpae-point-right img{
+    width:200px;
+    height: auto;
+    bottom: 0
+  }
+}
+@media (max-width: 767px) {
+  .dots-dongpae-point-right img{
+    width:100px;
+    height: auto;
+    bottom: 0
+  }
+}
+
+.dots-main-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16/9 ratio */
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+}
+
+.dots-main-video2 {
+  padding-bottom: 47%
+}
+
+.dots-main-video iframe,
+.dots-main-video object,
+.dots-main-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;;
+}
+
+
+
+
+/* 문의하기 */
+.dots-number {
+  position: relative;
+  top: -2px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+}
+
+.dots-dongpae-form2 {
+  display: flex;
+  justify-content: space-between;
+  margin:0 -10px 10px;
+}
+.dots-dongpae-form2 > div {
+  width: 20%;
+  margin: 0 10px;
+}
+.dots-dongpae-form2 input {
+  display: none;
+}
+.dots-dongpae-form2 input + label{
+  height: 60px;
+  line-height: 60px;
+  transition: background 0.2s ease-out;
+}
+.dots-dongpae-form2 input:checked + label {
+  background-color: #3f78e0;
+  color: #fff;
+}
+
+
+
+/* Color */
+.dots-bg-color1 {
+  background-color: #222;
+  * {
+    border-color: rgba(164, 174, 198, 0.2) !important;
+  }
+}
+
+/* Sitemap */
+.sitemap ul {list-style: none}
+.sitemap > div > ul > li > ul > li{
+  margin-top:15px;
+}

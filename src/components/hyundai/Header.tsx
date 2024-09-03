@@ -3,7 +3,7 @@
 import { Fragment, ReactElement, useRef } from "react";
 // -------- CUSTOM HOOKS -------- //
 import useSticky from "hooks/useSticky";
-import useNestedDropdown from "hooks/useNestedDropdown";
+
 // -------- CUSTOM COMPONENTS -------- //
 import NextLink from "components/reuseable/links/NextLink";
 // LOCAL CUSTOM COMPONENTS
@@ -38,7 +38,6 @@ export default function Header({
     navOtherClass = "navbar-other w-100 d-flex ms-auto",
     navClassName = "navbar navbar-expand-lg center-nav transparent navbar-light"
 }: NavbarProps) {
-    useNestedDropdown();
     const sticky = useSticky(350);
     const navbarRef = useRef<HTMLElement | null>(null);
 

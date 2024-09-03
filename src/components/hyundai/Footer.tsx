@@ -15,7 +15,7 @@ export default function Footer() {
                     <div className="col-md-auto col-lg-auto">
                         <div className="widget">
                             <h4 className="widget-title text-white mb-3">회사소개</h4>
-                            <ul className="list-unstyled  mb-0">
+                            <ul className="list-unstyled mb-0">
                                 <li><a href="/company/ceo-greeting">CEO 인사말</a></li>
                                 <li><a href="/company/about-us">소개</a></li>
                                 <li><a href="/company/history">연혁</a></li>
@@ -26,7 +26,7 @@ export default function Footer() {
                     <div className="col-md-auto col-lg-auto">
                         <div className="widget">
                             <h4 className="widget-title text-white mb-3">사업분야</h4>
-                            <ul className="list-unstyled  mb-0">
+                            <ul className="list-unstyled mb-0">
                                 <li><a href="/business-area/new-construction">신축</a></li>
                                 <li><a href="/business-area/extension-reconstruction">증 · 개축</a></li>
                                 <li><a href="/business-area/factory-remodeling">공장 리모델링</a></li>
@@ -38,7 +38,7 @@ export default function Footer() {
                     <div className="col-md-auto col-lg-auto">
                         <div className="widget">
                             <h4 className="widget-title text-white mb-3">홍보센터</h4>
-                            <ul className="list-unstyled  mb-0">
+                            <ul className="list-unstyled mb-0">
                                 <li><a href="/promotion-center/portfolio">포트폴리오</a></li>
                                 <li><a href="/promotion-center/videos">영상</a></li>
                                 <li><a href="/promotion-center/news">소식지</a></li>
