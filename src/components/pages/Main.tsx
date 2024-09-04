@@ -1,178 +1,134 @@
+'use client'
+
 import MainBanner from "../hyundai/MainBanner";
 import Link from "next/link";
 import FigureImage from "../reuseable/FigureImage";
 import NextLink from "../reuseable/links/NextLink";
 import Image from "next/image";
-import {About14, About15} from "../blocks/about";
-import ListColumn from "../reuseable/ListColumn";
-import {aboutList1} from "../../data/about";
+import {projectList1} from "../../data/project";
+import {ProjectCard1} from "../reuseable/project-cards";
+import useIsotope from "../../hooks/useIsotope";
+import {Clients4} from "../blocks/clients";
+import {clientList2} from "../../data/client";
 
 export default function Main() {
+    useIsotope();
+
     return (
         <main className="content-wrapper">
             <MainBanner/>
 
             <div className="container pb-17 pt-15">
                 <div className="row">
-                    <h1 className="display-1 mb-3 text-center">포트폴리오</h1>
-                    <p className="lead text-center mb-10">현대엔지니어링의 최신 포트폴리오를 만나보세요</p>
+                    <section className="wrapper bg-light">
+                        <div className="container py-14 py-md-16">
+                            <div className="row mt-6">
+                                <div>
+                                    <div className="projects-tiles">
+                                        <div className="project grid grid-view">
+                                            <div className="row g-6 isotope">
+                                                <div className="item col-md-6">
+                                                    <div className="project-details d-flex justify-content-center flex-column">
+                                                        <div className="post-header">
+                                                            <div className="post-category text-red mb-3">PORTFOLIO</div>
+                                                            <h2 className="post-title mb-3">(주)현대엔지니어링의 최신 포트폴리오를 만나보세요</h2>
+                                                        </div>
 
-                    <article className="item post col-md-4">
-                        <div className="card">
-                            <figure className="card-img-top overlay overlay-1 hover-scale">
-                                <Link href="#">
-                                    <FigureImage width={560} height={350} src="/img/photos/b4.jpg"/>
-                                    <span className="bg"/>
-                                </Link>
+                                                        <div className="post-content">
+                                                            <p>현장에서 쌓아온 신뢰와 품질의 기록, 우리 건설의 포트폴리오가 말해줍니다.</p>
+                                                            <NextLink title="See Project" href="See Portfolio" className="more hover link-red"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                <figcaption>
-                                    <h5 className="from-top mb-0">Read More</h5>
-                                </figcaption>
-                            </figure>
-
-                            <div className="card-body">
-                                <div className="post-header">
-                                    <h2 className="post-title h3 mt-1 mb-3 overflow-hidden dots-main-post-title">
-                                        <NextLink title="타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다." className="link-dark" href="#"/>
-                                    </h2>
-                                </div>
-
-                                <div className="post-content overflow-hidden dots-main-post-detail">
-                                    <p className="mb-0">설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article className="item post col-md-4">
-                        <div className="card">
-                            <figure className="card-img-top overlay overlay-1 hover-scale">
-                                <Link href="#">
-                                    <FigureImage width={560} height={350} src="/img/photos/b4.jpg"/>
-                                    <span className="bg"/>
-                                </Link>
-
-                                <figcaption>
-                                    <h5 className="from-top mb-0">Read More</h5>
-                                </figcaption>
-                            </figure>
-
-                            <div className="card-body">
-                                <div className="post-header">
-                                    <h2 className="post-title h3 mt-1 mb-3 overflow-hidden dots-main-post-title">
-                                        <NextLink title="타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다." className="link-dark" href="#"/>
-                                    </h2>
-                                </div>
-
-                                <div className="post-content overflow-hidden dots-main-post-detail">
-                                    <p className="mb-0">설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.</p>
+                                                <div className="item col-md-6">
+                                                    <figure className="itooltip itooltip-light hover-scale rounded" title="tooltip">
+                                                        <a href="#" data-glightbox={`title: tooltip`} data-gallery="project-2">
+                                                            <Image alt="title" src="/img/hyundai/portfolio-01.png" width={900} height={800} className="w-100 h-auto"/>
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                                <div className="item col-md-6">
+                                                    <figure className="itooltip itooltip-light hover-scale rounded" title="tooltip">
+                                                        <a href="#" data-glightbox={`title: tooltip`} data-gallery="project-2">
+                                                            <Image alt="title" src="/img/hyundai/portfolio-02.png" width={900} height={900} className="w-100 h-auto"/>
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                                <div className="item col-md-6">
+                                                    <figure className="itooltip itooltip-light hover-scale rounded" title="tooltip">
+                                                        <a href="#" data-glightbox={`title: tooltip`} data-gallery="project-2">
+                                                            <Image alt="title" src="/img/hyundai/portfolio-03.png" width={900} height={718} className="w-100 h-auto"/>
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </article>
-
-                    <article className="item post col-md-4">
-                        <div className="card">
-                            <figure className="card-img-top overlay overlay-1 hover-scale">
-                                <Link href="#">
-                                    <FigureImage width={560} height={350} src="/img/photos/b4.jpg"/>
-                                    <span className="bg"/>
-                                </Link>
-
-                                <figcaption>
-                                    <h5 className="from-top mb-0">Read More</h5>
-                                </figcaption>
-                            </figure>
-
-                            <div className="card-body">
-                                <div className="post-header">
-                                    <h2 className="post-title h3 mt-1 mb-3 overflow-hidden dots-main-post-title">
-                                        <NextLink title="타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다." className="link-dark" href="#"/>
-                                    </h2>
-                                </div>
-
-                                <div className="post-content overflow-hidden dots-main-post-detail">
-                                    <p className="mb-0">설명이 들어갑니다.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                    </section>
                 </div>
             </div>
 
-            <div className="bg-pale-ash">
-                <div className="container pb-17 pt-15">
-                    <div className="row">
-                        <h1 className="display-1 mb-3 text-center">사업분야</h1>
-                        <p className="lead text-center mb-10">다양한 사업을 영위하는 종합건설사입니다</p>
+            <section className="wrapper bg-gray">
+                <div className="container py-14 py-md-16">
+                    <div className="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0 mb-10">
+                        <div className="col-lg-4 mt-lg-2">
+                            <h3 className="display-4 mb-3 pe-xxl-5">Trusted by over 300+ clients</h3>
+                            <p className="lead fs-lg mb-0 pe-xxl-5">
+                                We <span className="underline">bring solutions</span> to make life easier for our customers.
+                            </p>
+                        </div>
 
-                        <article className="col-md-4">
-                            <figure className="overlay overlay-1 hover-scale rounded mb-6">
-                                <Link href="#">
-                                    <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
-                                    <span className="bg"/>
-                                </Link>
-
-                                <figcaption>
-                                    <h2 className="from-top mb-0">신축</h2>
-                                </figcaption>
-                            </figure>
-                        </article>
-
-                        <article className="col-md-4">
-                            <figure className="overlay overlay-1 hover-scale rounded mb-6">
-                                <Link href="#">
-                                    <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
-                                    <span className="bg"/>
-                                </Link>
-
-                                <figcaption>
-                                    <h2 className="from-top mb-0">증 · 개축</h2>
-                                </figcaption>
-                            </figure>
-                        </article>
-
-                        <article className="col-md-4">
-                            <figure className="overlay overlay-1 hover-scale rounded mb-6">
-                                <Link href="#">
-                                    <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
-                                    <span className="bg"/>
-                                </Link>
-
-                                <figcaption>
-                                    <h2 className="from-top mb-0">공장 리모델링</h2>
-                                </figcaption>
-                            </figure>
-                        </article>
-
-                        <article className="col-md-6">
-                            <figure className="overlay overlay-1 hover-scale rounded mb-6">
-                                <Link href="#">
-                                    <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
-                                    <span className="bg"/>
-                                </Link>
-
-                                <figcaption>
-                                    <h2 className="from-top mb-0">공장방수</h2>
-                                </figcaption>
-                            </figure>
-                        </article>
-
-                        <article className="col-md-6">
-                            <figure className="overlay overlay-1 hover-scale rounded mb-6">
-                                <Link href="#">
-                                    <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
-                                    <span className="bg"/>
-                                </Link>
-
-                                <figcaption>
-                                    <h2 className="from-top mb-0">공장보수</h2>
-                                </figcaption>
-                            </figure>
-                        </article>
+                        <div className="col-lg-8">
+                            <div className="row row-cols-2 row-cols-md-4 gx-0 gx-md-8 gx-xl-12 gy-12">
+                                <div className="col">
+                                    <figure className="px-3 px-md-0 px-xxl-2">
+                                        <Image src="/img/hyundai/new-building.svg" alt="demo" width={85} height={85} className="w-100 h-auto"/>
+                                    </figure>
+                                </div>
+                                <div className="col">
+                                    <figure className="px-3 px-md-0 px-xxl-2">
+                                        <Image src="/img/hyundai/new-building.svg" alt="demo" width={85} height={85} className="w-100 h-auto"/>
+                                    </figure>
+                                </div>
+                                <div className="col">
+                                    <figure className="px-3 px-md-0 px-xxl-2">
+                                        <Image src="/img/hyundai/new-building.svg" alt="demo" width={85} height={85} className="w-100 h-auto"/>
+                                    </figure>
+                                </div>
+                                <div className="col">
+                                    <figure className="px-3 px-md-0 px-xxl-2">
+                                        <Image src="/img/hyundai/new-building.svg" alt="demo" width={85} height={85} className="w-100 h-auto"/>
+                                    </figure>
+                                </div>
+                                <div className="col">
+                                    <figure className="px-3 px-md-0 px-xxl-2">
+                                        <Image src="/img/hyundai/new-building.svg" alt="demo" width={85} height={85} className="w-100 h-auto"/>
+                                    </figure>
+                                </div>
+                                <div className="col">
+                                    <figure className="px-3 px-md-0 px-xxl-2">
+                                        <Image src="/img/hyundai/new-building.svg" alt="demo" width={85} height={85} className="w-100 h-auto"/>
+                                    </figure>
+                                </div>
+                                <div className="col">
+                                    <figure className="px-3 px-md-0 px-xxl-2">
+                                        <Image src="/img/hyundai/new-building.svg" alt="demo" width={85} height={85} className="w-100 h-auto"/>
+                                    </figure>
+                                </div>
+                                <div className="col">
+                                    <figure className="px-3 px-md-0 px-xxl-2">
+                                        <Image src="/img/hyundai/new-building.svg" alt="demo" width={85} height={85} className="w-100 h-auto"/>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <div className="container pb-17 pt-15">
                 <div className="row">

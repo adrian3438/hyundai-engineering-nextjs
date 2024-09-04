@@ -1,3 +1,5 @@
+import NavBar from "../../hyundai/NavBar";
+
 export default function Inquiry() {
     return (
         <>
@@ -15,6 +17,8 @@ export default function Inquiry() {
                     </div>
                 </div>
             </section>
+
+            {/*<NavBar depthId={5}/>*/}
 
             <div className="container py-17">
                 <h2 className="display-5 text-center">무엇이 궁금하신가요?</h2>

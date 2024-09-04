@@ -1,3 +1,5 @@
+import NavBar from "../../hyundai/NavBar";
+
 export default function History() {
     return (
         <>
@@ -15,6 +17,8 @@ export default function History() {
                     </div>
                 </div>
             </section>
+
+            <NavBar depth1Id={0} depth2Id={2}/>
 
             <div className="container py-17">
                 <div className="row">
