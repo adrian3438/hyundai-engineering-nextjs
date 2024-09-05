@@ -102,11 +102,72 @@ export default function Main() {
 
             <div className="bg-pale-ash">
                 <div className="container pb-17 pt-15">
-                    <div className="row">
-                        <h1 className="display-1 mb-3 text-center">사업분야</h1>
-                        <p className="lead text-center mb-10">다양한 사업을 영위하는 종합건설사입니다</p>
+                    <h1 className="display-1 mb-3 text-center">사업분야</h1>
+                    <p className="lead text-center mb-10">다양한 사업을 영위하는 종합건설사입니다</p>
+                    <div className="row row-cols-5">
 
-                        <article className="col-md-4">
+                        <article className="col">
+                            <figure className="overlay overlay-1 hover-scale rounded mb-6">
+                                <Link href="#">
+                                    <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
+                                    <span className="bg"/>
+                                </Link>
+
+                                <figcaption>
+                                    <h2 className="from-top mb-0">신축</h2>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article className="col">
+                            <figure className="overlay overlay-1 hover-scale rounded mb-6">
+                                <Link href="#">
+                                    <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
+                                    <span className="bg"/>
+                                </Link>
+
+                                <figcaption>
+                                    <h2 className="from-top mb-0">증 · 개축</h2>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article className="col">
+                            <figure className="overlay overlay-1 hover-scale rounded mb-6">
+                                <Link href="#">
+                                    <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
+                                    <span className="bg"/>
+                                </Link>
+
+                                <figcaption>
+                                    <h2 className="from-top mb-0">공장 리모델링</h2>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <article className="col">
+                            <figure className="overlay overlay-1 hover-scale rounded mb-6">
+                                <Link href="#">
+                                    <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
+                                    <span className="bg"/>
+                                </Link>
+
+                                <figcaption>
+                                    <h2 className="from-top mb-0">공장방수</h2>
+                                </figcaption>
+                            </figure>
+                        </article>
+
+                        <article className="col">
+                            <figure className="overlay overlay-1 hover-scale rounded mb-6">
+                                <Link href="#">
+                                    <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
+                                    <span className="bg"/>
+                                </Link>
+
+                                <figcaption>
+                                    <h2 className="from-top mb-0">공장보수</h2>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        {/*<article className="col-md-4">
                             <figure className="overlay overlay-1 hover-scale rounded mb-6">
                                 <Link href="#">
                                     <Image src="/img/photos/b4.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
@@ -169,7 +230,7 @@ export default function Main() {
                                     <h2 className="from-top mb-0">공장보수</h2>
                                 </figcaption>
                             </figure>
-                        </article>
+                        </article>*/}
                     </div>
                 </div>
             </div>
