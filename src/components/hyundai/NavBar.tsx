@@ -2,7 +2,6 @@
 
 import NextLink from "../reuseable/links/NextLink";
 import {NavBarData} from "../../data/hyundai/navBarData"
-import {useState} from "react";
 
 interface Props {
     depth1Id: number,
@@ -10,10 +9,15 @@ interface Props {
 }
 
 export default function NavBar({depth1Id, depth2Id}: Props) {
+
     const handleClick = (e:any) => {
+        const allEl = document.querySelectorAll('.position-relative ul');
         const target = e.currentTarget as HTMLElement;
         const nextEl = target.nextElementSibling as HTMLElement;
         if (nextEl.style.display === 'none') {
+            allEl.forEach((el:any) => {
+                el.style.display = 'none';
+            });
             nextEl.style.display = "block";
         } else {
             nextEl.style.display = "none";
