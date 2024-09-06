@@ -87,13 +87,7 @@ export default function Header({
                                 <li className="nav-item"><a className="dropdown-item" href="/promotion-center/news">소식지</a></li>
                             </ul>
                         </li>
-                        <li className="nav-item dropdown"><a href="#" data-bs-toggle="dropdown" className="nav-link">인증현황</a>
-                            <ul className="dropdown-menu">
-                                <li className="nav-item"><a className="dropdown-item" href="#">인증종류-1</a></li>
-                                <li className="nav-item"><a className="dropdown-item" href="#">인증종류-3</a></li>
-                                <li className="nav-item"><a className="dropdown-item" href="#">인증종류-3</a></li>
-                            </ul>
-                        </li>
+                        <li className="nav-item dropdown"><a href="#" data-bs-toggle="dropdown" className="nav-link">인증현황</a></li>
                         <li className="nav-item dropdown"><a href="/esg" data-bs-toggle="dropdown" className="nav-link">지속가능경영</a></li>
                         <li className="nav-item dropdown"><a href="/inquiry" data-bs-toggle="dropdown" className="nav-link">문의하기</a></li>
                     </ul>

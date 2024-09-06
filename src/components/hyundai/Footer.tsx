@@ -47,22 +47,17 @@ export default function Footer() {
                     </div>
                     <div className="col-md-auto col-lg-auto">
                         <div className="widget">
-                            <h4 className="widget-title text-white mb-3">인증현황</h4>
-                            <ul className="list-unstyled  mb-0">
-                                <li><a href="#">인증종류-1</a></li>
-                                <li><a href="#">인증종류-3</a></li>
-                                <li><a href="#">인증종류-3</a></li>
-                            </ul>
+                            <h4 className="widget-title text-white mb-3"><a href="/certification" className="text-white">인증현황</a></h4>
                         </div>
                     </div>
                     <div className="col-md-auto col-lg-auto">
                         <div className="widget">
-                            <h4 className="widget-title text-white mb-3"><a href="/esg">지속가능경영</a></h4>
+                            <h4 className="widget-title text-white mb-3"><a href="/esg" className="text-white">지속가능경영</a></h4>
                         </div>
                     </div>
                     <div className="col-md-auto col-lg-auto">
                         <div className="widget">
-                            <h4 className="widget-title text-white mb-3"><a href="/inquiry">문의하기</a></h4>
+                            <h4 className="widget-title text-white mb-3"><a href="/inquiry" className="text-white">문의하기</a></h4>
                         </div>
                     </div>
                 </div>

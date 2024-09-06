@@ -176,8 +176,15 @@ body {
   }
 }
 
+.dots-bg-navy {
+  --bs-bg-opacity: 1;
+  background-color: #1C2436;
+}
+
 /* Sitemap */
 .sitemap ul {list-style: none}
 .sitemap > div > ul > li > ul > li{
   margin-top:15px;
 }
+
+

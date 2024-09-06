@@ -1,88 +1,124 @@
-import Carousel from "components/reuseable/Carousel";
+'use client'
 
+import React, {useEffect, useRef, useState} from "react";
 // GLOBAL CUSTOM COMPONENTS
 import NextLink from "components/reuseable/links/NextLink";
 
 export default function MainBanner() {
+    const mainImageRef = useRef<HTMLImageElement>(null);
+    const mainFadeRef = useRef<HTMLDivElement>(null);
+    const bannerWrap = useRef<HTMLDivElement>(null);
+    const [height, setHeight] = useState<number>(420);
+    const [scaleUp, setScaleUp] = useState<boolean>(true);
+    const [scaleDown, setScaleDown] = useState<boolean>(true);
+    const prevScrollY = useRef(0);
+
+    useEffect(() => {
+        if(window.scrollY === 0) {
+            document.body.style.overflowY = "hidden";
+        }
+
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY === 0 && prevScrollY.current !== 0) {
+                setScaleDown(false);
+                document.body.style.overflowY = "hidden";
+            }
+            prevScrollY.current = currentScrollY;
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        if(!scaleUp) {
+            if(mainFadeRef.current && bannerWrap.current) {
+                mainFadeRef.current.classList.remove('opacity-0');
+                mainFadeRef.current.style.animation = "0.3s linear fadeIn";
+                bannerWrap.current.classList.remove('d-none');
+                bannerWrap.current.style.animation = "0.3s linear fadeIn";
+                setTimeout(() => {
+                    document.body.style.overflowY = "scroll";
+                },0.5);
+            }
+            setScaleDown(true);
+        }
+    }, [scaleUp]);
+
+    useEffect(() => {
+        if(!scaleDown) {
+            if(mainFadeRef.current && bannerWrap.current) {
+                mainFadeRef.current.classList.add('opacity-0');
+                bannerWrap.current.classList.add('d-none');
+            }
+            setScaleUp(true);
+        }
+    }, [scaleDown]);
+
+    const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+        if (mainImageRef.current) {
+            if(event.deltaY > 0) {
+                if(mainImageRef.current.offsetHeight < document.body.offsetHeight) {
+                    setHeight(prevHeight => prevHeight + 40);
+                } else {
+                    setScaleUp(false);
+                }
+            }
+            if(event.deltaY < 0) {
+                if(height >= 450) {
+                    setHeight(prevHeight => prevHeight - 40);
+                } else {
+                    setScaleDown(false);
+                }
+            }
+            mainImageRef.current.style.height = `${height}px`;
+            mainImageRef.current.style.transition = 'height 0.2s';
+        }
+    }
+
     return (
-        <div className="wrapper bg-dark">
-            <div className="swiper-container swiper-hero dots-over">
-                <Carousel slidesPerView={1} autoplay={{delay: 7000, disableOnInteraction: false}}>
-                    <div
-                        className="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image"
-                        style={{backgroundImage: 'url("/img/hyundai/main-construction-1.jpg")'}}>
-                        <div className="container h-100">
-                            <div className="row h-100">
-                                <div className="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-9 text-center text-lg-start justify-content-center align-self-center align-items-start">
-                                    <h2 className="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">
-                                        정직으로 신뢰를 얻고, 전문성으로 보답합니다.
-                                    </h2>
-
-                                    <p className="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">
-                                        결과물로 증명하는 종합건설회사 <span className="fw-bold">(주)현대엔지니어링</span> 입니다.
-                                    </p>
-
-                                    <div className="animate__animated animate__slideInUp animate__delay-3s">
-                                        <NextLink title="Read More" href="#" className="btn btn-lg btn-outline-white rounded-pill"/>
-                                    </div>
+        <>
+            <div className="wrapper dots-bg-navy swiper-fullscreen position-relative overflow-hidden" onWheel={handleWheel}>
+                <div ref={bannerWrap} className="position-absolute top-0 start-0 w-100 h-100 d-none" style={{zIndex:'11', background:"rgba(0,0,0,0.5)"}}></div>
+                <div className="container pt-20 position-relative" style={{zIndex:"10"}}>
+                    <div className="row text-white">
+                        <div className="col-md-8">
+                            <h1 className="text-white display-2">정직과 신뢰, 전문성으로 답합니다.</h1>
+                            <p className="fs-20">결과물로 증명하는 종합건설회사 (주)현대엔지니어링 입니다.</p>
+                        </div>
+                        <div className="col-md-4">
+                            <p className="fs-20">문의사항이 있으면 언제든지 연락주시기 바랍니다.</p>
+                            <div className="row align-items-center">
+                                <div className="col-md-auto">
+                                    <NextLink title="Get started" href="#" className="btn btn-yellow text-navy"/>
+                                </div>
+                                <div className="col-md-auto">
+                                    <p className="mb-0"><i className="uil uil-mobile-android-alt"></i> 010-5256-9489</p>
+                                    <p className="mb-0"><i className="uil uil-phone"></i> 032-837-5647</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div
-                        className="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image"
-                        style={{backgroundImage: 'url("/img/hyundai/main-construction-2.jpg")'}}>
-                        <div className="container h-100">
-                            <div className="row h-100">
-                                <div className="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start m-auto">
-                                    <div className="display-1 fs-50 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s text-center row">
-                                        <div className="col-md-4">
-                                            30+<br/><span className="fs-43">사업년수</span>
-                                        </div>
-                                        <div className="col-md-4">
-                                            500+<br/><span className="fs-43">공사건수</span>
-                                        </div>
-                                        <div className="col-md-4">
-                                            200+<br/><span className="fs-43">보유고객</span>
-                                        </div>
-                                    </div>
-
-                                    <p className="lead fs-23 lh-sm mb-7 text-white text-center">
-                                        실적으로 증명된 신뢰, 우리는 <span className="fw-bold">건설의 미래</span>를 만듭니다.
-                                    </p>
-
-                                    <div className="animate__animated animate__slideInUp animate__delay-3s text-center">
-                                        <NextLink title="포트폴리오" href="#" className="btn btn-lg btn-outline-white rounded-pill"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div ref={mainFadeRef} className="position-absolute top-50 start-50 display-1 fs-50 mb-4 text-white text-center row row-cols-3 w-50 translate-middle opacity-0"
+                     style={{zIndex:11}}
+                >
+                    <div className="col">
+                        30+<br/><span className="fs-43">사업년수</span>
                     </div>
-
-                    <div
-                        className="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image"
-                        style={{backgroundImage: 'url("/img/hyundai/main-construction-3.jpg")'}}>
-                        <div className="container h-100">
-                            <div className="row h-100">
-                                <div className="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-7 text-center text-lg-start justify-content-center align-self-center align-items-start">
-                                    <h2 className="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">
-                                        건축의 시작과 끝, 우리가 책임집니다.
-                                    </h2>
-
-                                    <p className="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">
-                                        경험과 기술력으로 건설의 새로운 지평을 여는 <span className="fw-bold">(주)현대엔지니어링</span> 입니다.
-                                    </p>
-
-                                    <div className="animate__animated animate__slideInUp animate__delay-3s">
-                                        <NextLink title="Read More" href="#" className="btn btn-lg btn-outline-white rounded-pill"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="col">
+                        500+<br/><span className="fs-43">공사건수</span>
                     </div>
-                </Carousel>
+                    <div className="col">
+                        200+<br/><span className="fs-43">보유고객</span>
+                    </div>
+                </div>
+                <img ref={mainImageRef} src="/img/hyundai/main-banner.jpg" alt="공사현장" className="position-absolute left-0 bottom-0" style={{zIndex:10}}/>
             </div>
-        </div>
+        </>
     );
 }

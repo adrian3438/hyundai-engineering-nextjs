@@ -26,16 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     return (
         <html lang="en">
         <body>
-        <header className="w-100">
-            <Header
-                navClassName="navbar navbar-expand-lg center-nav transparent navbar-light"
-                button={
-                    <a href="https://cutt.ly/P4rW6e4" className="btn btn-primary rounded-xl" target="_blank">
-                        Purchase Now
-                    </a>
-                }
-            />
-        </header>
+
         {children}
 
         <Footer/>

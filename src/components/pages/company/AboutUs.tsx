@@ -31,7 +31,7 @@ export default function AboutUs() {
             <NavBar depth1Id={0} depth2Id={1}/>
 
             <div className="container py-17">
-                <div className="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
+                {/*<div className="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
                     <div className="col-lg-6 position-relative order-lg-2">
                         <div className="shape bg-dot primary rellax w-16 h-20" style={{top: "3rem", left: "5.5rem"}}/>
 
@@ -60,15 +60,22 @@ export default function AboutUs() {
                         <p>
                             우리는 고객의 신뢰와 만족을 최우선으로 생각하며, 각 프로젝트마다 최상의 품질과 최고의 서비스로 보답하고자 합니다. 종합 건설사로서, 고객과 협력하여 모든 요구 사항을 충족하고, 함께 성장하는 파트너가 되기 위해 최선을 다하고 있습니다.</p>
                     </div>
+                </div>*/}
+                <div className="row mb-13">
+                    <h1 className="text-center">공간을 생각하는 <span className="text-primary">(주) 현대엔지니어링의 철학</span></h1>
+                </div>
+
+                <div className="row">
+                    <img src="/img/hyundai/company/about-us-middle-banner.png"/>
                 </div>
 
                 <div className="row text-center mb-15">
                     <div className="col-lg-12 col-xl-12 col-xxl-12 mx-auto">
                         <h2 className="fs-16 text-uppercase text-muted mb-3">Trust, Safety, Know-how </h2>
                         <h3 className="display-3 px-lg-12 px-xxl-14 mb-10">
-                            (주)현대엔지니어링은 성실함과 정직함으로 고객의 행복을 함께 지어갑니다
+                            New Thinking, New Possibilities
                         </h3>
-                        <p>1997년부터 다져온 현대엔지니어링의 기술력과 노하우를 바탕으로 고객 여러분이 보다 안전하고 안락한 공간을 누릴 수 있도록 끊임없는 노력과 최선을 다해 시공하도록 하겠습니다.</p>
+                        <p>1997년부터 다져온 현대엔지니어링의 기술력과 노하우를 바탕으로 고객 여러분이 보다 안전하고 안락한<br/> 공간을 누릴 수 있도록 끊임없는 노력과 최선을 다해 시공하도록 하겠습니다.</p>
                         <p className="fw-bold">HYUNDAE ENGINEERING CO., LTD.</p>
                     </div>
                 </div>
