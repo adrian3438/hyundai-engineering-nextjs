@@ -52,7 +52,7 @@ export default function Header({
     const headerContent = (
         <Fragment>
             <div className="navbar-brand w-100">
-                <NextLink href="/" title={<img alt="logo" src={`/img/logo.png`} srcSet={`/img/${logo}@2x.png 2x`}/>}/>
+                <NextLink href="/" title={<img alt="logo" src={`/img/hyundai/logo.png`} style={{width: "50px"}} />}/>
 
             </div>
 
@@ -85,7 +85,7 @@ export default function Header({
                             <ul className="dropdown-menu">
                                 <li className="nav-item"><a className="dropdown-item" href="/promotion-center/portfolio">포트폴리오</a></li>
                                 <li className="nav-item"><a className="dropdown-item" href="/promotion-center/videos">영상</a></li>
-                                <li className="nav-item"><a className="dropdown-item" href="/promotion-center/news">소식지</a></li>
+                                <li className="nav-item"><a className="dropdown-item" href="/promotion-center/News">소식지</a></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown"><a href="#" data-bs-toggle="dropdown" className="nav-link">인증현황</a></li>

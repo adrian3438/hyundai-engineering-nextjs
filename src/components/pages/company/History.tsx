@@ -1,7 +1,6 @@
 'use client'
 
 import NavBar from "../../hyundai/NavBar";
-import hex from "../../../icons/Hex";
 import {useState} from "react";
 
 const HistoryData = [
@@ -78,7 +77,8 @@ export default function History() {
                 <div className="row">
                     <h1 className="text-center mb-15">(주) 현대엔지니어링이<span className="text-primary"> 걸어온 발자취 입니다.</span></h1>
                     <div className="col-md-8 mx-auto">
-                        <div className="row border rounded p-10 justify-content-between">
+                        <div className="row border rounded px-10 pt-13 pb-10 justify-content-between position-relative">
+                            <span className="clip-background">연혁</span>
                             <div className="col-md-3">
                                 <ul className="p-0 m-0" style={{listStyle: "none"}}>
                                     {HistoryData.map((item, index) => (
@@ -100,10 +100,10 @@ export default function History() {
                                                  maxWidth: "574px",
                                                  minHeight: "438px"
                                              }}
-                                             className={`position-relative ${index === historyIndex ? 'd-block' : 'd-none'}`}
+                                             className={`position-relative rounded overflow-hidden ${index === historyIndex ? 'd-block' : 'd-none'}`}
                                     >
                                         <ul className="position-absolute bottom-0 start-0 m-0 w-100 py-3"
-                                            style={{background:"rgba(0,0,0,0.45)"}}
+                                            style={{background: "rgba(0,0,0,0.45)"}}
                                         >
                                             {item.kr.map((item, index) => (
                                                 <li key={index} className="text-white">
