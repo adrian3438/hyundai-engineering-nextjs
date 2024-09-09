@@ -1,10 +1,6 @@
 'use client'
 import NavBar from "../../hyundai/NavBar";
-import {Tiles5} from "../../elements/tiles";
-import ListColumn from "../../reuseable/ListColumn";
-import {aboutList2} from "../../../data/about";
 import CountUp from "react-countup";
-import {factList7} from "../../../data/facts";
 
 export default function AboutUs() {
     const images = ["about2", "about3"];

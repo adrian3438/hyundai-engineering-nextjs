@@ -102,6 +102,9 @@ export default function Main() {
                             </div>
                         </article>
                     </div>
+                    <div className="text-center mt-10">
+                        <NextLink href="#" title="포트폴리오 바로가기" className="btn btn-outline-primary" />
+                    </div>
                 </div>
 
                 <div className="bg-pale-ash" style={{background:'url(/img/hyundai/shape-01.svg) no-repeat 100% 0',backgroundSize:"auto 100%"}}>
