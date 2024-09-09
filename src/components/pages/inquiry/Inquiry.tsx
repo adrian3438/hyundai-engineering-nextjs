@@ -1,7 +1,30 @@
+'use client'
+import React, { useState } from "react";
 import NavBar from "../../hyundai/NavBar";
 
 export default function Inquiry() {
-    return (
+    const [data, setData] = useState<any>({
+        company : '', name : '', position : '', phone : '', mobile : '',
+        email : '', type : '', message : '', attachedFile : null
+    })
+    const [fileName , setFileName] = useState<string>('')
+    function handleChange (e : any) {
+        const {name , type , value , files} = e.target
+        if(type === 'file') {
+            const reader = new FileReader()
+            if(files[0]) { reader.readAsDataURL(files[0]) }
+            reader.onload = () => {
+                setData((prev:any) => ({...prev, [name] : files[0]}))
+                setFileName(files[0].name)
+            }
+        }else{
+            setData((prev:any) => ({...prev, [name] : value}))
+        }
+    }
+    function save () {
+
+    }
+    return ( 
         <>
             <section
                 className="wrapper image-wrapper bg-image bg-overlay text-white"
