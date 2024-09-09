@@ -8,6 +8,7 @@ import useSticky from "hooks/useSticky";
 import NextLink from "components/reuseable/links/NextLink";
 // LOCAL CUSTOM COMPONENTS
 import FancyHeader from "../blocks/navbar/components/fancy-header";
+import Langbox from "./Langbox";
 
 // ===================================================================
 interface NavbarProps {
@@ -97,14 +98,9 @@ export default function Header({
             {/* ============= right side header content ============= */}
             <div className="navbar-other w-100 d-flex ms-auto">
                 <ul className="navbar-nav flex-row align-items-center ms-auto">
-                    <li className="nav-item dropdown language-select text-uppercase">
-                        <a role="button" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown" className="nav-link dropdown-item dropdown-toggle">Ko</a>
-                        <ul className="dropdown-menu">
-                            <li className="nav-item">
-                                <button className="dropdown-item">En</button>
-                            </li>
-                        </ul>
-                    </li>
+                    <Langbox
+                    
+                    />
                     <li className="nav-item dropdown language-select text-uppercase">
                         <a role="button" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown" className="nav-link">
                             <i className="uil uil-bars"></i>
