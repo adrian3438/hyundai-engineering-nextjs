@@ -188,3 +188,8 @@ body {
 }
 
 
+.active {
+  color: black !important;
+  box-sizing: content-box;
+  border-bottom: 2px solid black !important;
+}

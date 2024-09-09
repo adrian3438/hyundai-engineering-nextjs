@@ -21,7 +21,7 @@ export default function CeoGreeting() {
                 </div>
             </section>
 
-            <NavBar depth1Id={0} depth2Id={0}/>
+            <NavBar depthId="menu1" activeId={0}/>
 
             <div className="container py-17">
                 <div className="row">

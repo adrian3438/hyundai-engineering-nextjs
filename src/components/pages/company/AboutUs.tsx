@@ -28,39 +28,9 @@ export default function AboutUs() {
                 </div>
             </section>
 
-            <NavBar depth1Id={0} depth2Id={1}/>
+            <NavBar depthId="menu1" activeId={1}/>
 
             <div className="container py-17">
-                {/*<div className="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-17 align-items-center">
-                    <div className="col-lg-6 position-relative order-lg-2">
-                        <div className="shape bg-dot primary rellax w-16 h-20" style={{top: "3rem", left: "5.5rem"}}/>
-
-                        <div className="overlap-grid overlap-grid-2">
-                            <div className="item">
-                                <figure className="rounded shadow">
-                                    <img src={`/img/hyundai/company/ceo-greeting-middle-banner-2.png`} alt=""/>
-                                </figure>
-                            </div>
-                            <div className="item" style={{marginTop: "-16.5%"}}>
-                                <figure className="rounded shadow">
-                                    <img src={`/img/hyundai/company/ceo-greeting-middle-banner-1.png`} alt=""/>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-lg-6">
-                        <p className="display-6">공간을 대하는 (주)현대엔지니어링의 철학</p>
-                        <h2 className="display-4 mb-10">New Thinking, New Possibilities</h2>
-                        <p className="mb-6">
-                            저희 (주)현대엔지니어링은 종합 건설사로서, 공장신축, 리모델링, 증축 및 개축, 공장보수, 공장방수 등의 다양한 건축 산업 분야에서 전문 기술력을 제공합니다.
-                            <br/>
-                            당사는 30년 넘게 수많은 공장신축과 공장리모델링 프로젝트를 바탕으로 폭넓은 경험과 전문 기술력을 활용하여 고객의 만족을 충족시키기 위해 노력하고 있습니다.
-                        </p>
-                        <p>
-                            우리는 고객의 신뢰와 만족을 최우선으로 생각하며, 각 프로젝트마다 최상의 품질과 최고의 서비스로 보답하고자 합니다. 종합 건설사로서, 고객과 협력하여 모든 요구 사항을 충족하고, 함께 성장하는 파트너가 되기 위해 최선을 다하고 있습니다.</p>
-                    </div>
-                </div>*/}
                 <div className="row mb-13">
                     <h1 className="text-center">공간을 생각하는 <span className="text-primary">(주) 현대엔지니어링의 철학</span></h1>
                 </div>

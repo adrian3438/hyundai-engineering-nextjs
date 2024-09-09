@@ -72,7 +72,7 @@ export default function History() {
                 </div>
             </section>
 
-            <NavBar depth1Id={0} depth2Id={2}/>
+            <NavBar depthId="menu1" activeId={2}/>
 
             <div className="container py-17">
                 <div className="row">
@@ -102,7 +102,9 @@ export default function History() {
                                              }}
                                              className={`position-relative ${index === historyIndex ? 'd-block' : 'd-none'}`}
                                     >
-                                        <ul className="position-absolute bottom-0 start-0">
+                                        <ul className="position-absolute bottom-0 start-0 m-0 w-100 py-3"
+                                            style={{background:"rgba(0,0,0,0.45)"}}
+                                        >
                                             {item.kr.map((item, index) => (
                                                 <li key={index} className="text-white">
                                                     {item}
