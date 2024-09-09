@@ -21,23 +21,23 @@ export const NavBarData = {
         "menu2": [
             {
                 "title": "신축",
-                "linkUrl": "/business-area/",
+                "linkUrl": "/business-area/new-construction",
             },
             {
                 "title": "증 · 개축",
-                "linkUrl": "/business-area/",
+                "linkUrl": "/business-area/extension-reconstruction",
             },
             {
                 "title": "공장 리모델링",
-                "linkUrl": "/business-area/",
+                "linkUrl": "/business-area/factory-remodeling",
             },
             {
                 "title": "공장방수",
-                "linkUrl": "/business-area/",
+                "linkUrl": "/business-area/factory-waterproofing",
             },
             {
                 "title": "공장보수",
-                "linkUrl": "/business-area/",
+                "linkUrl": "/business-area/factory-maintenance",
             }
         ],
         "menu3": [

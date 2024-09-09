@@ -30,7 +30,8 @@ export default function CeoGreeting() {
                             <h1><span className="text-primary">(주) 현대엔지니어링 홈페이지</span>에 방문해주신 여러분을 진심으로 환영합니다.</h1>
                             <p className="fs-20">저는 이 자리를 빌려 <strong>당사의 비전과 철학</strong>에 대한 다짐을 전하고자 합니다.</p>
                         </div>
-                        <div className="border rounded px-10 py-15">
+                        <div className="border rounded px-10 py-15 position-relative">
+                            <span className="clip-background">CEO 인사말</span>
                             <p>안녕하십니까,</p>
                             <p>(주) 현대엔지니어링 홈페이지에 방문해주신 여러분을 진심으로 환영합니다. 저는 이 자리를 빌려 <strong>당사의 비전과 철학</strong>에 대한 다짐을 전하고자 합니다.</p>
                             <p>(주) 현대엔지니어링은 고객의 신뢰를 바탕으로 <strong>최고의 품질과 완벽한 시공</strong>을 <strong>최우선으로 목표</strong>로 삼고 있습니다. 저희 회사는 1997년 창립 이래 전국 공업단지 및 상업단지에서 수많은 공장신축과 리모델링 공사를 진행해 왔습니다. 당사는 수십년간 현장에서 활동해 온 전문가들이 하나의 팀으로 활동하며, 다양한 프로젝트에서 쌓아온 풍부한 경험과 노하우를 바탕으로, 고객에게 최고의 가치를 제공하기 위해 끊임없이 노력하고 있습니다.</p>

@@ -193,3 +193,19 @@ body {
   box-sizing: content-box;
   border-bottom: 2px solid black !important;
 }
+
+.clip-background {
+  position: absolute;
+  top: -27px;
+  right: 25px;
+  width: 176px;
+  height: 72px;
+  background:url("/img/hyundai/clip-background.svg") no-repeat 0 0;
+  background-size: 176px 72px;
+  color:#fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 85px;
+  text-indent: 23px;
+}

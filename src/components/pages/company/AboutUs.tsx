@@ -35,8 +35,11 @@ export default function AboutUs() {
                     <h1 className="text-center">공간을 생각하는 <span className="text-primary">(주) 현대엔지니어링의 철학</span></h1>
                 </div>
 
-                <div className="row">
-                    <img src="/img/hyundai/company/about-us-middle-banner.png"/>
+                <div className="row position-relative mb-15">
+                    <div className="col-md-8 mx-auto position-relative">
+                        <span className="clip-background">소개</span>
+                        <img src="/img/hyundai/company/about-us-middle-banner.png" alt="New Thinking, New Possibilities" className="w-100"/>
+                    </div>
                 </div>
 
                 <div className="row text-center mb-15">
