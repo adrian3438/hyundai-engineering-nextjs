@@ -41,7 +41,7 @@ export default function Footer() {
                             <ul className="list-unstyled mb-0">
                                 <li><a href="/promotion-center/portfolio">포트폴리오</a></li>
                                 <li><a href="/promotion-center/videos">영상</a></li>
-                                <li><a href="/promotion-center/News">소식지</a></li>
+                                <li><a href="/promotion-center/news">소식지</a></li>
                             </ul>
                         </div>
                     </div>

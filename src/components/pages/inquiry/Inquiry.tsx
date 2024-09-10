@@ -50,9 +50,7 @@ export default function Inquiry() {
                         <form className="contact-form needs-validation" method="post">
                             <div className="messages"></div>
                             <div className="row gx-4">
-                                <h3 className="display-7 mb-5"><span className="dots-number bg-navy text-white text-center fs-16 d-inline-block">1</span>
-                                    문의하시는 고객님의 정보를 기입해 주세요.
-                                    <span className="text-red">*</span></h3>
+                                <h3 className="display-7 mb-5"><span className="dots-number bg-navy text-white text-center fs-16 d-inline-block">1</span> 문의하시는 고객님의 정보를 기입해 주세요. <span className="text-red">*</span></h3>
                                 <div className="col-md-4">
                                     <div className="form-floating mb-4">
                                         <input required type="text" name="company" id="company_name" placeholder="test" className="form-control"/>
@@ -96,21 +94,19 @@ export default function Inquiry() {
 
                             <div className="row gx-4 mt-8">
                                 <h3 className="display-7 mb-5">
-                                    <span className="dots-number bg-navy text-white text-center fs-16 d-inline-block">2</span>
-                                    &nbsp;어떤 것이 궁금하신가요?
-                                    <span className="text-red">*</span>
+                                    <span className="dots-number bg-navy text-white text-center fs-16 d-inline-block">2</span> 어떤 것이 궁금하신가요? <span className="text-red">*</span>
                                 </h3>
                                 <div className="dots-dongpae-form2">
-                                    <div><input type="radio" id="questionType01" name="questionType"/><label htmlFor="questionType01" className="form-control text-center p-0">test13</label></div>
-                                    <div><input type="radio" id="questionType02" name="questionType"/><label htmlFor="questionType02" className="form-control text-center p-0">test14</label></div>
-                                    <div><input type="radio" id="questionType03" name="questionType"/><label htmlFor="questionType03" className="form-control text-center p-0">test15</label></div>
-                                    <div><input type="radio" id="questionType04" name="questionType"/><label htmlFor="questionType04" className="form-control text-center p-0">test16</label></div>
-                                    <div><input type="radio" id="questionType05" name="questionType"/><label htmlFor="questionType05" className="form-control text-center p-0">test17</label></div>
+                                    <div><input type="radio" id="questionType01" name="questionType"/><label htmlFor="questionType01" className="form-control text-center p-0">신축</label></div>
+                                    <div><input type="radio" id="questionType02" name="questionType"/><label htmlFor="questionType02" className="form-control text-center p-0">증 · 개축</label></div>
+                                    <div><input type="radio" id="questionType03" name="questionType"/><label htmlFor="questionType03" className="form-control text-center p-0">공장 리모델링</label></div>
+                                    <div><input type="radio" id="questionType04" name="questionType"/><label htmlFor="questionType04" className="form-control text-center p-0">공장방수</label></div>
+                                    <div><input type="radio" id="questionType05" name="questionType"/><label htmlFor="questionType05" className="form-control text-center p-0">공장보수</label></div>
                                 </div>
                             </div>
 
                             <div className="row gx-4 mt-8">
-                                <h3 className="display-7 mb-5"><span className="dots-number bg-navy text-white text-center fs-16 d-inline-block">3</span> test20 <span className="text-red">*</span></h3>
+                                <h3 className="display-7 mb-5"><span className="dots-number bg-navy text-white text-center fs-16 d-inline-block">3</span> 문의하실 내용을 자유롭게 적어주세요. <span className="text-red">*</span></h3>
                                 <div className="col-12">
                                     <div className="form-floating mb-4">
                             <textarea
@@ -121,7 +117,7 @@ export default function Inquiry() {
                                 placeholder="Your message"
                                 style={{height: 300}}
                             />
-                                        <label htmlFor="form_message">Message *</label>
+                                        <label htmlFor="form_message">Message</label>
                                         <div className="valid-feedback"> Looks good!</div>
                                         <div className="invalid-feedback"> Please enter your messsage.</div>
                                     </div>
@@ -131,8 +127,7 @@ export default function Inquiry() {
                             </div>
 
                             <div className="row gx-4 mt-8">
-                                <h3 className="display-7 mb-5"><span className="dots-number bg-navy text-white text-center fs-16 d-inline-block">4</span> test1
-                                    <span className="text-red">*</span></h3>
+                                <h3 className="display-7 mb-5"><span className="dots-number bg-navy text-white text-center fs-16 d-inline-block">4</span> 파일을 업로드해 주세요. <span className="text-red">*</span></h3>
                                 <div className="col-md-4">
                                     <input required type="file" name="attachedFile" id="file_upload" className="form-control"/>
                                 </div>
@@ -142,22 +137,12 @@ export default function Inquiry() {
                                 <div className="form-check">
                                     <div className="d-inline-block m-auto mb-5">
                                         <label className="form-check-label" htmlFor="flexCheck1">
-                                            test20
+                                            (필수) 개인정보 수집 및 이용에 동의합니다.
                                         </label>
                                         <input className="form-check-input" name="agreeTerms" type="checkbox" id="flexCheck1"/>
                                     </div>
-
                                 </div>
-                                <div className="form-check">
-                                    <div className="d-inline-block m-auto mb-5">
-                                        <label className="form-check-label" htmlFor="flexCheck2">
-                                            test21
-                                        </label>
-                                        <input className="form-check-input" name="adagree" type="checkbox" id="flexCheck2"/>
-                                    </div>
-
-                                </div>
-                                <input type="submit" value="test25" className="btn btn-primary rounded btn-send mb-3"/>
+                                <input type="submit" value="문의하기" className="btn btn-primary rounded btn-send mb-3"/>
                             </div>
                         </form>
                     </div>

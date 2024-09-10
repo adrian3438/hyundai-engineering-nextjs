@@ -3,7 +3,6 @@ import NavBar from "../../hyundai/NavBar";
 import CountUp from "react-countup";
 
 export default function AboutUs() {
-    const images = ["about2", "about3"];
     return (
         <>
             <section
@@ -32,7 +31,7 @@ export default function AboutUs() {
                 </div>
 
                 <div className="row position-relative mb-15">
-                    <div className="col-md-8 mx-auto position-relative">
+                    <div className="col-md-10 mx-auto position-relative">
                         <span className="clip-background">소개</span>
                         <img src="/img/hyundai/company/about-us-middle-banner.png" alt="New Thinking, New Possibilities" className="w-100"/>
                     </div>

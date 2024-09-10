@@ -47,7 +47,7 @@ export const NavBarData = {
             },
             {
                 "title": "영상",
-                "linkUrl": "/promotion-center/video",
+                "linkUrl": "/promotion-center/videos",
             },
             {
                 "title": "소식지",

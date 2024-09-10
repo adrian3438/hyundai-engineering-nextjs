@@ -10,6 +10,7 @@ import NextLink from "components/reuseable/links/NextLink";
 import FancyHeader from "../blocks/navbar/components/fancy-header";
 import Langbox from "./Langbox";
 import { useSearchParams } from "next/navigation";
+import HeaderRight from "../blocks/navbar/components/header-right";
 
 // ===================================================================
 interface NavbarProps {
@@ -52,8 +53,7 @@ export default function Header({
     const headerContent = (
         <Fragment>
             <div className="navbar-brand w-100">
-                <NextLink href="/" title={<img alt="logo" src={`/img/hyundai/logo.png`} style={{width: "50px"}} />}/>
-
+                <NextLink href="/" title={<img alt="logo" src={`/img/hyundai/logo.png`} style={{width: "200px"}} />}/>
             </div>
 
             <div id="offcanvas-nav" data-bs-scroll="true" className="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
@@ -88,7 +88,7 @@ export default function Header({
                                 <li className="nav-item"><a className="dropdown-item" href="/promotion-center/news">소식지</a></li>
                             </ul>
                         </li>
-                        <li className="nav-item dropdown"><a href="#" data-bs-toggle="dropdown" className="nav-link">인증현황</a></li>
+                        <li className="nav-item dropdown"><a href="/certification" data-bs-toggle="dropdown" className="nav-link">인증현황</a></li>
                         <li className="nav-item dropdown"><a href="/esg" data-bs-toggle="dropdown" className="nav-link">지속가능경영</a></li>
                         <li className="nav-item dropdown"><a href="/inquiry" data-bs-toggle="dropdown" className="nav-link">문의하기</a></li>
                     </ul>
@@ -101,12 +101,22 @@ export default function Header({
                         {/* <Langbox
                         /> */}
                     <li className="nav-item dropdown language-select text-uppercase">
-                        <a role="button" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown" className="nav-link">
+                        <a role="button" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown" className="nav-link" href="/sitemap">
                             <i className="uil uil-bars"></i>
                         </a>
                     </li>
                 </ul>
             </div>
+
+            {/*<HeaderRight
+                cart={cart}
+                info={info}
+                button={button}
+                search={search}
+                social={social}
+                language={language}
+                navOtherClass={navOtherClass}
+            />*/}
         </Fragment>
     );
 

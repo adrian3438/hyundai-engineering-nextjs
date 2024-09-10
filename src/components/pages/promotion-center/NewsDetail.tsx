@@ -1,4 +1,4 @@
-export default function PortfolioDetail() {
+export default function NewsDetail() {
     return (
         <>
             <section
@@ -18,7 +18,7 @@ export default function PortfolioDetail() {
             <div className="container my-10">
                 <section className="row my-10 justify-content-center">
                     <div className="col-md-10">
-                        <p className="fs-18 fw-600">포트폴리오</p>
+                        <p className="fs-18 fw-600">소식지</p>
                         <h2 className="text-black fw-600">타이틀이 들어갑니다.</h2>
                         <p className="fs-16 fw-500">2024-08-09</p>
                         <hr className="mt-5 mb-8"/>

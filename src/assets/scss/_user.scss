@@ -109,31 +109,6 @@ body {
   }
 }
 
-.dots-main-video {
-  position: relative;
-  padding-bottom: 56.25%; /* 16/9 ratio */
-  height: 0;
-  overflow: hidden;
-  margin: 0;
-}
-
-.dots-main-video2 {
-  padding-bottom: 47%
-}
-
-.dots-main-video iframe,
-.dots-main-video object,
-.dots-main-video embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;;
-}
-
-
-
-
 /* 문의하기 */
 .dots-number {
   position: relative;
@@ -208,4 +183,13 @@ body {
   text-align: center;
   line-height: 85px;
   text-indent: 23px;
+}
+
+.dots-portfolio-detail {
+  height: 82px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

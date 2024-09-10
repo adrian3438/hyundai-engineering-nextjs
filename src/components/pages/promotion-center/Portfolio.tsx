@@ -5,19 +5,20 @@ import useIsotope from "../../../hooks/useIsotope";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
+import NextLink from "../../reuseable/links/NextLink";
 const projectList = [
     {
         id: 1,
-        link: "#",
+        link: "portfolio/1",
         type: "new-construction",
         date: "2023.10.20",
         title: "신축 포트폴리오",
-        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
+        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
         image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-01.png" }
     },
     {
         id: 2,
-        link: "#",
+        link: "portfolio/2",
         type: "extension-reconstruction",
         date: "2023.10.20",
         title: "증 · 개축 포트폴리오",
@@ -26,16 +27,16 @@ const projectList = [
     },
     {
         id: 3,
-        link: "#",
+        link: "portfolio/3",
         type: "factory-remodeling",
         date: "2023.10.20",
         title: "공장리모델링 포트폴리오",
-        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
+        detail: "내용이 들어갑니다.",
         image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-03.png" }
     },
     {
         id: 4,
-        link: "#",
+        link: "portfolio/4",
         type: "factory-waterproofing",
         date: "2023.10.20",
         title: "공장방수 포트폴리오",
@@ -44,7 +45,7 @@ const projectList = [
     },
     {
         id: 5,
-        link: "#",
+        link: "portfolio/5",
         type: "factory-maintenance",
         date: "2023.10.20",
         title: "공장보수 포트폴리오",
@@ -126,7 +127,7 @@ export default function Portfolio() {
                                         <div className="project-details d-flex justify-content-center flex-column">
                                             <div className="post-header">
                                                 <h3 className="post-title">{title}</h3>
-                                                <div>
+                                                <div className="dots-portfolio-detail mb-1">
                                                     {detail}
                                                 </div>
                                                 <div className={`post-category mb-3`}>{date}</div>
@@ -137,6 +138,10 @@ export default function Portfolio() {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className="text-center mt-10">
+                    <NextLink href="#" title="더보기" className="btn btn-outline-primary"/>
                 </div>
             </div>
         </>
