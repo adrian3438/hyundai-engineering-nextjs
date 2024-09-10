@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, ReactElement, useRef } from "react";
+import { Fragment, ReactElement, Suspense, useRef } from "react";
 // -------- CUSTOM HOOKS -------- //
 import useSticky from "hooks/useSticky";
 
@@ -9,6 +9,7 @@ import NextLink from "components/reuseable/links/NextLink";
 // LOCAL CUSTOM COMPONENTS
 import FancyHeader from "../blocks/navbar/components/fancy-header";
 import Langbox from "./Langbox";
+import { useSearchParams } from "next/navigation";
 
 // ===================================================================
 interface NavbarProps {
@@ -41,7 +42,6 @@ export default function Header({
 }: NavbarProps) {
     const sticky = useSticky(350);
     const navbarRef = useRef<HTMLElement | null>(null);
-
     // dynamically render the logo
     const logo = sticky ? "logo-dark" : logoAlt ?? "logo-dark";
 
@@ -98,9 +98,10 @@ export default function Header({
             {/* ============= right side header content ============= */}
             <div className="navbar-other w-100 d-flex ms-auto">
                 <ul className="navbar-nav flex-row align-items-center ms-auto">
-                    {/*<Langbox
-                    
-                    />*/}
+                    <Suspense>
+                        <Langbox
+                        />
+                    </Suspense>
                     <li className="nav-item dropdown language-select text-uppercase">
                         <a role="button" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown" className="nav-link">
                             <i className="uil uil-bars"></i>
