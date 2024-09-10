@@ -98,8 +98,8 @@ export default function Header({
             {/* ============= right side header content ============= */}
             <div className="navbar-other w-100 d-flex ms-auto">
                 <ul className="navbar-nav flex-row align-items-center ms-auto">
-                        <Langbox
-                        />
+                        {/* <Langbox
+                        /> */}
                     <li className="nav-item dropdown language-select text-uppercase">
                         <a role="button" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown" className="nav-link">
                             <i className="uil uil-bars"></i>
