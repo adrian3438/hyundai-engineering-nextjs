@@ -9,10 +9,7 @@ export default function Sitemap() {
                 <div className="container min-vh-60 d-flex align-items-center">
                     <div className="row w-100">
                         <div className="col-md-12">
-                            <h1 className="display-2 text-white mb-3">(주)현대엔지니어링의 역사는 계속 이어갑니다.</h1>
-                            <p className="lead fs-lg">
-                                고객의 꿈을 현실로 만들어가는 우리의 건설 실적, 그 자체가 신뢰의 증거입니다.
-                            </p>
+                            <h1 className="display-2 text-white mb-3">사이트맵</h1>
                         </div>
                     </div>
                 </div>

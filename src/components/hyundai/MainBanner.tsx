@@ -8,15 +8,19 @@ export default function MainBanner() {
     const mainImageRef = useRef<HTMLImageElement>(null);
     const mainFadeRef = useRef<HTMLDivElement>(null);
     const bannerWrap = useRef<HTMLDivElement>(null);
-    const [height, setHeight] = useState<number>(420);
+    const [height, setHeight] = useState<number>(550);
     const [scaleUp, setScaleUp] = useState<boolean>(true);
     const [scaleDown, setScaleDown] = useState<boolean>(true);
     const prevScrollY = useRef(0);
 
     useEffect(() => {
-        if(window.scrollY === 0) {
-            document.body.style.overflowY = "hidden";
-        }
+        const handleInitialScroll = () => {
+            if (window.scrollY === 0) {
+                document.body.style.overflowY = "hidden";
+            }
+        };
+
+        setTimeout(handleInitialScroll, 0);
 
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
@@ -46,6 +50,8 @@ export default function MainBanner() {
                 },0.5);
             }
             setScaleDown(true);
+        } else {
+            document.body.style.overflowY = "hidden";
         }
     }, [scaleUp]);
 
@@ -69,7 +75,7 @@ export default function MainBanner() {
                 }
             }
             if(event.deltaY < 0) {
-                if(height >= 450) {
+                if(height >= 551) {
                     setHeight(prevHeight => prevHeight - 40);
                 } else {
                     setScaleDown(false);
@@ -82,7 +88,7 @@ export default function MainBanner() {
 
     return (
         <>
-            <div className="wrapper dots-bg-navy swiper-fullscreen position-relative overflow-hidden" onWheel={handleWheel}>
+            <div className="wrapper dots-bg-navy swiper-fullscreen position-relative" onWheel={handleWheel}>
                 <div ref={bannerWrap} className="position-absolute top-0 start-0 w-100 h-100 d-none" style={{zIndex:'11', background:"rgba(0,0,0,0.5)"}}></div>
                 <div className="container pt-20 position-relative" style={{zIndex:"10"}}>
                     <div className="row text-white">
@@ -117,7 +123,7 @@ export default function MainBanner() {
                         200+<br/><span className="fs-43">보유고객</span>
                     </div>
                 </div>
-                <img ref={mainImageRef} src="/img/hyundai/main-banner.jpg" alt="공사현장" className="position-absolute left-0 bottom-0" style={{zIndex:10}}/>
+                <img ref={mainImageRef} src="/img/hyundai/main-banner.jpg" alt="공사현장" className="position-absolute left-0 bottom-0" style={{zIndex:10, height:"550px"}}/>
             </div>
         </>
     );

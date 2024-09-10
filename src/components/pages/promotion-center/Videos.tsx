@@ -9,7 +9,7 @@ export default function Videos() {
         <>
             <section
                 className="wrapper image-wrapper bg-image bg-overlay text-white"
-                style={{backgroundImage: "url(/img/hyundai/company/ceo-greeting-banner.jpg)"}}>
+                style={{backgroundImage: "url(/img/hyundai/promotion-center/promotion-center-banner.jpg)"}}>
                 <div className="container min-vh-60 d-flex align-items-center">
                     <div className="row w-100">
                         <div className="col-md-12">

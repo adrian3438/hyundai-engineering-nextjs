@@ -5,12 +5,19 @@ import NextLink from "../reuseable/links/NextLink";
 import Image from "next/image";
 import Header from "../hyundai/Header";
 
+
 export default function Main() {
     return (
         <>
-        <header className="w-100">
+        <header>
             <Header
                 navClassName="navbar navbar-expand-lg center-nav transparent navbar-light position-absolute navbar-dark"
+                button={
+                    <a href="/sitemap" className="d-md-none d-lg-block dots-hamburger">
+                        <i className="uil uil-bars fs-35"></i>
+                    </a>
+                }
+                logoAlt="logo-light"
             />
         </header>
         <main className="content-wrapper">
