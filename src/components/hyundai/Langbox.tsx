@@ -5,17 +5,14 @@ import { useEffect, useState } from "react"
 import { useCookies } from "react-cookie"
 export default function Langbox () {
     const router = useRouter()
-    const query = useSearchParams()
-    const currentRoute = usePathname()
     const [cookie , setCookie] = useCookies(['LANG'])
     const [lang , setLang] = useState<any>(null)
     function handleLang (e : any, lang : string) {
         e.preventDefault()
-        setCookie('LANG', lang, {path : '/'})
-        // 언어 변경 시 , url 변경
-        const newParams = new URLSearchParams(query.toString())
-        newParams.set('lang', lang)
-        router.push(`${currentRoute}?${newParams?.toString()}`)
+        setCookie('LANG', lang, { path: '/' })
+        const url = new URL(window.location.href)
+        url.searchParams.set('lang', lang)
+        router.push(url.pathname + url.search)
     }
     
     useEffect(()=>{setLang(cookie.LANG)} , [setCookie, cookie])
