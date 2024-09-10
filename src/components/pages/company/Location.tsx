@@ -22,7 +22,7 @@ export default function Location() {
 
             <div className="container py-17">
                 <div className="row">
-                    <div className="col-md-10 border rounded m-auto py-11 px-10 position-relative">
+                    <div className="col-md-10 border rounded m-auto py-11 px-10 position-relative pb-19">
                         <span className="clip-background">오시는길</span>
                         <div className="row justify-content-between">
                             <div className="col-md-5">
@@ -50,6 +50,9 @@ export default function Location() {
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25387.23478654725!2d-122.06115399490332!3d37.309248660190086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb4571bd377ab%3A0x394d3fe1a3e178b4!2sCupertino%2C%20CA%2C%20USA!5e0!3m2!1sen!2str!4v1645437305701!5m2!1sen!2str"
                                     style={{width: "100%", height: "100%", border: 0}}
                                 />
+
+                                <p>인천 연수구 송도미래로 30 (인천광역시 연수구 송도동 214) 송도비알씨스마트밸리지식산업센터 D동 1610호</p>
+                                <p>휴대폰: 010-5256-9489 / 전화: 032-837-5647 <br/> 팩스: 032-837-5643 / 이메일: hdeng60@nate.com</p>
                             </div>
                         </div>
                     </div>
