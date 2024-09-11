@@ -100,7 +100,7 @@ export default function MainBanner() {
                             <p className="fs-20">문의사항이 있으면 언제든지 연락주시기 바랍니다.</p>
                             <div className="row align-items-center">
                                 <div className="col-md-auto">
-                                    <NextLink title="Get started" href="#" className="btn btn-yellow text-navy"/>
+                                    <NextLink title="Get started" href="/inquiry" className="btn btn-yellow text-navy"/>
                                 </div>
                                 <div className="col-md-auto">
                                     <p className="mb-0"><i className="uil uil-mobile-android-alt"></i> 010-5256-9489</p>

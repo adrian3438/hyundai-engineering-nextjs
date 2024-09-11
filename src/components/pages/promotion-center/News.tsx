@@ -27,10 +27,6 @@ export default function News() {
             <div className="container py-17">
                 <div className="row">
                     <div className="col-md-10 m-auto">
-                        <div className="mb-10">
-                            <h1 className="text-primary">소식지</h1>
-                        </div>
-                        
                         <div className="row gx-lg-8 gx-xl-12">
                             {/* ========== blog details section ========== */}
                             <div className="col-lg-8">
@@ -180,16 +176,6 @@ export default function News() {
 
                             {/* ========== sidebar section ========== */}
                             <aside className="col-lg-4 sidebar mt-8 mt-lg-6">
-                                {/*<BlogSidebar/>*/}
-
-
-                                <div className="widget">
-                                    <h4 className="widget-title mb-3">About Us</h4>
-                                    <p>
-                                        (주) 현대엔지니어링은 고객의 신뢰를 바탕으로 최고의 품질과 완벽한 시공을 최우선으로 목표로 삼고 있습니다. 저희 회사는 1997년 창립 이래 전국 공업단지 및 상업단지에서 수많은 공장신축과 리모델링 공사를 진행해 왔습니다. 당사는 수십년간 현장에서 활동해 온 전문가들이 하나의 팀으로 활동하며, 다양한 프로젝트에서 쌓아온 풍부한 경험과 노하우를 바탕으로, 고객에게 최고의 가치를 제공하기 위해 끊임없이 노력하고 있습니다
-                                    </p>
-                                </div>
-
                                 {/* ========== popular posts section ========== */}
                                 <div className="widget">
                                     <h4 className="widget-title mb-3">Popular Posts</h4>

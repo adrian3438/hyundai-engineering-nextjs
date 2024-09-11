@@ -27,38 +27,35 @@ export default function Videos() {
             <div className="container py-17">
                 <div className="row">
                     <div className="col-md-10 m-auto">
-                        <div className="mb-10">
-                            <h1 className="text-primary">영상</h1>
-                        </div>
                         <div className="row">
                             <div className="col-md-4 rounded mb-7">
                                 <div className="ratio ratio-16x9">
-                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
+                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
                                 </div>
                             </div>
                             <div className="col-md-4 rounded mb-7">
                                 <div className="ratio ratio-16x9">
-                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
+                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
                                 </div>
                             </div>
                             <div className="col-md-4 rounded mb-7">
                                 <div className="ratio ratio-16x9">
-                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
+                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
                                 </div>
                             </div>
                             <div className="col-md-4 rounded mb-7">
                                 <div className="ratio ratio-16x9">
-                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
+                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
                                 </div>
                             </div>
                             <div className="col-md-4 rounded mb-7">
                                 <div className="ratio ratio-16x9">
-                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
+                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
                                 </div>
                             </div>
                             <div className="col-md-4 rounded mb-7">
                                 <div className="ratio ratio-16x9">
-                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
+                                    <iframe src="https://player.vimeo.com/video/1007586783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="hyundae-engineering-sustainability-video"></iframe>
                                 </div>
                             </div>
                         </div>

@@ -30,7 +30,7 @@ export default function CeoGreeting() {
                             <h1><span className="text-primary">(주) 현대엔지니어링 홈페이지</span>에 방문해주신 여러분을 진심으로 환영합니다.</h1>
                             <p className="fs-20">저는 이 자리를 빌려 <strong>당사의 비전과 철학</strong>에 대한 다짐을 전하고자 합니다.</p>
                         </div>
-                        <div className="border rounded px-10 py-15 position-relative">
+                        <div className="border rounded px-10 py-15 position-relative fs-19">
                             <span className="clip-background">CEO 인사말</span>
                             <p>안녕하십니까,</p>
                             <p>(주) 현대엔지니어링 홈페이지에 방문해주신 여러분을 진심으로 환영합니다. 저는 이 자리를 빌려 <strong>당사의 비전과 철학</strong>에 대한 다짐을 전하고자 합니다.</p>

@@ -88,10 +88,6 @@ export default function Portfolio() {
             <div className="container py-17">
                 <div className="row">
                     <div className="col-md-10 m-auto">
-                        <div className="mb-10">
-                            <h1 className="text-primary">포트폴리오</h1>
-                        </div>
-
                         <div className="grid grid-view projects-masonry">
                             {/* ========== filter section ========== */}
                             <div className="isotope-filter filter mb-10">
