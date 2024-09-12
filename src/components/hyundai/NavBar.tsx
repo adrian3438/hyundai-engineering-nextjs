@@ -15,7 +15,7 @@ export default function NavBar({depthId, activeId}: Props) {
                         <a href="/" className="px-5 py-4 d-inline-block lh-1 bg-blue"><i className="uil uil-home fs-20 text-white"></i></a>
                     </div>
                     {depthId &&
-                        <div className="col-auto p-0">
+                        <div className="col-auto p-0 d-none d-md-block">
                             <ul className="mb-0 p-0 d-flex">
                                 {NavBarData.kr[depthId]?.map((item, index) => (
                                     <NextLink href={item.linkUrl} key={index} title={item.title}

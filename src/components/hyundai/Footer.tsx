@@ -10,6 +10,7 @@ export default function Footer() {
                             <p className="mb-4">인천광역시 연수구 송도미래로 30 <br className="d-none d-lg-block"/>송도스마트밸리 D동 1610호 21990</p>
                             <p className="mb-4">전화번호 : 032-837-5647</p>
                             <p className="mb-4">Fax : 032-837-5643</p>
+                            <a href="/privacy" target="_blank" className="text-white text-decoration-underline">개인정보처리방침</a>
                         </div>
                     </div>
                     <div className="col-md-auto col-lg-auto">

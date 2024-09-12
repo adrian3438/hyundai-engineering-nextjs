@@ -20,7 +20,7 @@ export default function Esg() {
             </section>
 
             <div className="container py-17">
-                <div className="row">
+                <div className="row text-keep-all">
                     <div className="col-md-10 m-auto">
                         <h1 className="mb-15">비젼 2040 지속가능경영</h1>
 
@@ -84,7 +84,6 @@ export default function Esg() {
                         </div>
                     </div>
                 </div>
-
             </div>
         </>
     );
