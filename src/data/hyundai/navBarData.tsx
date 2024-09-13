@@ -42,10 +42,6 @@ export const NavBarData = {
         ],
         "menu3": [
             {
-                "title": "포트폴리오",
-                "linkUrl": "/promotion-center/portfolio",
-            },
-            {
                 "title": "영상",
                 "linkUrl": "/promotion-center/videos",
             },

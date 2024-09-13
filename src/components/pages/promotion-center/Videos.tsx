@@ -22,7 +22,7 @@ export default function Videos() {
                 </div>
             </section>
 
-            <NavBar depthId="menu3" activeId={1}/>
+            <NavBar depthId="menu3" activeId={0}/>
 
             <div className="container py-17">
                 <div className="row">

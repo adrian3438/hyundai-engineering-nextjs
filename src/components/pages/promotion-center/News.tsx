@@ -22,7 +22,7 @@ export default function News() {
                 </div>
             </section>
 
-            <NavBar depthId="menu3" activeId={2}/>
+            <NavBar depthId="menu3" activeId={1}/>
 
             <div className="container py-17">
                 <div className="row">

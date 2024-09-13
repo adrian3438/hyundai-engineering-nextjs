@@ -83,8 +83,6 @@ export default function Portfolio() {
                 </div>
             </section>
 
-            <NavBar depthId="menu3" activeId={0}/>
-
             <div className="container py-17">
                 <div className="row">
                     <div className="col-md-10 m-auto">

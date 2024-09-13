@@ -38,9 +38,13 @@ export default function Footer() {
                     </div>
                     <div className="col-md-auto col-lg-auto">
                         <div className="widget">
+                            <h4 className="widget-title text-white mb-3"><a href="/portfolio" className="text-white">포트폴리오</a></h4>
+                        </div>
+                    </div>
+                    <div className="col-md-auto col-lg-auto">
+                    <div className="widget">
                             <h4 className="widget-title text-white mb-3">홍보센터</h4>
                             <ul className="list-unstyled mb-0">
-                                <li><a href="/promotion-center/portfolio">포트폴리오</a></li>
                                 <li><a href="/promotion-center/videos">영상</a></li>
                                 <li><a href="/promotion-center/news">소식지</a></li>
                             </ul>
