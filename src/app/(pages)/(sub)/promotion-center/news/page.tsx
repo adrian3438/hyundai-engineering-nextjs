@@ -9,12 +9,12 @@ export default async function PromotionCenter({params, searchParams : {lang}} : 
     const cookie = cookies()
     const cookieLang : any = cookie.get('LANG') || 'kr'
     const langValue = lang || cookieLang?.value
-    const response = await api.get(`/user/promotion/getContentList.php?contentType=${1}&userLang=${langValue}&page=1&size=10&sortColumn=date&sortOrder=desc`)
-    const data = response?.data?.result === true ? response?.data : null;
+    const response = await api.get(`/user/promotion/getContentsList.php?contentType=${1}&userLang=${langValue}&page=1&size=10&sortColumn=date&sortOrder=desc`)
+    const data = response?.data?.result === true ? response?.data?.List : null;
     console.log(data)
     return (
         <Fragment>
-            <News/>
+            <News data={data} language={language}/>
         </Fragment>
     );
 }

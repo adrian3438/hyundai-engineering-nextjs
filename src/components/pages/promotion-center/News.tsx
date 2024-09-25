@@ -3,8 +3,11 @@ import Image from "next/image";
 import FigureImage from "../../reuseable/FigureImage";
 import NextLink from "../../reuseable/links/NextLink";
 import clsx from "clsx";
-
-export default function News() {
+interface Props {
+    data : any
+    language : string | undefined
+}
+export default function News({data, language} : Props) {
     return (
         <>
             <section
@@ -31,7 +34,7 @@ export default function News() {
                             {/* ========== blog details section ========== */}
                             <div className="col-lg-8">
                                 <div className="blog classic-view">
-                                    <article className="post">
+                                    {/* <article className="post">
                                         <div className="card">
                                             <figure className="card-img-top overlay overlay-1 hover-scale">
                                                 <a className="link-dark" href="news/1">
@@ -67,86 +70,32 @@ export default function News() {
                                                 </ul>
                                             </div>
                                         </div>
-                                    </article>
+                                    </article> */}
 
                                     <div className="blog grid grid-view">
                                         <div className="row isotope gx-md-8 gy-8 mb-8">
-                                            <article className="item post col-md-6">
-                                                <div className="card">
-                                                    <figure className="card-img-top overlay overlay-1 hover-scale"><a href="#">
-                                                        <figure><img alt="demo" loading="lazy" width="560" height="350" decoding="async" data-nimg="1" className="w-100 h-auto" src="/_next/image?url=%2Fimg%2Fphotos%2Fb4.jpg&amp;w=1200&amp;q=75"
-                                                                     style={{color: "transparent"}}/></figure>
-                                                        <span className="bg"></span></a>
-                                                        <figcaption><h5 className="from-top mb-0">Read More</h5></figcaption>
-                                                    </figure>
-                                                    <div className="card-body">
-                                                        <div className="post-header">
-                                                            <div className="post-category text-line"><a className="hover" href="#">신축</a></div>
-                                                            <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="#">타이틀이 들어갑니다.</a></h2></div>
-                                                        <div className="post-content"><p>내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.</p></div>
-                                                        <ul className="post-meta d-flex mb-0">
-                                                            <li className="post-date"><i className="uil uil-calendar-alt"></i><span>2024. 06. 26</span></li>
-                                                        </ul>
-                                                    </div>
+
+                                        {data?.map((list:any , index:number) => (
+                                        <article className="item post col-md-6" key={index}>
+                                            <div className="card">
+                                                <figure className="card-img-top overlay overlay-1 hover-scale"><a href="#">
+                                                    <figure><img alt="demo" loading="lazy" width="560" height="350" decoding="async" data-nimg="1" className="w-100 h-auto" src={list?.thumnailFile}
+                                                                style={{color: "transparent"}}/></figure>
+                                                    <span className="bg"></span></a>
+                                                    <figcaption><h5 className="from-top mb-0">Read More</h5></figcaption>
+                                                </figure>
+                                                <div className="card-body">
+                                                    <div className="post-header">
+                                                        <div className="post-category text-line"><a className="hover" href="#">신축</a></div>
+                                                        <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="#">{list?.promSubject}</a></h2></div>
+                                                    <div className="post-content"><p>{list?.excerpt?.length > 70 ? list?.excerpt?.slice(0,70) + '...' : list?.excerpt}</p></div>
+                                                    <ul className="post-meta d-flex mb-0">
+                                                        <li className="post-date"><i className="uil uil-calendar-alt"></i><span>2024. 06. 26</span></li>
+                                                    </ul>
                                                 </div>
-                                            </article>
-                                            <article className="item post col-md-6">
-                                                <div className="card">
-                                                    <figure className="card-img-top overlay overlay-1 hover-scale"><a href="#">
-                                                        <figure><img alt="demo" loading="lazy" width="560" height="350" decoding="async" data-nimg="1" className="w-100 h-auto" src="/_next/image?url=%2Fimg%2Fphotos%2Fb4.jpg&amp;w=1200&amp;q=75"
-                                                                     style={{color: "transparent"}}/></figure>
-                                                        <span className="bg"></span></a>
-                                                        <figcaption><h5 className="from-top mb-0">Read More</h5></figcaption>
-                                                    </figure>
-                                                    <div className="card-body">
-                                                        <div className="post-header">
-                                                            <div className="post-category text-line"><a className="hover" href="#">공장 리모델링</a></div>
-                                                            <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="#">타이틀이 들어갑니다.</a></h2></div>
-                                                        <div className="post-content"><p>내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.</p></div>
-                                                        <ul className="post-meta d-flex mb-0">
-                                                            <li className="post-date"><i className="uil uil-calendar-alt"></i><span>2024. 06. 26</span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            <article className="item post col-md-6">
-                                                <div className="card">
-                                                    <figure className="card-img-top overlay overlay-1 hover-scale"><a href="#">
-                                                        <figure><img alt="demo" loading="lazy" width="560" height="350" decoding="async" data-nimg="1" className="w-100 h-auto" src="/_next/image?url=%2Fimg%2Fphotos%2Fb4.jpg&amp;w=1200&amp;q=75"
-                                                                     style={{color: "transparent"}}/></figure>
-                                                        <span className="bg"></span></a>
-                                                        <figcaption><h5 className="from-top mb-0">Read More</h5></figcaption>
-                                                    </figure>
-                                                    <div className="card-body">
-                                                        <div className="post-header">
-                                                            <div className="post-category text-line"><a className="hover" href="#">공장방수</a></div>
-                                                            <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="#">타이틀이 들어갑니다.</a></h2></div>
-                                                        <div className="post-content"><p>내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.</p></div>
-                                                        <ul className="post-meta d-flex mb-0">
-                                                            <li className="post-date"><i className="uil uil-calendar-alt"></i><span>2024. 06. 26</span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            <article className="item post col-md-6">
-                                                <div className="card">
-                                                    <figure className="card-img-top overlay overlay-1 hover-scale"><a href="#">
-                                                        <figure><img alt="demo" loading="lazy" width="560" height="350" decoding="async" data-nimg="1" className="w-100 h-auto" src="/_next/image?url=%2Fimg%2Fphotos%2Fb4.jpg&amp;w=1200&amp;q=75"
-                                                                     style={{color: "transparent"}}/></figure>
-                                                        <span className="bg"></span></a>
-                                                        <figcaption><h5 className="from-top mb-0">Read More</h5></figcaption>
-                                                    </figure>
-                                                    <div className="card-body">
-                                                        <div className="post-header">
-                                                            <div className="post-category text-line"><a className="hover" href="#">공장보수</a></div>
-                                                            <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="#">타이틀이 들어갑니다.</a></h2></div>
-                                                        <div className="post-content"><p>내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.</p></div>
-                                                        <ul className="post-meta d-flex mb-0">
-                                                            <li className="post-date"><i className="uil uil-calendar-alt"></i><span>2024. 06. 26</span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </article>
+                                            </div>
+                                        </article>
+                                        ))}
                                         </div>
                                     </div>
 
