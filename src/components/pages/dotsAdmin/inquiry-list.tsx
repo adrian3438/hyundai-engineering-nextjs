@@ -131,7 +131,7 @@ export default function InquiryListPage ({
                                 <td>
                                     <span className="readOnly">{list?.createDate}</span>
                                 </td>
-                                <td onClick={()=>router.push(`/admin/inquiry-management/inquiry?id=${list?.ID}`)}>
+                                <td onClick={()=>router.push(`/dotsAdmin/inquiry-management/inquiry?id=${list?.ID}`)}>
                                     <div className="statUsBox">
                                         {list?.replyStatus === 'U' ?
                                         <span className="red">답변전</span>
