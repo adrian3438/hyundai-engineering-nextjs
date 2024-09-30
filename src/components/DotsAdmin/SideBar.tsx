@@ -19,16 +19,22 @@ export default function AdminSideBar () {
                     <span onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code-list/`)}>공용코드 관리</span>
                     <ul className="subMenu">
                         <li className={splitPath[3]==='common-code-list' || splitPath[3]==='common-code'? 'active' : ''} onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code-list/`)}>
-                            <span>공용코드</span>
+                            <span>컨텐츠 유형관리</span>
+                        </li>
+                        <li className={splitPath[3]==='bussiness-code-list' || splitPath[3]==='bussiness-code'? 'active' : ''} onClick={()=>router.push(`/dotsAdmin/common-code-management/bussiness-code-list/`)}>
+                            <span>사업영역 유형관리</span>
                         </li>
                     </ul>
                 </li>
 
                 <li className={splitPath[2] === 'contents-management' ? 'content active' : 'content'}>
-                    <span onClick={()=>router.push(`/dotsAdmin/contents-management/contents-list/`)}>콘텐츠 관리</span>
+                    <span onClick={()=>router.push(`/dotsAdmin/contents-management/contents-list/`)}>컨텐츠 관리</span>
                     <ul className="subMenu">
                         <li className={splitPath[3]==='contents-list' || splitPath[3]==='contents'? 'active' : ''} onClick={()=>router.push(`/dotsAdmin/contents-management/contents-list/`)}>
-                            <span>콘텐츠</span>
+                            <span>컨텐츠 관리</span>
+                        </li>
+                        <li className={splitPath[3]==='videos-list' || splitPath[3]==='videos'? 'active' : ''} onClick={()=>router.push(`/dotsAdmin/contents-management/videos-list/`)}>
+                            <span>홍보영상 관리</span>
                         </li>
                     </ul>
                 </li>

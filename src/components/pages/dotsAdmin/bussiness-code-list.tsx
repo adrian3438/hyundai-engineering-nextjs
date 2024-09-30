@@ -1,20 +1,20 @@
 'use client'
-import ListSearchBox from "components/DotsAdmin/List/ListSearchBox";
-import ListSizeBox from "components/DotsAdmin/List/ListSizeBox";
 import api from "lib/api";
 import { useAppSelector } from "store/hooks";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ListFilter from "components/DotsAdmin/List/ListFilter";
+import axios from "axios";
+import calCulateIndex from "components/calculateIndex";
 
 
-export default function CommonCodeListPage () {
+export default function BussinessListBox () {
     const router = useRouter()
     const [data, setData] = useState<[]>([])
     const [totalCount , setTotalCount] = useState<number>(0)
     async function getList () {
         try {   
-            const response = await api.get(`/admin/code/getContentsTypeList.php`)
+            const response = await api.get(`/admin/code/getBusinessDivisionTypeList.php`)
             if(response?.data?.result === true) {setData(response?.data?.List)}
             else {alert(response?.data?.resultMsg); setData([])}
         }catch{
@@ -26,7 +26,7 @@ export default function CommonCodeListPage () {
             const formData : number | string | any = new FormData()
             formData.append('codeId', id)
             formData.append('activeStatus', status === 'Y' ? 'N' : 'Y')
-            const response = await api.post(`/admin/code/updContentsTypeActiveStatus.php`, formData)
+            const response = await api.post(`/admin/code/updBusinessDivisionTypeStatus.php`, formData)
             if(response?.data?.result === true) getList()
             else alert(response?.data?.resultMsg)
         }catch{alert('Server Error')}
@@ -40,7 +40,7 @@ export default function CommonCodeListPage () {
             <h3>Common Code</h3>
             <div className="flexBox">
                 <div>
-                    <h4>컨텐츠 유형관리</h4>
+                    <h4>사업영역 유형관리</h4>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@ export default function CommonCodeListPage () {
 
                 <div className="right">
                     <div className="btnBox">
-                        {/* <button className="blueBtn" onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code`)}>신규등록</button> */}
+                        <button className="blueBtn" onClick={()=>router.push(`/dotsAdmin/common-code-management/bussiness-code`)}>신규등록</button>
                     </div>
                     {/* <ListSearchBox
 
@@ -70,18 +70,19 @@ export default function CommonCodeListPage () {
 
                         />
                         <tbody>
-                            {data?.map((list:any, index:number) => (
+                            {data?.map((list:any, index:number) => {
+                                return(
                                 <tr key={list?.codeId} style={{cursor : 'pointer'}}>
-                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code?id=${list?.codeId}`)}>
+                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/bussiness-code?id=${list?.codeId}`)}>
                                         <span className="readOnly">{'-'}</span>
                                     </td>
-                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code?id=${list?.codeId}`)}>
+                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/bussiness-code?id=${list?.codeId}`)}>
                                         <span className="readOnly">{list?.codeName}</span>
                                     </td>
-                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code?id=${list?.codeId}`)}>
+                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/bussiness-code?id=${list?.codeId}`)}>
                                         <span className="readOnly">{list?.codeId}</span>
                                     </td>
-                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code?id=${list?.codeId}`)}>
+                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/bussiness-code?id=${list?.codeId}`)}>
                                         <span className="readOnly">{list?.createDate}</span>
                                     </td>
                                     <td>
@@ -102,7 +103,8 @@ export default function CommonCodeListPage () {
                                         </div>
                                     </td>
                                 </tr>
-                            ))}
+                                )
+                            })}
                         </tbody>
                     </table>
                 </div>

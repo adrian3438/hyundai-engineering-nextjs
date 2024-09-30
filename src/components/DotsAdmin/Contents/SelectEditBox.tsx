@@ -23,7 +23,7 @@ export default function SelectContentsModifyBox ({
 
     // 수정 페이지로 이동
     function handleModify () {
-        router.push(`/admin/contents-management/contents?c=${contentType}&id=${id}&lang=${lang}`)
+        router.push(`/dotsAdmin/contents-management/contents?c=${contentType}&id=${id}&lang=${lang}`)
     }
 
     // 게시글 삭제

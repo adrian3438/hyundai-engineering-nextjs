@@ -20,6 +20,8 @@ export default function ContentsPage ({
     const router = useRouter()
     const query = useSearchParams()
     const managerInfo = useAppSelector((state) => state.userData.users.users)
+    const [contentsType , setContentsType] = useState<[]>([])
+    const [bussinessType , setBussinessType] = useState<[]>([])
     const [data, setData] = useState<any>({
         // 컨텐츠 유형 , 우선공지 , 공지상단 , 검색키워드 , 제목
         contentType : '1', prirorityNews : 'N', noticePrirority : 'N', searchKeyword : [], subject : '',
@@ -116,6 +118,15 @@ export default function ContentsPage ({
         fetchDetail()
     }, [id, lang])
     useEffect(() => {
+        async function fetchTypeList () {
+            const res1 = await api.get(`/admin/code/getContentsTypeList.php`);
+            const res2 = await api.get(`/admin/code/getBusinessDivisionTypeList.php`);
+            if(res1?.data?.result === true) {setContentsType(res1?.data?.List)} 
+            if(res2?.data?.result === true) {setBussinessType(res2?.data?.List)} 
+        }
+        fetchTypeList()
+    }, [])
+    useEffect(() => {
         const links = [
             {
                 rel: "stylesheet",
@@ -173,10 +184,25 @@ export default function ContentsPage ({
                                     <div className="selectWrap">
                                         <div className="selectBox">
                                         <select name="" id="">
-                                            <option selected disabled>블로그</option>
-                                            {/* {contents?.map((list:any)=>(
-                                                <option value={list?.codeId}>{list?.codeName}</option>
-                                            ))} */}
+                                            {contentsType?.map((contents : any, index : number) => (
+                                                <option key={index}>{contents?.codeName}</option>
+                                            ))}
+                                        </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>사업영역 유형 <span className="star">*</span></th>
+                            <td>
+                                <div className="selectContainer">
+                                    <div className="selectWrap">
+                                        <div className="selectBox">
+                                        <select name="" id="">
+                                            {bussinessType?.map((contents : any, index : number) => (
+                                                <option key={index}>{contents?.codeName}</option>
+                                            ))}
                                         </select>
                                         </div>
                                     </div>

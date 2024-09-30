@@ -10,6 +10,7 @@ export default function ListFilter () {
     useEffect(()=>{
         switch(pathname){
             case '/dotsAdmin/common-code-management/common-code-list' : setFilter(CommonCodeFilter); break;
+            case '/dotsAdmin/common-code-management/bussiness-code-list' : setFilter(BussinessCodeFilter); break;
             case '/dotsAdmin/contents-management/contents-list' : setFilter(ContentFilter); break;
             case '/dotsAdmin/inquiry-management/inquiry-list' : setFilter(InquiryFilter); break;
             case '/dotsAdmin/admin-account-management/admin-account-list' : setFilter(SettingFilter); break;
@@ -58,6 +59,12 @@ export const CommonCodeFilter = [
     {title : '공개/비공개', column : ''},
 ]
 
+export const BussinessCodeFilter = [
+    {title : '사업영역명', column : ''},
+    {title : '코드 ID', column : ''},
+    {title : '등록일자', column : ''},
+    {title : '공개/비공개', column : ''},
+]
 export const ContentFilter = [
     {title : '컨텐츠 유형', column : ''},
     {title : '이미지', column : ''},
