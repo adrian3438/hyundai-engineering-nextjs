@@ -20,63 +20,48 @@ export default function ContentsPage ({
     const router = useRouter()
     const query = useSearchParams()
     const managerInfo = useAppSelector((state) => state.userData.users.users)
+    console.log(managerInfo)
     const [contentsType , setContentsType] = useState<[]>([])
     const [bussinessType , setBussinessType] = useState<[]>([])
     const [data, setData] = useState<any>({
-        // 컨텐츠 유형 , 우선공지 , 공지상단 , 검색키워드 , 제목
-        contentType : '1', prirorityNews : 'N', noticePrirority : 'N', searchKeyword : [], subject : '',
-        // 보도자료 언론사 , 보도자료URL , 페이스북 , 링크드인 , 유튜브 , 트위터
-        pressCenter : '', pressUrl : '', facebook : '', linkedIn : '', youtube : '', twitter : '', 
+        // 컨텐츠 유형 , 사업영역 유형  , 검색키워드 , 제목
+        contentType : '', bussinessType : '', searchKeyword : [], subject : '',
         // 전시기간 , 전시장소 , 전시 사업분야 , 전시 웹사이트 , 발췌내용
-        exhibitionTerm : '', exhibitionPlace : '', exhibitionDivision : '', exhibitionWebsite  : '', excerpt : '',
-        // 컨텐츠 내용 , 썸네일 이미지 , 첨부 파일 , 보도일자
-        description : '', thumnailImage : null, attachedFile : null, date : ''
+        excerpt : '',
+        // 컨텐츠 내용 , 썸네일 이미지 , 첨부 파일
+        description : '', thumnailImage : null, attachedFile : null
+        // facebook : '', linkedIn : '', youtube : '', twitter : '', prirorityNews : 'N', noticePrirority : 'N', pressCenter : '', pressUrl : '',
     })
     const [previewImage, setPreviewImage] = useState<any>({thumnailImage : null})
-    async function detail () {
-        try{
-            const response = await api.get(`/admin/contents/getContentDetail.php?contentDetailId=${id}&lang=${lang}`)
-            if(response?.data?.result == true) {
-                const data = response?.data?.list[0];
-                const fomatSearchKeyword = data?.searchKeywords?.split(',')
-                setData((prev:any) => ({...prev, contentType : data?.contentType, subject : data?.contentName,
-                    facebook : data?.facebookUrl, linkedIn : data?.linkedinUrl, youtube : data?.youtubeUrl, twitter : data?.twitterUrl,
-                    searchKeyword : fomatSearchKeyword, excerpt : data?.promExcerpt, description : data?.promDescription
-                }))
-                setPreviewImage((prev:any) => ({...prev, thumnailImage : data?.thumnailImage}))
-            }else {
-                alert(response?.data?.resultMsg)
-            }
-        }catch {alert('Server Error')}
+    const [fileName , setFileName] = useState<string>('')
+    function handleSelect (e:React.ChangeEvent<HTMLSelectElement>) {
+        const {name , value} = e.target;
+        setData((prev:any) => ({...prev, [name] : value}))
     }
     async function save () {
         try {
             if(!data?.description) {alert('컨텐츠 내용은 필수 입력입니다.'); return;}
             const formData = new FormData()
             if(id){
-                formData.append('contentDetailId', id)
+                formData.append('ID', id)
                 formData.append('lang', lang) 
+            }else{
+                formData.append('managerId', managerInfo?.ID || 1);
+                formData.append('managerName', managerInfo?.name || '관리자')
             }
-            formData.append('managerId', managerInfo?.ID || 1);
             formData.append('contentType' , data?.contentType)
-            formData.append('prirorityNews', data?.prirorityNews ? data?.prirorityNews : 'N')
+            formData.append('businessDivitionType', data?.bussinessType)
             if(data?.thumnailImage){
                 formData.append('thumnailImage', data?.thumnailImage);
+            }
+            if(data?.attachedFile) {
+                formData.append('attachedFile', data?.attachedFile)
             }
             formData.append('subject', data?.subject ? data?.subject : '');
             formData.append('searchKeywords', data?.searchKeyword ? data?.searchKeyword : '');
             formData.append('excerpt', data?.excerpt ? data?.excerpt : '');
             formData.append('description', data?.description ? data?.description :'');
-            formData.append('exhibitionTerm', data?.exhibitionTerm ? data?.exhibitionTerm : '');
-            formData.append('exhibitionPlace', data?.exhibitionPlace ? data?.exhibitionPlace : '');
-            formData.append('exhibitionDivision', data?.exhibitionDivision ? data?.exhibitionDivision : '');
-            formData.append('exhibitionWebsite', data?.exhibitionWebsite ? data?.exhibitionWebsite :'');
-            formData.append('pressCenter', data?.pressCenter ? data?.pressCenter :'');
-            formData.append('pressUrl', data?.pressUrl ? data?.pressUrl : '');
-            formData.append('facebookUrl', data?.facebook ? data?.facebook : '');
-            formData.append('linkedInUrl', data?.linkedIn ? data?.linkedIn : '');
-            formData.append('youtubeUrl', data?.youtube ? data?.youtube  :'');
-            formData.append('twitterUrl', data?.twitter ? data?.twitter : '');
+            
             if(id) {
                 const response = await api.post(`/admin/contents/updContent.php`, formData)
                 if(response?.data?.result === true) {
@@ -183,9 +168,9 @@ export default function ContentsPage ({
                                 <div className="selectContainer">
                                     <div className="selectWrap">
                                         <div className="selectBox">
-                                        <select name="" id="">
+                                        <select value={data?.contentType} name="contentType" onChange={(e)=>handleSelect(e)} id="">
                                             {contentsType?.map((contents : any, index : number) => (
-                                                <option key={index}>{contents?.codeName}</option>
+                                                <option key={index} value={contents?.codeId}>{contents?.codeName}</option>
                                             ))}
                                         </select>
                                         </div>
@@ -199,9 +184,9 @@ export default function ContentsPage ({
                                 <div className="selectContainer">
                                     <div className="selectWrap">
                                         <div className="selectBox">
-                                        <select name="" id="">
+                                        <select value={data?.bussinessType} name="bussinessType" onChange={(e)=>handleSelect(e)}>
                                             {bussinessType?.map((contents : any, index : number) => (
-                                                <option key={index}>{contents?.codeName}</option>
+                                                <option key={index} value={contents?.codeId}>{contents?.codeName}</option>
                                             ))}
                                         </select>
                                         </div>
@@ -222,7 +207,7 @@ export default function ContentsPage ({
                             value={data?.subject}
                             setData={setData}
                         />
-                        <TextBox
+                        {/* <TextBox
                             title={'페이스북 링크'}
                             name={'facebook'}
                             value={data?.facebook}
@@ -245,15 +230,15 @@ export default function ContentsPage ({
                             name={'twitter'}
                             value={data?.twitter}
                             setData={setData}
-                        />
-                        <tr>
+                        /> */}
+                        {/* <tr>
                             <th>보도일자 <span className="star">*</span></th>
                             <td>
                                 <div className="dateBox">
                                     <input type="date" value={data?.date} name="date" id="date"/>
                                 </div>
                             </td>
-                        </tr>
+                        </tr> */}
                         <tr>
                             <th>검색 키워드 <span className="star">*</span></th>
                             <td>

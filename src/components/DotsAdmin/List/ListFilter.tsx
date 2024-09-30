@@ -74,6 +74,15 @@ export const ContentFilter = [
     {title : '날짜', column : ''},
 ]
 
+export const VideosFilter = [
+    {title : '홍보영상 유형', column : ''},
+    {title : '이미지', column : ''},
+    {title : '제목', column : ''},
+    {title : '언어별', column : ''},
+    {title : '공개/비공개', column : ''},
+    {title : '날짜', column : ''},
+]
+
 export const InquiryFilter = [
     {title : '문의 유형', column : ''},
     {title : '회사명', column : ''},
