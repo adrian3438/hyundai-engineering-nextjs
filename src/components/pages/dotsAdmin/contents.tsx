@@ -25,7 +25,7 @@ export default function ContentsPage ({
     const [bussinessType , setBussinessType] = useState<[]>([])
     const [data, setData] = useState<any>({
         // 컨텐츠 유형 , 사업영역 유형  , 검색키워드 , 제목
-        contentType : '', bussinessType : '', searchKeyword : [], subject : '',
+        contentType : '1', bussinessType : '3', searchKeyword : [], subject : '',
         // 전시기간 , 전시장소 , 전시 사업분야 , 전시 웹사이트 , 발췌내용
         excerpt : '',
         // 컨텐츠 내용 , 썸네일 이미지 , 첨부 파일
