@@ -24,9 +24,9 @@ export default function VideosListBox () {
     async function statusChange (id : number , status : string){
         try{
             const formData : number | string | any = new FormData()
-            formData.append('codeId', id)
-            formData.append('activeStatus', status === 'Y' ? 'N' : 'Y')
-            const response = await api.post(`/admin/code/updContentsTypeActiveStatus.php`, formData)
+            formData.append('videoId', id)
+            formData.append('videoActiveStatus', status === 'Y' ? 'N' : 'Y')
+            const response = await api.post(`/admin/contents/updPromotionVideoActiveStatus.php`, formData)
             if(response?.data?.result === true) getList()
             else alert(response?.data?.resultMsg)
         }catch{alert('Server Error')}
@@ -71,37 +71,37 @@ export default function VideosListBox () {
                         />
                         <tbody>
                             {data?.map((list:any, index:number) => (
-                                <tr key={list?.codeId} style={{cursor : 'pointer'}}>
-                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.codeId}`)}>
+                                <tr key={index} style={{cursor : 'pointer'}}>
+                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.videoId}`)}>
                                         <span className="readOnly">{'-'}</span>
                                     </td>
-                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.codeId}`)}>
-                                        <span className="readOnly">{'유형'}</span>
+                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.videoId}`)}>
+                                        <span className="readOnly">{list?.videoTypeName}</span>
                                     </td>
-                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.codeId}`)}>
-                                        <span className="readOnly">{'제목'}</span>
+                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.videoId}`)}>
+                                        <span className="readOnly">{list?.videoNameKr}</span>
                                     </td>
                                     <td>
                                         <span className="readOnly"><a href={list?.videoUrlKr} target="_blank"><i className="fa-brands fa-youtube" aria-hidden="true"></i></a></span>
                                     </td>
-                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.codeId}`)}>
-                                        <span className="readOnly">{'영상주소'}</span>
+                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.videoId}`)}>
+                                        <span className="readOnly">{list?.videoPublishDate}</span>
                                     </td>
-                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.codeId}`)}>
-                                        <span className="readOnly">{'영상주소'}</span>
+                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.videoId}`)}>
+                                        <span className="readOnly">{list?.videoMdate}</span>
                                     </td>
                                     <td>
                                         <div className="toggleSwitchBox">
                                             <span className="toggleSwitch">
                                                 <input 
                                                 type="checkbox" 
-                                                id={`commoncode_${list?.codeId}`}
+                                                id={`commoncode_${list?.videoId}`}
                                                 className="toggleIpt"
-                                                checked={list?.activeStatus === 'Y'}
-                                                onChange={()=>statusChange(list?.codeId, list?.activeStatus)}
+                                                checked={list?.videoActiveStatus === 'Y'}
+                                                onChange={()=>statusChange(list?.videoId, list?.videoActiveStatus)}
                                                 hidden
                                                 />
-                                                <label htmlFor={`commoncode_${list?.codeId}`} className="toggleSwitch">
+                                                <label htmlFor={`commoncode_${list?.videoId}`} className="toggleSwitch">
                                                     <span className="toggleButton"></span>
                                                 </label>
                                             </span>
