@@ -28,7 +28,7 @@ export default function ContentsListPage ({
     const [popup, setPopup] = useState<any>({id : '', lang : '', contentType : '', status : '', masterId : ''})
     async function getList () {
         try{
-            const response = await api.get(`/admin/contents/getContentsList.php?contentsType=${contentsType}&page=${page}&size=${size}&keyword=${keyword}&sortColumn=${column}&sortOrder=${order}`)
+            const response = await api.get(`/admin/contents/getContentsList.php?promLang=KR&contentsType=${contentsType}&businessDivisionType=${0}&page=${page}&size=${size}&keyword=${keyword}&sortColumn=${column}&sortOrder=${order}`)
             if(response.data.result === true) {setData(response.data.list); setTotalCount(response.data.totalCnt)}
             else alert(response.data.resultMsg)
         }catch {alert('Server Error')}

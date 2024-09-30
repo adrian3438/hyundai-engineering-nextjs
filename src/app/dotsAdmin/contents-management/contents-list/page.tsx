@@ -11,7 +11,7 @@ export default function ContentsList ({searchParams : {
             page={page || 1}
             size={size || 25}
             keyword={keyword || ''}
-            column={column || 'contentMdate'}
+            column={column || 'promDate'}
             order={order || 'desc'}
         />
         </>
