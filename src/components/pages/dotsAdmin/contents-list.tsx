@@ -1,5 +1,6 @@
 'use client'
 import SelectContentsModifyBox from "components/DotsAdmin/Contents/SelectEditBox";
+import ListBussinessTypeBox from "components/DotsAdmin/List/ListBussinessTypeBox";
 import ListContentsTypeBox from "components/DotsAdmin/List/ListContentsTypeBox";
 import ListFilter from "components/DotsAdmin/List/ListFilter";
 import ListSearchBox from "components/DotsAdmin/List/ListSearchBox";
@@ -10,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 
 interface Props {
     contentsType : any,
+    bussinessType : any,
     page : any,
     size : any,
     keyword : string,
@@ -18,7 +20,7 @@ interface Props {
 }
 
 export default function ContentsListPage ({
-    contentsType , page , size , keyword , column , order
+    contentsType , bussinessType , page , size , keyword , column , order
 } : Props) {
     const router = useRouter()
     const langWrapRef = useRef<any>(null)
@@ -91,7 +93,11 @@ export default function ContentsListPage ({
                     <div>
 
                         <ListContentsTypeBox
-                            
+                            contentsTypeId={contentsType}
+                        />
+
+                        <ListBussinessTypeBox
+                            bussinessTypeId={bussinessType}
                         />
 
                         <ListSearchBox

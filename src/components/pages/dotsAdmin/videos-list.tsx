@@ -37,10 +37,10 @@ export default function VideosListBox () {
     return(
         <>
         <div className="contentBox whistleBlow">
-            <h3>Common Code</h3>
+            <h3>Videos</h3>
             <div className="flexBox">
                 <div>
-                    <h4>컨텐츠 유형관리</h4>
+                    <h4>홍보영상 관리</h4>
                 </div>
             </div>
 
@@ -72,17 +72,23 @@ export default function VideosListBox () {
                         <tbody>
                             {data?.map((list:any, index:number) => (
                                 <tr key={list?.codeId} style={{cursor : 'pointer'}}>
-                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code?id=${list?.codeId}`)}>
+                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.codeId}`)}>
                                         <span className="readOnly">{'-'}</span>
                                     </td>
-                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code?id=${list?.codeId}`)}>
-                                        <span className="readOnly">{list?.codeName}</span>
+                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.codeId}`)}>
+                                        <span className="readOnly">{'유형'}</span>
                                     </td>
-                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code?id=${list?.codeId}`)}>
-                                        <span className="readOnly">{list?.codeId}</span>
+                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.codeId}`)}>
+                                        <span className="readOnly">{'제목'}</span>
                                     </td>
-                                    <td onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code?id=${list?.codeId}`)}>
-                                        <span className="readOnly">{list?.createDate}</span>
+                                    <td>
+                                        <span className="readOnly"><a href={list?.videoUrlKr} target="_blank"><i className="fa-brands fa-youtube" aria-hidden="true"></i></a></span>
+                                    </td>
+                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.codeId}`)}>
+                                        <span className="readOnly">{'영상주소'}</span>
+                                    </td>
+                                    <td onClick={()=>router.push(`/dotsAdmin/contents-management/videos?id=${list?.codeId}`)}>
+                                        <span className="readOnly">{'영상주소'}</span>
                                     </td>
                                     <td>
                                         <div className="toggleSwitchBox">

@@ -14,6 +14,7 @@ export default function ListFilter () {
             case '/dotsAdmin/contents-management/contents-list' : setFilter(ContentFilter); break;
             case '/dotsAdmin/inquiry-management/inquiry-list' : setFilter(InquiryFilter); break;
             case '/dotsAdmin/admin-account-management/admin-account-list' : setFilter(SettingFilter); break;
+            case '/dotsAdmin/contents-management/videos-list' : setFilter(VideosFilter); break;
         }
     }, [pathname])
     return(
@@ -76,11 +77,11 @@ export const ContentFilter = [
 
 export const VideosFilter = [
     {title : '홍보영상 유형', column : ''},
-    {title : '이미지', column : ''},
     {title : '제목', column : ''},
-    {title : '언어별', column : ''},
+    {title : '영상주소', column : ''},
+    {title : '게시일자', column : ''},
+    {title : '등록일자', column : ''},
     {title : '공개/비공개', column : ''},
-    {title : '날짜', column : ''},
 ]
 
 export const InquiryFilter = [

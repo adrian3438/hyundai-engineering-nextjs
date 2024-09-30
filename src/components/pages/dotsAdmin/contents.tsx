@@ -91,7 +91,8 @@ export default function ContentsPage ({
                         const fomatSearchKeyword = data?.searchKeywords?.split(',')
                         setData((prev:any) => ({...prev, contentType : data?.contentType, subject : data?.contentName,
                             facebook : data?.facebookUrl, linkedIn : data?.linkedinUrl, youtube : data?.youtubeUrl, twitter : data?.twitterUrl,
-                            searchKeyword : fomatSearchKeyword, excerpt : data?.promExcerpt, description : data?.promDescription
+                            searchKeyword : fomatSearchKeyword, excerpt : data?.promExcerpt, description : data?.promDescription,
+                            bussinessType : data?.businessDivisionType
                         }))
                         setPreviewImage((prev:any) => ({...prev, thumnailImage : data?.thumnailImage}))
                     }else {
