@@ -11,7 +11,7 @@ export default function AdminSideBar () {
         {/* members. product. content. pr_video. certificate. inquiry. settings */}
         <aside>
             <h2>
-                <img src="/images/smilelab/smilelab-logo-green.png" alt="smilelab"/>
+                <img src="/img/hyundai/logo-light.png" alt="hyundae"/>
             </h2>
             <ul className="mainMenu">
 
