@@ -21,7 +21,7 @@ export default function AdminLoginPage () {
             const formData = new FormData()
             formData.append('managerLoginId', login?.id)
             formData.append('managerPass', login?.password)
-            const res = await api.get(`/admin/manager/adminLogin.php?managerLoginId=${login?.id}&managerPass=${login?.password}`)
+            const res = await api.post(`/admin/manager/adminLogin.php`, formData)
             if(res?.data?.result === true) {
                 dispatch(setUser({users : res.data}));
                 router.push(`/dotsAdmin/common-code-management/common-code-list`);
