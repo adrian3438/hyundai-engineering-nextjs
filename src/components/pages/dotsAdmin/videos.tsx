@@ -22,7 +22,7 @@ export default function VideosViewBox ({id} : Props) {
     async function save () {
         const formData = new FormData()
         if(id) {formData.append('videoId', id)}
-        formData.append('videoType', '1')
+        formData.append('videoType', data?.videoType)
         formData.append('videoNameKr', data?.subject)
         formData.append('videoNameEn', data?.subject)
         formData.append('videoUrlKr', data?.link)
@@ -50,6 +50,14 @@ export default function VideosViewBox ({id} : Props) {
         async function getDetail () {
             if(id) {
                 const response = await api.get(`/admin/contents/getPromotionVideoDetail.php?videoId=${id}`)
+                if(response?.data?.Result === true){
+                    if(response?.data?.List?.length > 0) {
+                        const result = response?.data?.List[0]
+                        setData((prev:any) => ({...prev , 
+                            videoType : result?.videoType, subject : result?.videoNameKr, link : result?.videoUrlKr, date : '',
+                        }))
+                    }
+                }
             }
         }
         getDetail()
