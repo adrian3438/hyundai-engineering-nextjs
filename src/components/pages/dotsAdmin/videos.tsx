@@ -49,7 +49,7 @@ export default function VideosViewBox ({id} : Props) {
     useEffect(()=>{
         async function getDetail () {
             if(id) {
-                const response = await api.get(`/admin/contents/getPromotionDetail.php?videoId=${id}`)
+                const response = await api.get(`/admin/contents/getPromotionVideoDetail.php?videoId=${id}`)
             }
         }
         getDetail()
