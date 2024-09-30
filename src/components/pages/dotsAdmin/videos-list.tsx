@@ -14,7 +14,7 @@ export default function VideosListBox () {
     const [totalCount , setTotalCount] = useState<number>(0)
     async function getList () {
         try {   
-            const response = await api.get(`/admin/code/getContentsTypeList.php`)
+            const response = await api.get(`/admin/contents/getPromotionVideoList.php?contentType=0&page=1&size=10&keyword=&sortColumn=videoMdate&sortOrder=desc`)
             if(response?.data?.result === true) {setData(response?.data?.List)}
             else {alert(response?.data?.resultMsg); setData([])}
         }catch{
@@ -55,7 +55,7 @@ export default function VideosListBox () {
 
                 <div className="right">
                     <div className="btnBox">
-                        {/* <button className="blueBtn" onClick={()=>router.push(`/dotsAdmin/common-code-management/common-code`)}>신규등록</button> */}
+                        <button className="blueBtn" onClick={()=>router.push(`/dotsAdmin/contents-management/videos`)}>신규등록</button>
                     </div>
                     {/* <ListSearchBox
 
