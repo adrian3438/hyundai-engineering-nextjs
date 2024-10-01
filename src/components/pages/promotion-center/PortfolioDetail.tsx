@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function PortfolioDetail() {
     useEffect(() => {
         async function getDetail() {
-            const response = await api.get(`/user/contents/getContentDetail.php?ID=2&contentType=2&userLang=KR`) 
+            const response = await api.get(`/user/promotion/getContentDetail.php?ID=2&contentType=2&userLang=KR`) 
         }
         getDetail()
     }, [])

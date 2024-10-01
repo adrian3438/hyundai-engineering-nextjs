@@ -8,8 +8,8 @@ interface ParamsType {
 }
 export default async function PromotionCenter({params : {id}} : ParamsType ) {
 
-    const response = await api.get(`/user/contents/getContentDetail.php?ID=${id}&contentType=2&userLang=KR`) 
-    console.log(response?.data)
+    // const response = await api.get(`/user/contents/getContentDetail.php?ID=${id}&contentType=2&userLang=KR`) 
+    // console.log(response?.data)
     return (
         <Fragment>
             <PortfolioDetail/>
