@@ -1,10 +1,19 @@
+'use client'
 import NavBar from "../../hyundai/NavBar";
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 import NextLink from "../../reuseable/links/NextLink";
+import { useEffect } from "react";
+import api from "lib/api";
 
 export default function Videos() {
+    useEffect(()=>{
+        async function getList () {
+            const response = await api.get(`/user/promotion/getPrVideoList.php?videoType=0&page=1&size=25&keyword=&sortColumn=videoMdate&sortOrder=desc`)
+        }
+        getList()
+    }, [])
     return (
         <>
             <section

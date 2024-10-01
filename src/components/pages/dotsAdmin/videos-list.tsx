@@ -7,14 +7,23 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ListFilter from "components/DotsAdmin/List/ListFilter";
 
+interface Props {
+    page : number
+    size : number
+    keyword : string
+    sortColumn : string
+    sortOrder : string
+}
 
-export default function VideosListBox () {
+export default function VideosListBox ({
+    page , size , keyword , sortColumn , sortOrder
+} : Props) {
     const router = useRouter()
     const [data, setData] = useState<[]>([])
     const [totalCount , setTotalCount] = useState<number>(0)
     async function getList () {
         try {   
-            const response = await api.get(`/admin/contents/getPromotionVideoList.php?contentType=0&page=1&size=10&keyword=&sortColumn=videoMdate&sortOrder=desc`)
+            const response = await api.get(`/admin/contents/getPromotionVideoList.php?contentType=0&page=1&size=${size}&keyword=${keyword}&sortColumn=videoMdate&sortOrder=desc`)
             if(response?.data?.result === true) {setData(response?.data?.List)}
             else {alert(response?.data?.resultMsg); setData([])}
         }catch{
@@ -33,7 +42,7 @@ export default function VideosListBox () {
     }
     useEffect(()=>{getList()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [keyword])
     return(
         <>
         <div className="contentBox whistleBlow">
@@ -47,9 +56,9 @@ export default function VideosListBox () {
             <div className="toolBox">
                 <div className="left">
                     <div className="selectBox">
-                        {/* <ListSizeBox
-
-                        /> */}
+                        <ListSizeBox
+                            size={size}
+                        />
                     </div>
                 </div>
 
@@ -57,9 +66,9 @@ export default function VideosListBox () {
                     <div className="btnBox">
                         <button className="blueBtn" onClick={()=>router.push(`/dotsAdmin/contents-management/videos`)}>신규등록</button>
                     </div>
-                    {/* <ListSearchBox
-
-                    /> */}
+                    <ListSearchBox
+                        keyword={keyword}
+                    />
                 </div>
             </div>
 

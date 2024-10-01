@@ -1,13 +1,22 @@
+'use client'
 import NavBar from "../../hyundai/NavBar";
 import Image from "next/image";
 import FigureImage from "../../reuseable/FigureImage";
 import NextLink from "../../reuseable/links/NextLink";
 import clsx from "clsx";
+import { useEffect } from "react";
+import api from "lib/api";
 interface Props {
     data : any
     language : string | undefined
 }
 export default function News({data, language} : Props) {
+    useEffect(()=>{
+        async function getList () {
+            const response = await api.get(`/user/contents/getContentsList.php?contentType=0&userLang=KR&page=1&size=25&keyword=&sortColumn=videoMdate&sortOrder=desc`)
+        }
+        getList()
+    }, [])
     return (
         <>
             <section
