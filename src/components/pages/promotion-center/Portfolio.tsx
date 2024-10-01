@@ -16,10 +16,14 @@ interface Props {
 }
 export default function Portfolio({data ,typeList, totalCount} : Props) {
     const router = useRouter()
+    const [visiable , setVisiable] = useState<number>(1)
     const { handleFilterKeyChange, filterKey } = useIsotope();
     function handlePage (e : any , id : number) {
         e.preventDefault()
         router.push(`/portfolio/${id}`)
+    }
+    function handleShowMore() {
+        setVisiable(prevVisibleItems => prevVisibleItems + 1);
     }
     return (
         <>
@@ -96,9 +100,13 @@ export default function Portfolio({data ,typeList, totalCount} : Props) {
                     </div>
                 </div>
 
-                {/* <div className="text-center mt-10">
-                    <NextLink href="#" title="더보기" className="btn btn-outline-primary"/>
-                </div> */}
+                {/* {visiable < data.length && (
+                    <div className="text-center mt-10">
+                        <button onClick={handleShowMore} className="btn btn-outline-primary">
+                            더보기
+                        </button>
+                    </div>
+                )} */}
             </div>
         </>
     );
