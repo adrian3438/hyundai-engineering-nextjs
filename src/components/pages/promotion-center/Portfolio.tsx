@@ -38,7 +38,7 @@ export default function Portfolio({data ,typeList, totalCount} : Props) {
                 </div>
             </section>
 
-            <div className="container py-17">
+            <div className="container py-17" style={{minHeight: '800px'}}>
                 <div className="row">
                     <div className="col-md-10 m-auto">
                         <div className="grid grid-view projects-masonry">
