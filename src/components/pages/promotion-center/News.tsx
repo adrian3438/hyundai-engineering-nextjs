@@ -6,13 +6,17 @@ import NextLink from "../../reuseable/links/NextLink";
 import clsx from "clsx";
 import { useEffect } from "react";
 import api from "lib/api";
+import { useRouter } from "next/navigation";
+import Paginate from "components/DotsAdmin/Paginate/paginate";
 interface Props {
     data : any
     language : string | undefined
     bussinessTypeList : any
+    totalCount : number
+    page : number
 }
-export default function News({data, language, bussinessTypeList} : Props) {
-
+export default function News({data, language, bussinessTypeList, totalCount, page} : Props) {
+    const router = useRouter()
     return (
         <>
             <section
@@ -82,7 +86,7 @@ export default function News({data, language, bussinessTypeList} : Props) {
 
                                         {data?.map((list:any , index:number) => (
                                         <article className="item post col-md-6" key={index}>
-                                            <div className="card">
+                                            <div className="card" onClick={()=>router.push(`/promotion-center/news/${list?.ID}`)}>
                                                 <figure className="card-img-top overlay overlay-1 hover-scale"><a href="#">
                                                     <figure><img alt="demo" loading="lazy" width="560" height="350" decoding="async" data-nimg="1" className="w-100 h-auto" src={list?.thumnailFile}
                                                                 style={{color: "transparent"}}/></figure>
@@ -105,25 +109,9 @@ export default function News({data, language, bussinessTypeList} : Props) {
                                     </div>
 
                                     <nav className={`d-flex justify-content-center`} aria-label="pagination">
-                                        <ul className={clsx({pagination: true, "pagination-alt": false})}>
-                                            <li className="page-item disabled">
-                                                <NextLink href="#" className="page-link" title={<i className="uil uil-arrow-left"/>}/>
-                                            </li>
-
-                                            <li className={clsx({"page-item": true, active: true})}>
-                                                <button className="page-link">1</button>
-                                            </li>
-                                            <li className={clsx({"page-item": true, active: false})}>
-                                                <button className="page-link">2</button>
-                                            </li>
-                                            <li className={clsx({"page-item": true, active: false})}>
-                                                <button className="page-link">3</button>
-                                            </li>
-
-                                            <li className="page-item">
-                                                <NextLink href="#" className="page-link" title={<i className="uil uil-arrow-right"/>}/>
-                                            </li>
-                                        </ul>
+                                        <Paginate
+                                            page={page} size={25} totalCount={totalCount}
+                                        />
                                     </nav>
                                 </div>
                             </div>

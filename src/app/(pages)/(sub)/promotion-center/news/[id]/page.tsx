@@ -2,11 +2,15 @@ import { Fragment } from "react";
 
 import NewsDetail from "../../../../../../components/pages/promotion-center/NewsDetail";
 
-
-export default function PromotionCenter() {
+interface ParamsType {
+    params : {id : string | undefined}
+}
+export default function PromotionCenter({params : {id}} : ParamsType) {
     return (
         <Fragment>
-            <NewsDetail/>
+            <NewsDetail
+                id={id}
+            />
         </Fragment>
     );
 }

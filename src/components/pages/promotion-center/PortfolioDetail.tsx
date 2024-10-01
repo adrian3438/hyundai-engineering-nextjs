@@ -1,12 +1,34 @@
 'use client'
 
 import api from "lib/api";
-import { useEffect } from "react";
-
-export default function PortfolioDetail() {
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+interface Props {
+    id : string | undefined
+    // data : any
+    // next : any
+    // prev : any
+}
+export default function PortfolioDetail({
+    id,
+    // data , next , prev
+} : Props) {
+    const router = useRouter()
+    const [data , setData] = useState<any>({
+        list : null, next : null, prev : null
+    })
+    function handlePage (e:any, url:string) {
+        e.preventDefault()
+        router.push(url)
+    }
     useEffect(() => {
         async function getDetail() {
-            const response = await api.get(`/user/promotion/getContentDetail.php?ID=2&contentType=2&userLang=KR`) 
+            const response = await api.get(`/user/promotion/getContentDetail2.php?ID=${id}&contentType=2&userLang=KR`)
+            if(response?.data?.result === true) {
+                if(response?.data?.List?.length > 0) {setData((prev:any) => ({...prev, list : response?.data?.List[0]}))}
+                if(response?.data?.next?.length > 0) {setData((prev:any) => ({...prev, next : response?.data?.next[0]}))}
+                if(response?.data?.prev?.length > 0) {setData((prev:any) => ({...prev, prev : response?.data?.prev[0]}))}
+            }
         }
         getDetail()
     }, [])
@@ -30,45 +52,34 @@ export default function PortfolioDetail() {
                 <section className="row my-10 justify-content-center">
                     <div className="col-md-10">
                         <p className="fs-18 fw-600">포트폴리오</p>
-                        <h2 className="text-black fw-600">타이틀이 들어갑니다.</h2>
-                        <p className="fs-16 fw-500">2024-08-09</p>
+                        <h2 className="text-black fw-600">{data?.list?.promSubject}</h2>
+                        <p className="fs-16 fw-500">{data?.list?.createDate}</p>
                         <hr className="mt-5 mb-8"/>
-                        <article className="mb-8">
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
-                            에디터 영역이 들어갑니다.
+                        <article className="mb-8"
+                        dangerouslySetInnerHTML={{
+                            __html : data?.list?.description
+                        }}
+                        >
+                            
                         </article>
                         <div className="mt-4 border-bottom">
                             <div className="py-4 px-5 border-top">
                                 <i className="uil uil-angle-up fs-22 me-4"></i>
                                 <span className="text-black fw-bold me-4">이전글</span>
-                                <a href="#" className="text-medium-gray fw-bold">이전글 타이틀 입니다.</a>
+                                {data?.prev?.prevUrl ?
+                                <a href="#" onClick={(e)=>handlePage(e, data?.prev?.prevUrl)} className="text-medium-gray fw-bold">{data?.prev?.prevSubject}</a>
+                                :
+                                <a className="text-medium-gray fw-bold">이전 글 없음</a>
+                                }
                             </div>
                             <div className="py-4 px-5 border-top">
                                 <i className="uil uil-angle-down fs-22 me-4"></i>
                                 <span className="text-black fw-bold me-4">다음글</span>
-                                <a href="#" className="text-medium-gray fw-bold">다음글 타이틀 입니다.</a>
+                                {data?.prev?.nextUrl ?
+                                <a href="#" onClick={(e)=>handlePage(e, data?.next?.nextUrl)} className="text-medium-gray fw-bold">{data?.next?.nextSubject}</a>
+                                :
+                                <a className="text-medium-gray fw-bold">다음 글 없음</a>
+                                }
                             </div>
                         </div>
                     </div>

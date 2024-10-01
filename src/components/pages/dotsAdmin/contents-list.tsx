@@ -124,20 +124,20 @@ export default function ContentsListPage ({
                         <tbody>
                             {data?.map((list:any, index:number) => (
                             <tr key={index}>
-                                <td>
+                                <td onClick={()=>router.push(`/dotsAdmin/contents-management/contents?c=${contentsType}&id=${list?.contentDetailKrId}&lang=${'KR'}`)}>
                                     <span className="readOnly">
                                         {1}
                                     </span>
                                 </td>
-                                <td>
+                                <td onClick={()=>router.push(`/dotsAdmin/contents-management/contents?c=${contentsType}&id=${list?.contentDetailKrId}&lang=${'KR'}`)}>
                                     <span className="readOnly">{list?.contentTypeNameKr}</span>
                                 </td>
-                                <td>
+                                <td onClick={()=>router.push(`/dotsAdmin/contents-management/contents?c=${contentsType}&id=${list?.contentDetailKrId}&lang=${'KR'}`)}>
                                     <div className="imgBox">
                                         <img src={list?.thumnailImage ? list?.thumnailImage : '/images/admin/DK-LOK-no-images.png'}alt="thumbmail"/>
                                     </div>
                                 </td>
-                                <td>
+                                <td onClick={()=>router.push(`/dotsAdmin/contents-management/contents?c=${contentsType}&id=${list?.contentDetailKrId}&lang=${'KR'}`)}>
                                     <span className="readOnly">{list?.contentName}</span>
                                 </td>
                                 <td>
@@ -162,7 +162,7 @@ export default function ContentsListPage ({
                                             : ''
 
                                             }
-                                            {list?.contentDetailEnId ? 
+                                            {/* {list?.contentDetailEnId ? 
                                             <>
                                                 <button 
                                                 className={list?.publishStatusEn === 'Y' ? 'lang_en' : 'lang_en none'} 
@@ -192,7 +192,7 @@ export default function ContentsListPage ({
                                                 <div className="langBox">
                                                    <button className="lang_add en" onClick={()=>handleContentsCopy(list?.contentDetailKrId)}></button>
                                                 </div>
-                                            }
+                                            } */}
                                         </div>
                                     </div>
                                 </td>
