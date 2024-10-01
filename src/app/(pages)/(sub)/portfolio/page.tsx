@@ -10,16 +10,15 @@ interface SearchParamsType {
 }
 
 export default async function PromotionCenterPortFolio({searchParams : {page , bussinessType}} : SearchParamsType) {
-    // const responseList = await api.get(`/user/promotion/getContentsList.php?contentType=${2}&businessDivisionType=${bussinessType || 0}&userLang=KR&page=${page || 1}&size=10&sortColumn=date&sortOrder=desc`)
+    const responseList = await api.get(`/user/promotion/getContentsList.php?contentType=${2}&businessDivisionType=${bussinessType || 0}&userLang=KR&page=${page || 1}&size=10&sortColumn=date&sortOrder=desc`)
     const responseBussinessType = await api.get(`/admin/code/getBusinessDivisionTypeList.php`)
-    // const list = responseList?.data?.result === true ? responseList?.data?.List : []
+    const list = responseList?.data?.result === true ? responseList?.data?.List : []
     const bussinessTypeList = responseBussinessType?.data?.result === true ? responseBussinessType?.data?.List : []
-    // console.log(responseList?.data)
-    console.log(responseBussinessType?.data)
+    console.log(responseList?.data)
     return (
         <Fragment>
             <Portfolio
-                // data={list}
+                data={list}
                 typeList={bussinessTypeList}
 
             />
