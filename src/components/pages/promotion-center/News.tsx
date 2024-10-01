@@ -6,7 +6,7 @@ import NextLink from "../../reuseable/links/NextLink";
 import clsx from "clsx";
 import { useEffect } from "react";
 import api from "lib/api";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Paginate from "components/DotsAdmin/Paginate/paginate";
 interface Props {
     data : any
@@ -14,9 +14,20 @@ interface Props {
     bussinessTypeList : any
     totalCount : number
     page : number
+    business : string
+    popularList : any
+    categoryList : any
 }
-export default function News({data, language, bussinessTypeList, totalCount, page} : Props) {
+export default function News({data, language, bussinessTypeList, totalCount, page, business, popularList, categoryList} : Props) {
     const router = useRouter()
+    const path = usePathname()
+    const query = useSearchParams()
+    function handleSelectBussinessType (e : any, idx : string) {
+        e.preventDefault()
+        const newParams = new URLSearchParams(query.toString())
+        newParams.set('business', idx)
+        router.push(`${path}?${newParams?.toString()}`)
+    }
     return (
         <>
             <section
@@ -43,44 +54,6 @@ export default function News({data, language, bussinessTypeList, totalCount, pag
                             {/* ========== blog details section ========== */}
                             <div className="col-lg-8">
                                 <div className="blog classic-view">
-                                    {/* <article className="post">
-                                        <div className="card">
-                                            <figure className="card-img-top overlay overlay-1 hover-scale">
-                                                <a className="link-dark" href="news/1">
-                                                    <Image alt="blog" width={960} height={600} src="/img/photos/b1.jpg" className="w-100 h-auto"/>
-                                                    <span className="bg"/>
-                                                </a>
-
-                                                <figcaption>
-                                                    <h5 className="from-top mb-0">Read More</h5>
-                                                </figcaption>
-                                            </figure>
-
-                                            <div className="card-body">
-                                                <div className="post-header">
-                                                    <div className="post-category text-line">
-                                                        <NextLink title={`신축`} href="#" className="hover"/>
-                                                    </div>
-
-                                                    <h2 className="post-title mt-1 mb-0">
-                                                        <NextLink title={`타이틀이 들어갑니다.`} className="link-dark" href={`link`}/>
-                                                    </h2>
-                                                </div>
-
-                                                <div className="post-content">
-                                                    <p>{`내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다. 내용이 들어갑니다. `}</p>
-                                                </div>
-
-                                                <ul className="post-meta d-flex mb-0">
-                                                    <li className="post-date">
-                                                        <i className="uil uil-calendar-alt"/>
-                                                        <span>2024. 06. 26</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </article> */}
-
                                     <div className="blog grid grid-view">
                                         <div className="row isotope gx-md-8 gy-8 mb-8">
 
@@ -123,54 +96,24 @@ export default function News({data, language, bussinessTypeList, totalCount, pag
                                     <h4 className="widget-title mb-3">Popular Posts</h4>
 
                                     <ul className="image-list">
-                                        <li>
-                                            <NextLink title={<FigureImage width={100} height={100} className="rounded" src={'/img/photos/a1.jpg'}/>} href="#"/>
+                                        {popularList?.map((popular : any, index:number) => (
+                                        <li key={index}>
+                                            <NextLink title={<FigureImage width={100} height={100} className="rounded" src={popular?.thumnailFile}/>} href={`/promotion-center/news/${popular?.ID}`}/>
 
                                             <div className="post-content">
                                                 <h6 className="mb-2">
-                                                    <NextLink className="link-dark" title={'타이틀이 들어갑니다.'} href="#"/>
+                                                    <NextLink className="link-dark" title={popular?.promSubject} href={`/promotion-center/news/${popular?.ID}`}/>
                                                 </h6>
 
                                                 <ul className="post-meta">
                                                     <li className="post-date">
                                                         <i className="uil uil-calendar-alt"/>
-                                                        <span>2024. 06. 26</span>
+                                                        <span>{popular?.createDate}</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li>
-                                            <NextLink title={<FigureImage width={100} height={100} className="rounded" src={'/img/photos/a1.jpg'}/>} href="#"/>
-
-                                            <div className="post-content">
-                                                <h6 className="mb-2">
-                                                    <NextLink className="link-dark" title={'타이틀이 들어갑니다.'} href="#"/>
-                                                </h6>
-
-                                                <ul className="post-meta">
-                                                    <li className="post-date">
-                                                        <i className="uil uil-calendar-alt"/>
-                                                        <span>2024. 06. 26</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <NextLink title={<FigureImage width={100} height={100} className="rounded" src={'/img/photos/a1.jpg'}/>} href="#"/>
-
-                                            <div className="post-content">
-                                                <h6 className="mb-2">
-                                                    <NextLink className="link-dark" title={'타이틀이 들어갑니다.'} href="#"/>
-                                                </h6>
-
-                                                <ul className="post-meta">
-                                                    <li className="post-date">
-                                                        <i className="uil uil-calendar-alt"/>
-                                                        <span>2024. 06. 26</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
+                                        ))}
                                     </ul>
                                 </div>
 
@@ -179,21 +122,12 @@ export default function News({data, language, bussinessTypeList, totalCount, pag
                                     <h4 className="widget-title mb-3">Categories</h4>
 
                                     <ul className="unordered-list bullet-primary text-reset">
-                                        <li>
-                                            <NextLink title="신축(10)" href="#"/>
-                                        </li>
-                                        <li>
-                                            <NextLink title="증 · 개축(5)" href="#"/>
-                                        </li>
-                                        <li>
-                                            <NextLink title="공장 리모델링(10)" href="#"/>
-                                        </li>
-                                        <li>
-                                            <NextLink title="공장방수(10)" href="#"/>
-                                        </li>
-                                        <li>
-                                            <NextLink title="공장보수(10)" href="#"/>
-                                        </li>
+                                        {categoryList?.map((category : any, index:number) => (
+                                            <li key={index}>
+                                                <NextLink title={`${category?.businessDivisionName}(${category?.businessDivisionCnt})`} href="#" onClick={(e)=>handleSelectBussinessType(e, category?.businessDivisionType)}/>
+                                            </li>
+                                        ))}
+                                        
                                     </ul>
                                 </div>
                             </aside>

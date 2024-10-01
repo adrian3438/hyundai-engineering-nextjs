@@ -1,6 +1,6 @@
 'use client'
 import api from "lib/api"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
 }
 export default function NewsDetail({id} : Props) {
     const router = useRouter()
+    
     const [data , setData] = useState<any>({
         list : null, next : null, prev : null
     })

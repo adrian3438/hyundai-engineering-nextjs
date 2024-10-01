@@ -1,12 +1,29 @@
+'use client'
 import MainBanner from "../hyundai/MainBanner";
 import Link from "next/link";
 import FigureImage from "../reuseable/FigureImage";
 import NextLink from "../reuseable/links/NextLink";
 import Image from "next/image";
 import Header from "../hyundai/Header";
+import { useRouter } from "next/navigation";
 
+interface Props {
+    news : string[]
+    portFolio : string[]
+}
 
-export default function Main() {
+export default function Main({
+    news , portFolio
+} : Props) {
+    const router = useRouter()
+    function handleNewPage(e : any , id : number) {
+        e.preventDefault()
+        router.push(`/promotion-center/news/${id}`)
+    }
+    function handlePortPage (e:any, id : number) {
+        e.preventDefault()
+        router.push(`/portfolio/${id}`)
+    }
     return (
         <>
         <header>
@@ -28,11 +45,12 @@ export default function Main() {
                     <h1 className="display-1 mb-3 text-center">포트폴리오</h1>
                         <p className="lead text-center mb-10 fs-25">현대엔지니어링의 최신 포트폴리오를 만나보세요</p>
 
-                        <article className="item post col-md-4">
+                        {portFolio?.map((portFolio:any, index : number) => (
+                        <article className="item post col-md-4" key={portFolio?.ID}>
                             <div className="card">
                                 <figure className="card-img-top overlay overlay-1 hover-scale">
-                                    <Link href="#">
-                                        <FigureImage width={560} height={350} src="/img/hyundai/portfolio-exam.jpg"/>
+                                    <Link href="#" onClick={(e)=>handlePortPage(e, portFolio?.ID)}>
+                                        <FigureImage width={560} height={350} src={portFolio?.thumnailFile}/>
                                         <span className="bg"/>
                                     </Link>
 
@@ -44,73 +62,20 @@ export default function Main() {
                                 <div className="card-body">
                                     <div className="post-header">
                                         <h2 className="post-title h3 mt-1 mb-3 overflow-hidden dots-main-post-title">
-                                            <NextLink title="타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다." className="link-dark fs-25" href="#"/>
+                                            <NextLink onClick={(e)=>handlePortPage(e, portFolio?.ID)} title={portFolio?.promSubject} className="link-dark fs-25" href="#"/>
                                         </h2>
                                     </div>
 
                                     <div className="post-content overflow-hidden dots-main-post-detail">
-                                        <p className="mb-0 fs-18">설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.</p>
+                                        <p className="mb-0 fs-18">{portFolio?.excerpt}</p>
                                     </div>
                                 </div>
                             </div>
                         </article>
-
-                        <article className="item post col-md-4">
-                            <div className="card">
-                                <figure className="card-img-top overlay overlay-1 hover-scale">
-                                    <Link href="#">
-                                        <FigureImage width={560} height={350} src="/img/hyundai/portfolio-exam.jpg"/>
-                                        <span className="bg"/>
-                                    </Link>
-
-                                    <figcaption>
-                                        <h5 className="from-top mb-0">Read More</h5>
-                                    </figcaption>
-                                </figure>
-
-                                <div className="card-body">
-                                    <div className="post-header">
-                                        <h2 className="post-title h3 mt-1 mb-3 overflow-hidden dots-main-post-title">
-                                            <NextLink title="타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다." className="link-dark fs-25" href="#"/>
-                                        </h2>
-                                    </div>
-
-                                    <div className="post-content overflow-hidden dots-main-post-detail">
-                                        <p className="mb-0 fs-18">설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.설명이 들어갑니다.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article className="item post col-md-4">
-                            <div className="card">
-                                <figure className="card-img-top overlay overlay-1 hover-scale">
-                                    <Link href="#">
-                                        <FigureImage width={560} height={350} src="/img/hyundai/portfolio-exam.jpg"/>
-                                        <span className="bg"/>
-                                    </Link>
-
-                                    <figcaption>
-                                        <h5 className="from-top mb-0">Read More</h5>
-                                    </figcaption>
-                                </figure>
-
-                                <div className="card-body">
-                                    <div className="post-header">
-                                        <h2 className="post-title h3 mt-1 mb-3 overflow-hidden dots-main-post-title">
-                                            <NextLink title="타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다.타이틀이 들어갑니다." className="link-dark fs-25" href="#"/>
-                                        </h2>
-                                    </div>
-
-                                    <div className="post-content overflow-hidden dots-main-post-detail">
-                                        <p className="mb-0 fs-18">설명이 들어갑니다.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                        ))}
                     </div>
                     <div className="text-center mt-10">
-                        <NextLink href="#" title="포트폴리오 바로가기" className="btn btn-outline-primary" />
+                        <NextLink href="/portfolio" title="포트폴리오 바로가기" className="btn btn-outline-primary" />
                     </div>
                 </div>
 
@@ -192,60 +157,28 @@ export default function Main() {
                     <div className="row">
                         <h1 className="display-1 mb-3 text-center">소식지</h1>
                         <p className="lead text-center mb-10 fs-25">현대엔지니어링의 최신 소식을 확인하세요</p>
-
-                        <div className="row gx-lg-8 gx-xl-12 align-items-center">
-                            <div className="col-lg-4">
-                                <figure className="rounded">
-                                    <img src="/img/hyundai/news-exam.jpg" srcSet="/img/photos/about19@2x.jpg 2x" alt=""/>
-                                </figure>
+                        {news?.map((news : any, index:number) => (
+                            <>
+                            <div className="row gx-lg-8 gx-xl-12 align-items-center" key={news?.ID}>
+                                <div className="col-lg-4">
+                                    <figure className="rounded">
+                                        <img src={news?.thumnailFile} srcSet={news?.thumnailFile} alt={news?.thumnailFilename}/>
+                                    </figure>
+                                </div>
+                                <div className="col-lg-8">
+                                    <h3 className="display-6 mb-4">{news?.promSubject}</h3>
+                                    <p className="mb-5 fs-18">
+                                        <i className="uil uil-calendar-alt"></i> {news?.createDate}
+                                    </p>
+                                    <p className="mb-4 dots-main-post-detail overflow-hidden fs-18">
+                                        {news?.excerpt}
+                                    </p>
+                                    <NextLink title="소식 보러가기" href="#" onClick={(e) => handleNewPage(e, news?.ID)} className="btn btn-soft-primary rounded-pill mt-6 mb-0 fs-18"/>
+                                </div>
                             </div>
-                            <div className="col-lg-8">
-                                <h3 className="display-6 mb-4">제목</h3>
-                                <p className="mb-5 fs-18">
-                                    <i className="uil uil-calendar-alt"></i> 2024. 06. 26
-                                </p>
-                                <p className="mb-4 dots-main-post-detail overflow-hidden fs-18">
-                                    OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.
-                                </p>
-                                <NextLink title="소식 보러가기" href="#" className="btn btn-soft-primary rounded-pill mt-6 mb-0 fs-18"/>
-                            </div>
-                        </div>
-                        <hr className="my-10 p-0"/>
-                        <div className="row gx-lg-8 gx-xl-12 align-items-center">
-                            <div className="col-lg-4">
-                                <figure className="rounded">
-                                    <img src="/img/hyundai/news-exam.jpg" srcSet="/img/photos/about19@2x.jpg 2x" alt=""/>
-                                </figure>
-                            </div>
-                            <div className="col-lg-8">
-                                <h3 className="display-6 mb-4">제목</h3>
-                                <p className="mb-5 fs-18">
-                                    <i className="uil uil-calendar-alt"></i> 2024. 06. 26
-                                </p>
-                                <p className="mb-4 dots-main-post-detail overflow-hidden fs-18">
-                                    OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.
-                                </p>
-                                <NextLink title="소식 보러가기" href="#" className="btn btn-soft-primary rounded-pill mt-6 mb-0 fs-18"/>
-                            </div>
-                        </div>
-                        <hr className="my-10 p-0"/>
-                        <div className="row gx-lg-8 gx-xl-12 align-items-center">
-                            <div className="col-lg-4">
-                                <figure className="rounded">
-                                    <img src="/img/hyundai/news-exam.jpg" srcSet="/img/photos/about19@2x.jpg 2x" alt=""/>
-                                </figure>
-                            </div>
-                            <div className="col-lg-8">
-                                <h3 className="display-6 mb-4">제목</h3>
-                                <p className="mb-5 fs-18">
-                                    <i className="uil uil-calendar-alt"></i> 2024. 06. 26
-                                </p>
-                                <p className="mb-4 dots-main-post-detail overflow-hidden fs-18">
-                                    OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.OOOO 인증을 획득했습니다. 내용이 들어갑니다.
-                                </p>
-                                <NextLink title="소식 보러가기" href="#" className="btn btn-soft-primary rounded-pill mt-6 mb-0 fs-18"/>
-                            </div>
-                        </div>
+                            <hr className="my-10 p-0"/>
+                            </>
+                        ))}
                     </div>
                 </div>
             </main>
