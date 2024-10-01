@@ -2,7 +2,14 @@
 //	PAGINATION
 //----------------------------------------------------------//
 .pagination {
-  box-shadow: $box-shadow;
+  //box-shadow: $box-shadow;
+  .active {
+    border: none !important;
+    .page-link {
+      background: #3f78e0 !important;
+      color: #fff;
+    }
+  }
   .page-link {
     width: $pagination-size;
     height: $pagination-size;
@@ -11,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
     i {
       @include font-size($pagination-icon-font-size);
     }

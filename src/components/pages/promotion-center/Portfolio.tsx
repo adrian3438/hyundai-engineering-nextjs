@@ -1,6 +1,5 @@
 'use client'
 
-import NavBar from "../../hyundai/NavBar";
 import useIsotope from "../../../hooks/useIsotope";
 import Link from "next/link";
 import Image from "next/image";
@@ -73,10 +72,26 @@ interface Props {
 export default function Portfolio({data ,typeList, totalCount} : Props) {
     const router = useRouter()
     const { handleFilterKeyChange, filterKey } = useIsotope();
-    function handlePage (e:any, id : number) {
+    function handlePage (e : any , id : number) {
         e.preventDefault()
         router.push(`/portfolio/${id}`)
     }
+    // const [data , setData] = useState<any>([])
+    const [type , setType] = useState<any>([])
+    // async function getList () {
+    //     const response = await api.get(`/user/promotion/getContentsList.php?contentType=${2}&businessDivisionType=${0}&userLang=KR&page=${1}&size=10&sortColumn=date&sortOrder=desc`)
+    //     if(response?.data?.result === true) {
+    //         setData(response?.data?.List)
+    //     }
+    // }
+    // async function getType () {
+    //     const response = await api.get(`/admin/code/getBusinessDivisionTypeList.php`)
+    //     if(response?.data?.result=== true) {
+    //         getList()
+    //         setType(response?.data?.List)
+    //     }
+    // }
+    // useEffect(() => {getType()}, [])
     return (
         <>
             <section

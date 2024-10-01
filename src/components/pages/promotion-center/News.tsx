@@ -12,7 +12,7 @@ interface Props {
     bussinessTypeList : any
 }
 export default function News({data, language, bussinessTypeList} : Props) {
-   
+
     return (
         <>
             <section
