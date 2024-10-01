@@ -1,91 +1,18 @@
 'use client'
 
-import NavBar from "../../hyundai/NavBar";
 import useIsotope from "../../../hooks/useIsotope";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 import NextLink from "../../reuseable/links/NextLink";
-import { useEffect, useState } from "react";
-import api from "lib/api";
-const projectList = [
-    {
-        id: 1,
-        link: "portfolio/1",
-        type: "new-construction",
-        date: "2023.10.20",
-        title: "신축 포트폴리오",
-        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
-        image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-01.png" }
-    },
-    {
-        id: 2,
-        link: "portfolio/2",
-        type: "extension-reconstruction",
-        date: "2023.10.20",
-        title: "증 · 개축 포트폴리오",
-        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
-        image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-02.png" }
-    },
-    {
-        id: 3,
-        link: "portfolio/3",
-        type: "factory-remodeling",
-        date: "2023.10.20",
-        title: "공장리모델링 포트폴리오",
-        detail: "내용이 들어갑니다.",
-        image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-03.png" }
-    },
-    {
-        id: 4,
-        link: "portfolio/4",
-        type: "factory-waterproofing",
-        date: "2023.10.20",
-        title: "공장방수 포트폴리오",
-        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
-        image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-04.png" }
-    },
-    {
-        id: 5,
-        link: "portfolio/5",
-        type: "factory-maintenance",
-        date: "2023.10.20",
-        title: "공장보수 포트폴리오",
-        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
-        image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-05.png" }
-    },
-];
 
-const filterItems = [
-    { id: 1, title: "All", value: "*" },
-    { id: 2, title: "신축", value: ".new-construction" },
-    { id: 3, title: "증 · 개축", value: ".extension-reconstruction" },
-    { id: 4, title: "공장리모델링", value: ".factory-remodeling" },
-    { id: 5, title: "공장방수", value: ".factory-waterproofing" },
-    { id: 6, title: "공장보수", value: ".factory-maintenance" },
-];
 interface Props {
     data : any
     typeList : any
 }
 export default function Portfolio({data ,typeList} : Props) {
     const { handleFilterKeyChange, filterKey } = useIsotope();
-    // const [data , setData] = useState<any>([])
-    const [type , setType] = useState<any>([])
-    // async function getList () {
-    //     const response = await api.get(`/user/promotion/getContentsList.php?contentType=${2}&businessDivisionType=${0}&userLang=KR&page=${1}&size=10&sortColumn=date&sortOrder=desc`)
-    //     if(response?.data?.result === true) {
-    //         setData(response?.data?.List)
-    //     }
-    // }
-    // async function getType () {
-    //     const response = await api.get(`/admin/code/getBusinessDivisionTypeList.php`)
-    //     if(response?.data?.result=== true) {
-    //         getList()
-    //         setType(response?.data?.List)
-    //     }
-    // }
-    // useEffect(() => {getType()}, [])
+
     return (
         <>
             <section

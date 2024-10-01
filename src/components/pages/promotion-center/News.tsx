@@ -12,7 +12,7 @@ interface Props {
     bussinessTypeList : any
 }
 export default function News({data, language, bussinessTypeList} : Props) {
-   
+
     return (
         <>
             <section
@@ -92,9 +92,10 @@ export default function News({data, language, bussinessTypeList} : Props) {
                                                 <div className="card-body">
                                                     <div className="post-header">
                                                         <div className="post-category text-line"><a className="hover" href="#">신축</a></div>
-                                                        <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="#">{list?.promSubject}</a></h2></div>
-                                                    <div className="post-content"><p>{list?.excerpt?.length > 70 ? list?.excerpt?.slice(0,70) + '...' : list?.excerpt}</p></div>
-                                                    <ul className="post-meta d-flex mb-0">
+                                                        <h2 className="post-title h3 mt-1 mb-1"><a className="link-dark" href="#">{list?.promSubject}</a></h2>
+                                                        <div className="post-content"><p>{list?.excerpt?.length > 70 ? list?.excerpt?.slice(0, 70) + '...' : list?.excerpt}</p></div>
+                                                    </div>
+                                                    <ul className="post-meta d-flex mb-0 justify-content-end">
                                                         <li className="post-date"><i className="uil uil-calendar-alt"></i><span>2024. 06. 26</span></li>
                                                     </ul>
                                                 </div>

@@ -192,6 +192,7 @@ body {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  color: #9e9e9e;
 }
 
 
@@ -204,4 +205,15 @@ body {
 /* Text */
 .text-keep-all {
   word-break: keep-all !important;
+}
+
+
+.card {
+  box-shadow: 0 0 0 0.05rem rgba(8, 60, 130, 0.06);
+  border: 0;
+  .post-content {
+    p {
+      color: #9e9e9e !important;
+    }
+  }
 }
