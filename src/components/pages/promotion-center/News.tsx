@@ -13,7 +13,7 @@ interface Props {
 export default function News({data, language} : Props) {
     useEffect(()=>{
         async function getList () {
-            const response = await api.get(`/user/contents/getContentsList.php?contentType=0&userLang=KR&page=1&size=25&keyword=&sortColumn=videoMdate&sortOrder=desc`)
+            const response = await api.get(`user/promotion/getContentsList.php?contentType=1&userLang=KR&page=1&size=25&keyword=&sortColumn=videoMdate&sortOrder=desc`)
         }
         getList()
     }, [])
