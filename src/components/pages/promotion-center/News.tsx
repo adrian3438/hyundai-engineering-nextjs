@@ -9,14 +9,10 @@ import api from "lib/api";
 interface Props {
     data : any
     language : string | undefined
+    bussinessTypeList : any
 }
-export default function News({data, language} : Props) {
-    useEffect(()=>{
-        async function getList () {
-            const response = await api.get(`user/promotion/getContentsList.php?contentType=1&userLang=KR&page=1&size=25&keyword=&sortColumn=videoMdate&sortOrder=desc`)
-        }
-        getList()
-    }, [])
+export default function News({data, language, bussinessTypeList} : Props) {
+   
     return (
         <>
             <section

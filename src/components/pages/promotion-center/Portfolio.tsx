@@ -6,66 +6,27 @@ import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 import NextLink from "../../reuseable/links/NextLink";
-const projectList = [
-    {
-        id: 1,
-        link: "portfolio/1",
-        type: "new-construction",
-        date: "2023.10.20",
-        title: "신축 포트폴리오",
-        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
-        image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-01.png" }
-    },
-    {
-        id: 2,
-        link: "portfolio/2",
-        type: "extension-reconstruction",
-        date: "2023.10.20",
-        title: "증 · 개축 포트폴리오",
-        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
-        image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-02.png" }
-    },
-    {
-        id: 3,
-        link: "portfolio/3",
-        type: "factory-remodeling",
-        date: "2023.10.20",
-        title: "공장리모델링 포트폴리오",
-        detail: "내용이 들어갑니다.",
-        image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-03.png" }
-    },
-    {
-        id: 4,
-        link: "portfolio/4",
-        type: "factory-waterproofing",
-        date: "2023.10.20",
-        title: "공장방수 포트폴리오",
-        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
-        image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-04.png" }
-    },
-    {
-        id: 5,
-        link: "portfolio/5",
-        type: "factory-maintenance",
-        date: "2023.10.20",
-        title: "공장보수 포트폴리오",
-        detail: "내용이 들어갑니다. 내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.내용이 들어갑니다.",
-        image: { width: 1300, height: 1262, url: "/img/hyundai/promotion-center/portfolio-exam-05.png" }
-    },
-];
+import { useEffect, useState } from "react";
+import api from "lib/api";
 
-const filterItems = [
-    { id: 1, title: "All", value: "*" },
-    { id: 2, title: "신축", value: ".new-construction" },
-    { id: 3, title: "증 · 개축", value: ".extension-reconstruction" },
-    { id: 4, title: "공장리모델링", value: ".factory-remodeling" },
-    { id: 5, title: "공장방수", value: ".factory-waterproofing" },
-    { id: 6, title: "공장보수", value: ".factory-maintenance" },
-];
-
-export default function Portfolio() {
+interface Props {
+    // data : any
+    typeList : any
+}
+export default function Portfolio({
+     typeList
+} : Props) {
     const { handleFilterKeyChange, filterKey } = useIsotope();
-
+    const [data, setData] = useState<any>([])
+    useEffect(() => {
+        async function getList () {
+            const responseList = await api.get(`/user/promotion/getContentsList.php?contentType=${2}&businessDivisionType=${0}&userLang=KR&page=${1}&size=10&sortColumn=date&sortOrder=desc`)
+            if(responseList?.data?.result === true) {
+                setData(responseList?.data?.List)
+            }
+        }
+        getList()
+    }, [])
     return (
         <>
             <section
@@ -90,12 +51,12 @@ export default function Portfolio() {
                             {/* ========== filter section ========== */}
                             <div className="isotope-filter filter mb-10">
                                 <ul>
-                                    {filterItems.map(({id, title, value}) => (
-                                        <li key={id}>
+                                    {typeList?.map((type : any, index:number) => (
+                                        <li key={index}>
                                             <a
-                                                onClick={handleFilterKeyChange(value)}
-                                                className={clsx({"filter-item": true, active: value === filterKey}) + ' fs-18'}>
-                                                {title}
+                                                onClick={handleFilterKeyChange(type?.codeId)}
+                                                className={clsx({"filter-item": true, active: type?.codeId.toString() === filterKey}) + ' fs-18'}>
+                                                {type?.codeName}
                                             </a>
                                         </li>
                                     ))}
@@ -104,15 +65,15 @@ export default function Portfolio() {
 
                             {/* ========== projects section ========== */}
                             <div className="row gx-md-10 gy-10 gy-md-13 isotope">
-                                {projectList.map(({id, image, title, date, link, type, detail}) => (
-                                    <div className={`project item col-md-3 ${type}`} key={id}>
-                                        <Link href={link}>
+                                {data.map((list: any , index : number) => (
+                                    <div className={`project item col-md-3 ${list?.businessDivisionType}`} key={index}>
+                                        <Link href={''}>
                                             <figure className="lift rounded mb-6">
                                                 <Image
-                                                    alt={title}
-                                                    src={image.url}
-                                                    width={image.width}
-                                                    height={image.height}
+                                                    alt={list?.businessDivisionType}
+                                                    src={'/img/hyundai/promotion-center/portfolio-exam-02.png'}
+                                                    width={1300}
+                                                    height={1262}
                                                     className="w-100 h-auto"
                                                 />
                                             </figure>
@@ -120,11 +81,11 @@ export default function Portfolio() {
 
                                         <div className="project-details d-flex justify-content-center flex-column">
                                             <div className="post-header">
-                                                <h3 className="post-title">{title}</h3>
+                                                <h3 className="post-title">{list?.promSubject}</h3>
                                                 <div className="dots-portfolio-detail mb-1">
-                                                    {detail}
+                                                    {list?.excerpt}
                                                 </div>
-                                                <div className={`post-category mb-3`}>{date}</div>
+                                                <div className={`post-category mb-3`}>{list?.createDate}</div>
                                             </div>
                                         </div>
                                     </div>
