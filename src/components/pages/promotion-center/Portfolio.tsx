@@ -8,6 +8,7 @@ import clsx from "clsx";
 import NextLink from "../../reuseable/links/NextLink";
 import { useEffect, useState } from "react";
 import api from "lib/api";
+import { useRouter } from "next/navigation";
 const projectList = [
     {
         id: 1,
@@ -67,25 +68,15 @@ const filterItems = [
 interface Props {
     data : any
     typeList : any
+    totalCount : number
 }
-export default function Portfolio({data ,typeList} : Props) {
+export default function Portfolio({data ,typeList, totalCount} : Props) {
+    const router = useRouter()
     const { handleFilterKeyChange, filterKey } = useIsotope();
-    // const [data , setData] = useState<any>([])
-    const [type , setType] = useState<any>([])
-    // async function getList () {
-    //     const response = await api.get(`/user/promotion/getContentsList.php?contentType=${2}&businessDivisionType=${0}&userLang=KR&page=${1}&size=10&sortColumn=date&sortOrder=desc`)
-    //     if(response?.data?.result === true) {
-    //         setData(response?.data?.List)
-    //     }
-    // }
-    // async function getType () {
-    //     const response = await api.get(`/admin/code/getBusinessDivisionTypeList.php`)
-    //     if(response?.data?.result=== true) {
-    //         getList()
-    //         setType(response?.data?.List)
-    //     }
-    // }
-    // useEffect(() => {getType()}, [])
+    function handlePage (e:any, id : number) {
+        e.preventDefault()
+        router.push(`/portfolio/${id}`)
+    }
     return (
         <>
             <section
@@ -120,8 +111,8 @@ export default function Portfolio({data ,typeList} : Props) {
                                     {typeList.map((type:any, index:number) => (
                                         <li key={index}>
                                             <a
-                                                onClick={handleFilterKeyChange(`.${type?.codeId.toString()}`)}
-                                                className={clsx({"filter-item": true, active: `.${type?.codeId.toString()}` === filterKey}) + ' fs-18'}>
+                                                onClick={handleFilterKeyChange(`.type_${type?.codeId.toString()}`)}
+                                                className={clsx({"filter-item": true, active: `.type_${type?.codeId.toString()}` === filterKey}) + ' fs-18'}>
                                                 {type?.codeName}
                                             </a>
                                         </li>
@@ -132,14 +123,14 @@ export default function Portfolio({data ,typeList} : Props) {
                             {/* ========== projects section ========== */}
                             <div className="row gx-md-10 gy-10 gy-md-13 isotope">
                                 {data.map((list:any , index:number) => (
-                                    <div className={`project item col-md-3 ${list?.businessDivisionType.toString()}`} key={index}>
-                                        <Link href={'/portfolio/4'}>
+                                    <div className={`project item col-md-3 type_${list?.businessDivisionType.toString()}`} key={index}>
+                                        <Link href={'#'} onClick={(e)=>handlePage(e, list?.ID)}>
                                             <figure className="lift rounded mb-6">
                                                 <Image
                                                     alt={list?.thumnailFilename}
                                                     src={list?.thumnailFile}
                                                     width={1300}
-                                                    height={1300}
+                                                    height={1262}
                                                     className="w-100 h-auto"
                                                 />
                                             </figure>
@@ -161,9 +152,9 @@ export default function Portfolio({data ,typeList} : Props) {
                     </div>
                 </div>
 
-                <div className="text-center mt-10">
+                {/* <div className="text-center mt-10">
                     <NextLink href="#" title="더보기" className="btn btn-outline-primary"/>
-                </div>
+                </div> */}
             </div>
         </>
     );

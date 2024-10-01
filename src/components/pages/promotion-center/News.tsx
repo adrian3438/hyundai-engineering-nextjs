@@ -91,7 +91,7 @@ export default function News({data, language, bussinessTypeList} : Props) {
                                                 </figure>
                                                 <div className="card-body">
                                                     <div className="post-header">
-                                                        <div className="post-category text-line"><a className="hover" href="#">신축</a></div>
+                                                        <div className="post-category text-line"><a className="hover" href="#">{list?.businessDivisionName}</a></div>
                                                         <h2 className="post-title h3 mt-1 mb-3"><a className="link-dark" href="#">{list?.promSubject}</a></h2></div>
                                                     <div className="post-content"><p>{list?.excerpt?.length > 70 ? list?.excerpt?.slice(0,70) + '...' : list?.excerpt}</p></div>
                                                     <ul className="post-meta d-flex mb-0">
