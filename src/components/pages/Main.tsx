@@ -86,7 +86,7 @@ export default function Main({
                         <div className="row">
                             <article className="col-md-4">
                                 <figure className="overlay overlay-1 hover-scale rounded mb-6">
-                                    <Link href="#" className="position-relative">
+                                    <Link href="/business-area/new-construction" className="position-relative">
                                         <Image src="/img/hyundai/construnction-new-building.jpg" alt="신축" width={560} height={350} className="w-100 h-auto"/>
                                         <span className="position-absolute fs-24 fw-bold" style={{top:"20px",left:"20px",zIndex:8}}>신축</span>
                                         <span className="bg" style={{zIndex:9}}/>
@@ -99,7 +99,7 @@ export default function Main({
                             </article>
                             <article className="col-md-4">
                                 <figure className="overlay overlay-1 hover-scale rounded mb-6">
-                                    <Link href="#">
+                                    <Link href="/business-area/extension-reconstruction">
                                         <Image src="/img/hyundai/repair-building.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
                                         <span className="position-absolute fs-24 fw-bold" style={{top: "20px", left: "20px", zIndex: 8}}>증 · 개축</span>
                                         <span className="bg" style={{zIndex: 9}}/>
@@ -112,7 +112,7 @@ export default function Main({
                             </article>
                             <article className="col-md-4">
                                 <figure className="overlay overlay-1 hover-scale rounded mb-6">
-                                    <Link href="#">
+                                    <Link href="/business-area/factory-remodeling">
                                         <Image src="/img/hyundai/factory-remodeling.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
                                         <span className="position-absolute fs-24 fw-bold" style={{top: "20px", left: "20px", zIndex: 8}}>공장 리모델링</span>
                                         <span className="bg" style={{zIndex: 9}}/>
@@ -125,7 +125,7 @@ export default function Main({
                             </article>
                             <article className="col-md-4">
                                 <figure className="overlay overlay-1 hover-scale rounded mb-6">
-                                    <Link href="#">
+                                    <Link href="/business-area/factory-waterproofing">
                                         <Image src="/img/hyundai/factory-water-proof.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
                                         <span className="position-absolute fs-24 fw-bold" style={{top: "20px", left: "20px", zIndex: 8}}>공장방수</span>
                                         <span className="bg" style={{zIndex: 9}}/>
@@ -138,7 +138,7 @@ export default function Main({
                             </article>
                             <article className="col-md-4">
                                 <figure className="overlay overlay-1 hover-scale rounded mb-6">
-                                    <Link href="#">
+                                    <Link href="/business-area/factory-maintenance">
                                         <Image src="/img/hyundai/factory-repair.jpg" alt="image title" width={560} height={350} className="w-100 h-auto"/>
                                         <span className="position-absolute fs-24 fw-bold" style={{top: "20px", left: "20px", zIndex: 8}}>공장보수</span>
                                         <span className="bg" style={{zIndex: 9}}/>
