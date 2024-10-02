@@ -4,14 +4,23 @@ import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 import NextLink from "../../reuseable/links/NextLink";
+import { useEffect, useState } from "react";
+import api from "lib/api";
 
 interface Props {
-    data : any
 }
 export default function Videos({
-    data 
 } : Props) {
-    
+    const [data, setData] = useState<any>([])
+    useEffect(() => {
+        async function getList () {
+            const response = await api.get(`/user/promotion/getPrVideoList.php?videoType=1&page=1&size=99&keyword=&sortColumn=videoMdate&sortOrder=desc`)
+            if(response?.data?.Result === true) {
+                setData(response?.data?.List)
+            }
+        }
+        getList()
+    }, [])
     return (
         <>
             <section
