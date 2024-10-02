@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Certification() {
     return (
@@ -21,7 +22,27 @@ export default function Certification() {
             <div className="container py-17">
                 <div className="row">
                     <div className="col-md-10 m-auto">
-                        <h1 className="mb-15">인증현황</h1>
+                        <div className="row">
+                            <div className="col-md-4">
+                                <h1 className="mb-15 position-sticky" style={{top:'120px', left:0}}>(주)현대엔지니어링의<br/> 등록 현황을 소개합니다.</h1>
+                            </div>
+                            <div className="col-md-8">
+                                <div className="row">
+                                    <div className="col-md-6 text-center">
+                                        <p className="rounded p-2 bg-gray">
+                                            <Image src="/img/hyundai/certification/certification01.png" alt="사업자등록증" width={425} height={605} className="w-100 h-auto rounded-0"/>
+                                        </p>
+                                        <p>사업자등록증</p>
+                                    </div>
+                                    <div className="col-md-6 text-center">
+                                        <p className="rounded p-2 bg-gray">
+                                            <Image src="/img/hyundai/certification/certification02.png" alt="사업자등록증" width={425} height={605} className="w-100 h-auto rounded-0"/>
+                                        </p>
+                                        <p>건설업등록증</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
