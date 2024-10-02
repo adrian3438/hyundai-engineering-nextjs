@@ -25,7 +25,7 @@ export default function Portfolio({data ,typeList, totalCount} : Props) {
     function handleShowMore() {
         setVisiable(prevVisibleItems => prevVisibleItems + 1);
     }
-    console.log('typeList : ', data);
+
     return (
         <>
             <section
