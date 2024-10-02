@@ -25,6 +25,7 @@ export default function Portfolio({data ,typeList, totalCount} : Props) {
     function handleShowMore() {
         setVisiable(prevVisibleItems => prevVisibleItems + 1);
     }
+    console.log('typeList : ', data);
     return (
         <>
             <section
@@ -86,6 +87,7 @@ export default function Portfolio({data ,typeList, totalCount} : Props) {
 
                                         <div className="project-details d-flex justify-content-center flex-column">
                                             <div className="post-header">
+                                                <div className="post-category text-line">{list?.businessDivisionName}</div>
                                                 <h3 className="post-title">{list?.promSubject}</h3>
                                                 <div className="dots-portfolio-detail mb-1">
                                                     {list?.excerpt}
