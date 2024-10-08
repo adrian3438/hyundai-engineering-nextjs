@@ -85,11 +85,11 @@ export default function Header({
             </li>
             <li className="nav-item dropdown"><a href="/portfolio" className="nav-link fs-22">포트폴리오</a>
               <ul className="dropdown-menu">
-                <li className="nav-item"><a className="dropdown-item" href="/portfolio">신축</a></li>
-                <li className="nav-item"><a className="dropdown-item" href="/portfolio">증 · 개축</a></li>
-                <li className="nav-item"><a className="dropdown-item" href="/portfolio">공장 리모델링</a></li>
-                <li className="nav-item"><a className="dropdown-item" href="/portfolio">공장방수</a></li>
-                <li className="nav-item"><a className="dropdown-item" href="/portfolio">공장보수</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=3">신축</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=4">증 · 개축</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=5">공장 리모델링</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=6">공장방수</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=7">공장보수</a></li>
               </ul>
             </li>
             <li className="nav-item dropdown"><a href="#" data-bs-toggle="dropdown" className="nav-link fs-22">홍보센터</a>

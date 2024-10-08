@@ -4,10 +4,8 @@ import useIsotope from "../../../hooks/useIsotope";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
-import NextLink from "../../reuseable/links/NextLink";
-import { useEffect, useState } from "react";
-import api from "lib/api";
-import { useRouter } from "next/navigation";
+import {useEffect, useState} from "react";
+import {useRouter, useSearchParams} from "next/navigation";
 
 interface Props {
     data : any
@@ -17,7 +15,8 @@ interface Props {
 export default function Portfolio({data ,typeList, totalCount} : Props) {
     const router = useRouter()
     const [visiable , setVisiable] = useState<number>(1)
-    const { handleFilterKeyChange, filterKey } = useIsotope();
+    const param = useSearchParams().get('type');
+    const { handleFilterKeyChange, filterKey } = useIsotope(`.type_${param}`);
     function handlePage (e : any , id : number) {
         e.preventDefault()
         router.push(`/portfolio/${id}`)

@@ -41,11 +41,11 @@ export default function Footer() {
                         <div className="widget">
                             <h4 className="widget-title text-white mb-3"><a href="/portfolio" className="text-white">포트폴리오</a></h4>
                             <ul className="list-unstyled mb-0">
-                                <li><a href="/portfolio">신축</a></li>
-                                <li><a href="/portfolio">증 · 개축</a></li>
-                                <li><a href="/portfolio">공장 리모델링</a></li>
-                                <li><a href="/portfolio">공장방수</a></li>
-                                <li><a href="/portfolio">공장보수</a></li>
+                                <li><a href="/portfolio?type=3">신축</a></li>
+                                <li><a href="/portfolio?type=4">증 · 개축</a></li>
+                                <li><a href="/portfolio?type=5">공장 리모델링</a></li>
+                                <li><a href="/portfolio?type=6">공장방수</a></li>
+                                <li><a href="/portfolio?type=7">공장보수</a></li>
                             </ul>
                         </div>
                     </div>

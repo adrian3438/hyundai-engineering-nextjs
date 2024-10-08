@@ -3,9 +3,10 @@
 import type Isotope from "isotope-layout";
 import { useEffect, useRef, useState } from "react";
 
-export default function useIsotope() {
+export default function useIsotope(type?:string) {
   const isotope = useRef<Isotope>();
-  const [filterKey, setFilterKey] = useState("*");
+  const [filterKey, setFilterKey] = useState(type === undefined || null ? '*' : type);
+  console.log('filterKey : ', filterKey);
 
   useEffect(() => {
     if (typeof window === undefined) return;
@@ -33,6 +34,7 @@ export default function useIsotope() {
   }, []);
 
   useEffect(() => {
+    console.log('filterKey2 : ', filterKey);
     const filtered = filterKey === "*" ? { filter: "*" } : { filter: filterKey };
     isotope.current?.arrange(filtered);
   }, [filterKey]);
