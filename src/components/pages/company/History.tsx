@@ -90,8 +90,8 @@ export default function History() {
                                              style={{
                                                  backgroundImage: `url(${item.imageUrl})`,
                                                  backgroundRepeat: 'no-repeat',
-                                                 backgroundSize: `${index === 5 ? 'auto 100%' : '100% auto'}`,
-                                                 backgroundPosition: 'center center',
+                                                 backgroundSize: `100% auto`,
+                                                 backgroundPosition: `${index === 5 ? 'center 0' : 'center center'}`,
                                                  maxWidth: "574px",
                                                  minHeight: "438px"
                                              }}

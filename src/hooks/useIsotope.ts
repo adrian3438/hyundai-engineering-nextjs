@@ -5,8 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function useIsotope(type?:string) {
   const isotope = useRef<Isotope>();
-  const [filterKey, setFilterKey] = useState(type === undefined || null ? '*' : type);
-  console.log('filterKey : ', filterKey);
+  const [filterKey, setFilterKey] = useState((type === undefined || null) || !type ? '*' : type);
 
   useEffect(() => {
     if (typeof window === undefined) return;
@@ -34,7 +33,6 @@ export default function useIsotope(type?:string) {
   }, []);
 
   useEffect(() => {
-    console.log('filterKey2 : ', filterKey);
     const filtered = filterKey === "*" ? { filter: "*" } : { filter: filterKey };
     isotope.current?.arrange(filtered);
   }, [filterKey]);
