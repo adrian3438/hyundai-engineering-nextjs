@@ -8,7 +8,7 @@ interface Props {
 }
 export default function NewsDetail({id} : Props) {
     const router = useRouter()
-    
+
     const [data , setData] = useState<any>({
         list : null, next : null, prev : null
     })
@@ -35,9 +35,9 @@ export default function NewsDetail({id} : Props) {
                 <div className="container min-vh-60 d-flex align-items-center">
                     <div className="row w-100">
                         <div className="col-md-12">
-                            <h1 className="display-2 text-white mb-3">(주)현대엔지니어링의 역사는 계속 이어갑니다.</h1>
+                            <h1 className="display-2 text-white mb-3">홍보센터</h1>
                             <p className="lead fs-lg">
-                                고객의 꿈을 현실로 만들어가는 우리의 건설 실적, 그 자체가 신뢰의 증거입니다.
+                                (주)현대엔지니어링의 최신 현황을 소개해 드립니다.
                             </p>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ export default function NewsDetail({id} : Props) {
             </section>
             <div className="container my-10">
                 <section className="row my-10 justify-content-center">
-                    <div className="col-md-10">
+                <div className="col-md-10">
                         <p className="fs-18 fw-600">소식지</p>
                         <h2 className="text-black fw-600">{data?.list?.promSubject}</h2>
                         <p className="fs-16 fw-500">{data?.list?.createDate}</p>

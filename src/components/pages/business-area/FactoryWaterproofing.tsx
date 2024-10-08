@@ -26,8 +26,8 @@ export default function FactoryWaterproofing() {
                         <div className="border rounded px-10 py-10 position-relative fs-20">
                             <span className="clip-background">공장방수</span>
                             <p><strong>공장 방수</strong>는 외부로부터 발생하는 다양한 형태의 <strong>누수를 탐지, 보수, 예방</strong>하는 과정으로 우레탄과 실란트를 사용하여 외부의 빗물이나 습기 등이 내부로 침투하지 못하도록 하는 과정입니다.</p>
-                            <p>대표적인 예시로는 공장외부로부터 내부로 빗물이 흘러들어오는 것을 방지하기 위해서 균열이나 파손부위를 파악하고 물도이나 물홈통 등이 정상적으로 빗물을 배출하는지에 대한 여부, 최종적으로 우수관을 통해 빗물이 빠져나가는 과정을 확인함으로써 <strong>누수를 방지하는 것</strong>입니다.</p>
-                            <p className="mb-0">#우레탄 #실리콘(실란트) #사무실 누수, 공장 누수 #옥상 누수 #물도이  #우수관 #균열 발생부위 파악</p>
+                            <p>확실한 공장방수는 우수로부터 공장 내부의 자산을 지키고, 건축물의 수명과 가치를 늘려줄 수 있는 가장 효과적인 공장 보수 형태입니다.</p>
+                            <p className="mb-0">대표적인 예시로는 공장외부로부터 내부로 빗물이 흘러들어오는 것을 방지하기 위해서 균열이나 파손부위를 파악하고 물도이나 물홈통 등이 정상적으로 빗물을 배출하는지에 대한 여부, 최종적으로 우수관을 통해 빗물이 빠져나가는 과정을 확인함으로써 <strong>누수를 방지하는 것</strong>입니다.</p>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ export default function FactoryWaterproofing() {
                             </div>
                             <div className="col-md-5 fs-20 bg-gray rounded-4 p-7 text-keep-all">
                                 <p><strong>긴축 건물</strong>은 최초 시공시 틈새를 매꿈으로써 방수작업을 진행합니다. 외부 환경에 잘 견디는 재료를 사용하여 <strong>오랜 기간 방수를 유지</strong>할 수 있도록 합니다.</p>
-                                <p className="mb-0">구축 건물의 경우 외부 코팅이 벗겨져 콘크리트가 드러날 수 있는데 적절한 시기에 코팅을 하지 않으면 <strong>외벽의 균열로 빗물이 흘러</strong> 들어갑니다. 이런 경우, 균열이 발생한 곳을 일부 깎아 내고 <strong>특수 실란트로 충전</strong>한 후 외벽을 페인트로 마감하는 과정을 거칩니다.</p>
+                                <p className="mb-0">구축 건물의 경우 외부 코팅이 벗겨져 콘크리트가 드러날 수 있는데 적절한 시기에 코팅을 하지 않으면 <strong>외벽의 균열로 빗물이 흘러</strong> 들어갑니다. 이런 경우, 균열이 발생한 곳을 일부 깎아 내고 <strong>특수 실란트로 보수</strong>한 후 외벽을 페인트로 마감하는 과정을 거칩니다.</p>
                             </div>
                         </div>
                     </div>

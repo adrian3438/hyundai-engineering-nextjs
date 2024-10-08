@@ -29,17 +29,24 @@ export default function FactoryMaintenance() {
                             <span className="clip-background">공장보수</span>
                             <p><strong>공장보수</strong>의 경우에는 리모델링보다는 조금 더 <strong>세부적인 공간을 관리하는 개념</strong>으로써 전반적인 공장을 목표로 하는것이 아닌 <strong>필요한 공간들을 위주로 중점적으로 관리</strong>하는 것을 말합니다.</p>
                             <p>단순히 공장 건물만을 보수하는 것이 아닌 공장전체를 아우르는 담장(붉은벽돌담벼락)과 주차장 바닥, 공장건물의 외벽 및 천정 노후부분들, 그리고 세부적으로는 사무실, 화장실, 휴개실의 샷시, 판넬, 그리고 문틀과도 같은 <strong>세세한 것까지 관리</strong>합니다.</p>
-                            <p>특히, 공장보수는 <strong>전문가의 지식과 경험이 필수적인 작업</strong>이기 때문에 저희 <strong>(주)현대엔지니어링</strong>은 30년 경험의 전문가가 직접 현장을 관리, 감독하여 <strong>최상의 결과물</strong>을 보여드릴 것을 약속합니다.</p>
-                            <p className="mb-0">#외벽, 천정 노후 #샷시, 판넬 #문짝, 문틀 #담장, 바닥, 붉은벽돌</p>
+                            <p className="mb-0">특히, 공장보수는 <strong>전문가의 지식과 경험이 필수적인 작업</strong>이기 때문에 저희 <strong>(주)현대엔지니어링</strong>은 30년 경험의 전문가가 직접 현장을 관리, 감독하여 <strong>최상의 결과물</strong>을 보여드릴 것을 약속합니다.</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="row mt-10">
+                <div className="row mt-15">
                     <div className="col-md-10 m-auto">
                         <div className="row justify-content-between align-items-center text-keep-all">
                             <div className="col-md-12 m-auto">
-                                <div className="row my-20 align-items-center flex-row-reverse justify-content-between">
+                                <div className="row align-items-center justify-content-between">
+                                    <h2 className="mb-8 text-center">공장보수가 필요한 이유</h2>
+                                    <div className="col-md-12 mb-10 bg-gray rounded-4 p-7">
+                                        <p className="lead fs-lg">리모델링과 달리 전면적인 수정보다는 <strong>일부 영역에 한정하여 수리를 진행하는 방식</strong>은 시간과 비용 면에서 <strong>효율적</strong>입니다. 이러한 방식은 건물이나 시설의 전체적인 구조나 디자인을 유지하면서도, 손상되거나 <strong>성능이 저하된 특정 부분을 집중적으로 보완</strong>하는 데 중점을 둡니다. 예를 들어, 건물 외벽의 일부 패널이 손상된 경우, 해당 부위만을 보수하여 <strong>전반적인 외관과 기능을 유지</strong>할 수 있습니다. 이처럼 부분 수리는 필요한 부분에만 개입하기 때문에 <strong>자원을 절약하고 작업 시간을 단축</strong>할 수 있습니다.</p>
+                                        <p className="lead fs-lg mb-0">또한, 부분적인 수리 작업은 전체적인 시설 운영에 미치는 영향을 최소화하는 장점도 있습니다. 공장의 배관이나 철구조물 같은 주요 설비는 완전히 교체하는 대신 <strong>손상된 부분만 수리함</strong>으로써, 공장의 <strong>생산 중단을 피하거나 최소화</strong>할 수 있습니다. 이러한 방식은 비즈니스 운영의 <strong>연속성을 유지</strong>하면서도 필수적인 수리 작업을 효과적으로 수행할 수 있게 해줍니다.</p>
+                                    </div>
+                                </div>
+
+                                <div className="row my-15 align-items-center flex-row-reverse justify-content-between">
                                     <div className="col-md-5">
                                         <Image src="/img/hyundai/business-area/factoryRepair-1.png" alt="지속 가능 경영의 중요성" width={375} height={375} className="w-100 h-auto"/>
                                     </div>
@@ -49,8 +56,8 @@ export default function FactoryMaintenance() {
                                     </div>
                                 </div>
 
-                                <div className="row my-20 align-items-center justify-content-between">
-                                <div className="col-md-5">
+                                <div className="row my-15 align-items-center justify-content-between">
+                                    <div className="col-md-5">
                                         <Image src="/img/hyundai/business-area/factoryRepair-2.png" alt="지속 가능 경영의 중요성" width={375} height={375} className="w-100 h-auto"/>
                                     </div>
                                     <div className="col-md-6 bg-gray rounded-4 p-7">
@@ -60,7 +67,7 @@ export default function FactoryMaintenance() {
                                 </div>
 
                                 <div className="row mb-20 align-items-center flex-row-reverse justify-content-between">
-                                <div className="col-md-5">
+                                    <div className="col-md-5">
                                         <Image src="/img/hyundai/business-area/factoryRepair-3.png" alt="지속 가능 경영의 중요성" width={375} height={375} className="w-100 h-auto"/>
                                     </div>
                                     <div className="col-md-6 bg-gray rounded-4 p-7">
@@ -72,7 +79,7 @@ export default function FactoryMaintenance() {
 
                                 <div className="row mb-20 align-items-center justify-content-between">
                                     <div className="col-md-5">
-                                    <Image src="/img/hyundai/business-area/factoryRepair-4.png" alt="지속 가능 경영의 중요성" width={375} height={375} className="w-100 h-auto"/>
+                                        <Image src="/img/hyundai/business-area/factoryRepair-4.png" alt="지속 가능 경영의 중요성" width={375} height={375} className="w-100 h-auto"/>
                                     </div>
                                     <div className="col-md-6 bg-gray rounded-4 p-7">
                                         <p className="lead fs-lg">또한 <strong>철구조물</strong>은 다양한 외부 환경에 노출되어 부식이나 파손이 발생할 수 있습니다. 철구조물의 손상은 구조적 안전성에 큰 영향을 미치므로, 이를 <strong>빠르게 수리하는 것</strong>이 중요합니다.</p>
@@ -80,15 +87,6 @@ export default function FactoryMaintenance() {
                                         <p className="lead fs-lg mb-0">이를 통해 철구조물의 <strong>수명을 연장</strong>하고, <strong>안전성을 유지</strong>할 수 있습니다.</p>
                                     </div>
                                 </div>
-
-                                <div className="row align-items-center justify-content-between">
-                                    <h2 className="mb-8 text-center">공장보수가 필요한 이유</h2>
-                                    <div className="col-md-12 mb-10 bg-gray rounded-4 p-7">
-                                        <p className="lead fs-lg">리모델링과 달리 전면적인 수정보다는 <strong>일부 영역에 한정하여 수리를 진행하는 방식</strong>은 시간과 비용 면에서 <strong>효율적</strong>입니다. 이러한 방식은 건물이나 시설의 전체적인 구조나 디자인을 유지하면서도, 손상되거나 <strong>성능이 저하된 특정 부분을 집중적으로 보완</strong>하는 데 중점을 둡니다. 예를 들어, 건물 외벽의 일부 패널이 손상된 경우, 해당 부위만을 보수하여 <strong>전반적인 외관과 기능을 유지</strong>할 수 있습니다. 이처럼 부분 수리는 필요한 부분에만 개입하기 때문에 <strong>자원을 절약하고 작업 시간을 단축</strong>할 수 있습니다.</p>
-                                        <p className="lead fs-lg mb-0">또한, 부분적인 수리 작업은 전체적인 시설 운영에 미치는 영향을 최소화하는 장점도 있습니다. 공장의 배관이나 철구조물 같은 주요 설비는 완전히 교체하는 대신 <strong>손상된 부분만 수리함</strong>으로써, 공장의 <strong>생산 중단을 피하거나 최소화</strong>할 수 있습니다. 이러한 방식은 비즈니스 운영의 <strong>연속성을 유지</strong>하면서도 필수적인 수리 작업을 효과적으로 수행할 수 있게 해줍니다.</p>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>

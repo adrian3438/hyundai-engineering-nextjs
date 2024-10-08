@@ -22,10 +22,12 @@ export default function Location() {
 
             <div className="container py-17">
                 <div className="row text-keep-all">
-                    <div className="col-md-10 border rounded m-auto py-11 px-10 position-relative pb-21">
+                    <div className="col-md-10 border rounded m-auto py-11 px-10 position-relative pb-15">
                         <span className="clip-background">오시는길</span>
                         <div className="row justify-content-between">
-                            <div className="col-md-5">
+                            <div className="col-md-6">
+                                <p className="fs-20">휴대폰: 010-5256-9489 / 전화: 032-837-5647 <br/> 팩스: 032-837-5643 / 이메일: hdeng60@nate.com</p>
+                                <p className="fs-20">인천 연수구 송도미래로 30 (인천광역시 연수구 송도동 214) 송도비알씨스마트밸리지식산업센터 D동 1610호</p>
                                 <p className="position-relative ps-11 fs-20">
                                     <i className="uil uil-car-sideview position-absolute start-0 fs-40" style={{marginTop: '-5px'}}></i>
                                     <span className="fw-bold">제 3경인고속화도로</span>: 인천공항, 목감 방면 물왕톨게이트 → 고잔톨게이트 → ‘남동구청, 남동산단‘ 방면 오른쪽 → 외암사거리 좌회전 → 송도미래로 우회전 → 1.3km 직진, 좌측 건물
@@ -50,9 +52,6 @@ export default function Location() {
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25387.23478654725!2d-122.06115399490332!3d37.309248660190086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb4571bd377ab%3A0x394d3fe1a3e178b4!2sCupertino%2C%20CA%2C%20USA!5e0!3m2!1sen!2str!4v1645437305701!5m2!1sen!2str"
                                     style={{width: "100%", height: "100%", border: 0}}
                                 />
-
-                                <p className="fs-20 mt-5">인천 연수구 송도미래로 30 (인천광역시 연수구 송도동 214) 송도비알씨스마트밸리지식산업센터 D동 1610호</p>
-                                <p className="fs-20">휴대폰: 010-5256-9489 / 전화: 032-837-5647 <br/> 팩스: 032-837-5643 / 이메일: hdeng60@nate.com</p>
                             </div>
                         </div>
                     </div>

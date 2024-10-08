@@ -1,49 +1,43 @@
 'use client'
 
 import NavBar from "../../hyundai/NavBar";
-import {useState} from "react";
+import React, {useState} from "react";
+import Image from "next/image";
 
 const HistoryData = [
     {
         "yearMonth": "1996.02",
         "kr": ["현대엔지니어링 설립", "인천광역시 동구 송현동 129"],
-        "en": ["test", "english"],
         "imageUrl": "/img/hyundai/company/history/history-1.png"
     },
     {
         "yearMonth": "2002.03",
         "kr": ["남구 사무실 개설", "인천광역시 남동구 고잔동 38"],
-        "en": ["test2", "english2"],
         "imageUrl": "/img/hyundai/company/history/history-2.png"
     },
     {
         "yearMonth": "2007.12",
         "kr": ["제조공장 지구단위 개발사무소 개설", "인천광역시 남동구 문학동 367"],
-        "en": ["test2", "english2"],
         "imageUrl": "/img/hyundai/company/history/history-3.png"
     },
     {
         "yearMonth": "2012.03",
         "kr": ["법인 설립 및 상호변경", "(주)현대엔지니어링 법인화", "인천광역시 연수구 송도미래로 30 스마트밸리 지식산업센터 D동 1610호"],
-        "en": ["test2", "english2"],
         "imageUrl": "/img/hyundai/company/history/history-4.png"
     },
     {
         "yearMonth": "2013.02",
         "kr": ["법인 자본금 증자", "4억원 -> 5억 2천만원"],
-        "en": ["test2", "english2"],
         "imageUrl": "/img/hyundai/company/history/history-5.png"
     },
     {
         "yearMonth": "2013.04",
         "kr": ["종합 건설 먼저 취득", "건축공사업 건축-04-649"],
-        "en": ["test2", "english2"],
-        "imageUrl": "/img/hyundai/company/history/history-6.png"
+        "imageUrl": "/img/hyundai/certification/certification02.png"
     },
     {
         "yearMonth": "2016.06",
         "kr": ["건설산업기본법 제 9조 제 4항에 의거 건설 주기적 신고"],
-        "en": ["test2", "english2"],
         "imageUrl": "/img/hyundai/company/history/history-7.png"
     },
 ]
@@ -75,7 +69,7 @@ export default function History() {
 
             <div className="container py-17">
                 <div className="row">
-                    <h1 className="text-center mb-15">(주) 현대엔지니어링이<span className="text-primary"> 걸어온 발자취 입니다.</span></h1>
+                    <h1 className="text-center mb-15"><span className="text-primary">(주) 현대엔지니어링</span> 성장과정</h1>
                     <div className="col-md-8 mx-auto">
                         <div className="row border rounded px-10 pt-13 pb-10 justify-content-between position-relative align-items-center">
                             <span className="clip-background">연혁</span>
@@ -96,7 +90,8 @@ export default function History() {
                                              style={{
                                                  backgroundImage: `url(${item.imageUrl})`,
                                                  backgroundRepeat: 'no-repeat',
-                                                 backgroundSize: '100% auto',
+                                                 backgroundSize: `${index === 5 ? 'auto 100%' : '100% auto'}`,
+                                                 backgroundPosition: 'center center',
                                                  maxWidth: "574px",
                                                  minHeight: "438px"
                                              }}
