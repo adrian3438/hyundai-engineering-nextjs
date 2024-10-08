@@ -70,6 +70,7 @@ export default function Header({
                 <li className="nav-item"><a className="dropdown-item" href="/company/ceo-greeting">CEO 인사말</a></li>
                 <li className="nav-item"><a className="dropdown-item" href="/company/about-us">소개</a></li>
                 <li className="nav-item"><a className="dropdown-item" href="/company/history">연혁</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/certification">인증현황</a></li>
                 <li className="nav-item"><a className="dropdown-item" href="/company/location">오시는길</a></li>
               </ul>
             </li>
@@ -97,7 +98,7 @@ export default function Header({
                 <li className="nav-item"><a className="dropdown-item" href="/promotion-center/news">소식지</a></li>
               </ul>
             </li>
-            <li className="nav-item dropdown"><a href="/certification" className="nav-link fs-22">인증현황</a></li>
+            {/*<li className="nav-item dropdown"><a href="/certification" className="nav-link fs-22">인증현황</a></li>*/}
             <li className="nav-item dropdown"><a href="/esg" className="nav-link fs-22">지속가능경영</a></li>
             <li className="nav-item dropdown"><a href="/inquiry" className="nav-link fs-22">문의하기</a></li>
           </ul>

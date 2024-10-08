@@ -58,20 +58,22 @@ export default function Portfolio({data ,typeList, totalCount} : Props) {
                                         </a>
                                     </li>
                                     {typeList.map((type:any, index:number) => (
-                                        <li key={index}>
-                                            <a
-                                                onClick={handleFilterKeyChange(`.type_${type?.codeId.toString()}`)}
-                                                className={clsx({"filter-item": true, active: `.type_${type?.codeId.toString()}` === filterKey}) + ' fs-18'}>
-                                                {type?.codeName?.split(',')[0]}
-                                            </a>
-                                        </li>
+                                        (index !== 5 &&
+                                            <li key={index}>
+                                                <a
+                                                    onClick={handleFilterKeyChange(`.type_${type?.codeId.toString()}`)}
+                                                    className={clsx({"filter-item": true, active: `.type_${type?.codeId.toString()}` === filterKey}) + ' fs-18'}>
+                                                    {type?.codeName?.split(',')[0]}
+                                                </a>
+                                            </li>
+                                        )
                                     ))}
                                 </ul>
                             </div>
 
                             {/* ========== projects section ========== */}
                             <div className="row gx-md-10 gy-10 gy-md-13 isotope">
-                                {data.map((list:any , index:number) => (
+                                {data.map((list: any, index: number) => (
                                     <div className={`project item col-md-3 type_${list?.businessDivisionType.toString()}`} key={index}>
                                         <Link href={'#'} onClick={(e)=>handlePage(e, list?.ID)}>
                                             <figure className="lift rounded mb-6">

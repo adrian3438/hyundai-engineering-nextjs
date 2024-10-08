@@ -60,7 +60,7 @@ export default function FactoryWaterproofing() {
                                 <img src="/img/hyundai/business-area/waterProof-3.png" alt="신축"/>
                             </div>
                             <div className="col-md-5 fs-20 bg-gray rounded-4 p-7 text-keep-all">
-                                <p><strong>긴축 건물</strong>은 최초 시공시 틈새를 매꿈으로써 방수작업을 진행합니다. 외부 환경에 잘 견디는 재료를 사용하여 <strong>오랜 기간 방수를 유지</strong>할 수 있도록 합니다.</p>
+                                <p><strong>신축 건물</strong>은 최초 시공시 틈새를 매꿈으로써 방수작업을 진행합니다. 외부 환경에 잘 견디는 재료를 사용하여 <strong>오랜 기간 방수를 유지</strong>할 수 있도록 합니다.</p>
                                 <p className="mb-0">구축 건물의 경우 외부 코팅이 벗겨져 콘크리트가 드러날 수 있는데 적절한 시기에 코팅을 하지 않으면 <strong>외벽의 균열로 빗물이 흘러</strong> 들어갑니다. 이런 경우, 균열이 발생한 곳을 일부 깎아 내고 <strong>특수 실란트로 보수</strong>한 후 외벽을 페인트로 마감하는 과정을 거칩니다.</p>
                             </div>
                         </div>

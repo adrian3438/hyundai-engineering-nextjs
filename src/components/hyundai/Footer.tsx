@@ -20,6 +20,7 @@ export default function Footer() {
                                 <li><a href="/company/ceo-greeting">CEO 인사말</a></li>
                                 <li><a href="/company/about-us">소개</a></li>
                                 <li><a href="/company/history">연혁</a></li>
+                                <li><a href="/certification">인증현황</a></li>
                                 <li><a href="/company/location">오시는길</a></li>
                             </ul>
                         </div>
@@ -57,11 +58,11 @@ export default function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-md-auto col-lg-auto">
+                    {/*<div className="col-md-auto col-lg-auto">
                         <div className="widget">
                             <h4 className="widget-title text-white mb-3"><a href="/certification" className="text-white">인증현황</a></h4>
                         </div>
-                    </div>
+                    </div>*/}
                     <div className="col-md-auto col-lg-auto">
                         <div className="widget">
                             <h4 className="widget-title text-white mb-3"><a href="/esg" className="text-white">지속가능경영</a></h4>

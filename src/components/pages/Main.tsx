@@ -39,7 +39,7 @@ export default function Main({
         </header>
             <main className="content-wrapper">
                 <MainBanner/>
-                <div className="bg-pale-ash" style={{background: 'url(/img/hyundai/shape-01.svg) no-repeat 100% 0', backgroundSize: "auto 100%"}}>
+                <div>
                     <div className="container pb-17 pt-15">
                         <h1 className="display-1 mb-3 text-center">사업분야</h1>
                         <p className="lead text-center mb-10 fs-25">다양한 사업을 영위하는 종합건설사입니다</p>
@@ -113,42 +113,44 @@ export default function Main({
                     </div>
                 </div>
 
-                <div className="container pb-17 pt-15">
-                    <div className="row">
-                        <h1 className="display-1 mb-3 text-center">포트폴리오</h1>
-                        <p className="lead text-center mb-10 fs-25">현대엔지니어링의 최신 포트폴리오를 만나보세요</p>
+                <div className="bg-pale-ash" style={{background: 'url(/img/hyundai/shape-01.svg) no-repeat 100% 0', backgroundSize: "auto 100%"}}>
+                    <div className="container pb-17 pt-15">
+                        <div className="row">
+                            <h1 className="display-1 mb-3 text-center">포트폴리오</h1>
+                            <p className="lead text-center mb-10 fs-25">현대엔지니어링의 최신 포트폴리오를 만나보세요</p>
 
-                        {portFolio?.map((portFolio: any, index: number) => (
-                            <article className="item post col-md-4" key={portFolio?.ID}>
-                                <div className="card">
-                                    <figure className="card-img-top overlay overlay-1 hover-scale">
-                                        <Link href="#" onClick={(e) => handlePortPage(e, portFolio?.ID)}>
-                                            <FigureImage width={560} height={350} src={portFolio?.thumnailFile}/>
-                                            <span className="bg"/>
-                                        </Link>
+                            {portFolio?.map((portFolio: any, index: number) => (
+                                <article className="item post col-md-4" key={portFolio?.ID}>
+                                    <div className="card">
+                                        <figure className="card-img-top overlay overlay-1 hover-scale">
+                                            <Link href="#" onClick={(e) => handlePortPage(e, portFolio?.ID)}>
+                                                <FigureImage width={560} height={350} src={portFolio?.thumnailFile}/>
+                                                <span className="bg"/>
+                                            </Link>
 
-                                        <figcaption>
-                                            <h5 className="from-top mb-0">Read More</h5>
-                                        </figcaption>
-                                    </figure>
+                                            <figcaption>
+                                                <h5 className="from-top mb-0">Read More</h5>
+                                            </figcaption>
+                                        </figure>
 
-                                    <div className="card-body">
-                                        <div className="post-header">
-                                            <h2 className="post-title h3 mt-1 mb-3 overflow-hidden dots-main-post-title">
-                                                <NextLink onClick={(e) => handlePortPage(e, portFolio?.ID)} title={portFolio?.promSubject} className="link-dark fs-25" href="#"/>
-                                            </h2>
-                                        </div>
+                                        <div className="card-body">
+                                            <div className="post-header">
+                                                <h2 className="post-title h3 mt-1 mb-3 overflow-hidden dots-main-post-title">
+                                                    <NextLink onClick={(e) => handlePortPage(e, portFolio?.ID)} title={portFolio?.promSubject} className="link-dark fs-25" href="#"/>
+                                                </h2>
+                                            </div>
 
-                                        <div className="post-content overflow-hidden dots-main-post-detail">
-                                            <p className="mb-0 fs-18">{portFolio?.excerpt}</p>
+                                            <div className="post-content overflow-hidden dots-main-post-detail">
+                                                <p className="mb-0 fs-18">{portFolio?.excerpt}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                    <div className="text-center mt-10">
-                        <NextLink href="/portfolio" title="포트폴리오 바로가기" className="btn btn-outline-primary"/>
+                                </article>
+                            ))}
+                        </div>
+                        <div className="text-center mt-10">
+                            <NextLink href="/portfolio" title="포트폴리오 바로가기" className="btn btn-outline-primary"/>
+                        </div>
                     </div>
                 </div>
 
