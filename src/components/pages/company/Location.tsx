@@ -5,12 +5,15 @@ export default function Location() {
         <>
             <section
                 className="wrapper image-wrapper bg-image bg-overlay text-white"
-                style={{backgroundImage: "url(/img/hyundai/company/ceo-greeting-banner.jpg)"}}>
+                style={{ 
+                    backgroundImage: "url(/img/hyundai/company/companyLocation.png)", 
+                    backgroundPosition: "center bottom"
+                }}>
                 <div className="container min-vh-60 d-flex align-items-center">
                     <div className="row w-100">
                         <div className="mx-auto">
                             <p className="lead fs-lg text-yellow">
-                                Location
+                                오시는길
                             </p>
                             <h1 className="display-1 text-white mb-3">오시는길</h1>
                         </div>

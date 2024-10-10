@@ -7,9 +7,14 @@ export default function AboutUs() {
         <>
             <section
                 className="wrapper image-wrapper bg-image bg-overlay text-white"
-                style={{backgroundImage: "url(/img/hyundai/company/ceo-greeting-banner.jpg)"}}>
+                style={{backgroundImage: "url(/img/hyundai/company/companyIntroduction-banner.png)"}}>
                 <div className="container min-vh-60 d-flex align-items-center">
                     <div className="row w-100">
+                    <div className="mx-auto">
+                            <p className="lead fs-lg text-yellow">
+                                소개
+                            </p>
+                        </div>
                         <div className="col-md-12">
                             <h1 className="display-2 text-white mb-3">미래를 건설하는 일, 그 중심에 (주)현대엔지니어링이 있습니다.</h1>
                             <p className="lead fs-lg">

@@ -36,9 +36,14 @@ export default function PortfolioDetail({
         <>
             <section
                 className="wrapper image-wrapper bg-image bg-overlay text-white"
-                style={{backgroundImage: "url(/img/hyundai/promotion-center/promotion-center-banner.jpg)"}}>
+                style={{backgroundImage: "url(/img/hyundai/promotion-center/portfolioBanner.png"}}>
                 <div className="container min-vh-60 d-flex align-items-center">
                     <div className="row w-100">
+                    <div className="mx-auto">
+                            <p className="lead fs-lg text-yellow">
+                                포트폴리오
+                            </p>
+                        </div>
                         <div className="col-md-12">
                             <h1 className="display-2 text-white mb-3">(주)현대엔지니어링의 다양한 사업분야 실적현황입니다.</h1>
                             <p className="lead fs-lg">

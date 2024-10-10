@@ -28,14 +28,14 @@ export default function Inquiry() {
         <>
             <section
                 className="wrapper image-wrapper bg-image bg-overlay text-white"
-                style={{backgroundImage: "url(/img/hyundai/company/ceo-greeting-banner.jpg)"}}>
+                style={{backgroundImage: "url(/img/hyundai/contactUsbanner.png)"}}>
                 <div className="container min-vh-60 d-flex align-items-center">
                     <div className="row w-100">
                         <div className="mx-auto">
                             <p className="lead fs-lg text-yellow">
                                 문의하기
                             </p>
-                            <h1 className="display-1 text-white mb-3">문의하기</h1>
+                            <h1 className="display-1 text-white mb-3">빠른 시일안에 연락 드리겠습니다</h1>
                         </div>
                     </div>
                 </div>

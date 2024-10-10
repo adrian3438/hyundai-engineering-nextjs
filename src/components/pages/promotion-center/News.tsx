@@ -32,14 +32,19 @@ export default function News({data, language, bussinessTypeList, totalCount, pag
         <>
             <section
                 className="wrapper image-wrapper bg-image bg-overlay text-white"
-                style={{backgroundImage: "url(/img/hyundai/promotion-center/promotion-center-banner.jpg)"}}>
+                style={{backgroundImage: "url(/img/hyundai/promotion-center/promotionCenter-banner.png)"}}>
                 <div className="container min-vh-60 d-flex align-items-center">
                     <div className="row w-100">
-                        <div className="col-md-12">
-                            <h1 className="display-2 text-white mb-3">홍보센터</h1>
-                            <p className="lead fs-lg">
-                                (주)현대엔지니어링의 최신 현황을 소개해 드립니다.
+                    <div className="mx-auto">
+                            <p className="lead fs-lg text-yellow">
+                                홍보센터
                             </p>
+                        </div>
+                        <div className="col-md-12">
+                            <h1 className="display-2 text-white mb-3">(주)현대엔지니어링의 최신 현황을 소개해 드립니다.</h1>
+                            {/* <p className="lead fs-lg">
+                                (주)현대엔지니어링의 최신 현황을 소개해 드립니다.
+                            </p> */}
                         </div>
                     </div>
                 </div>

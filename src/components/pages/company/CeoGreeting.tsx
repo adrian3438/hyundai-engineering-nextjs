@@ -6,12 +6,20 @@ export default function CeoGreeting() {
         <>
             <section
                 className="wrapper image-wrapper bg-image bg-overlay text-white"
-                style={{backgroundImage: "url(/img/hyundai/company/ceo-greeting-banner.jpg)"}}>
+                style={{backgroundImage: "url(/img/hyundai/company/ceoGreerings-banner.png)"}}>
                 <div className="container min-vh-60 d-flex align-items-center">
                     <div className="row w-100">
                         <div className="col-md-12">
+                        <div className="mx-auto">
+                            <p className="lead fs-lg text-yellow">
+                                CEO 인사말
+                            </p>
+                        </div>
                             <h1 className="display-2 text-white mb-3">신뢰와 정직으로 고객에게 보답합니다</h1>
                         </div>
+
+                        
+
                     </div>
                 </div>
             </section>
