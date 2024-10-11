@@ -1,22 +1,24 @@
 'use client'
-
-import useIsotope from "../../../hooks/useIsotope";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 import {useEffect, useState} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
+import api from "lib/api";
 
 interface Props {
-    data : any
+    page : number
     typeList : any
-    totalCount : number
+    type : any
 }
-export default function Portfolio({data ,typeList, totalCount} : Props) {
+export default function Portfolio({page, typeList, type} : Props) {
     const router = useRouter()
     const [visiable , setVisiable] = useState<number>(1)
-    const param = useSearchParams().get('type');
-    const { handleFilterKeyChange, filterKey } = useIsotope(`.type_${param}`);
+    const [data , setData] = useState<any>([])
+    async function getList () {
+        const response = await api.get(`/user/promotion/getContentsList.php?contentType=${2}&businessDivisionType=${type || 0}&userLang=KR&page=${page || 1}&size=99&sortColumn=date&sortOrder=desc`)
+        if(response?.data?.result === true) {setData(response?.data?.List)}
+    }
     function handlePage (e : any , id : number) {
         e.preventDefault()
         router.push(`/portfolio/${id}`)
@@ -24,6 +26,9 @@ export default function Portfolio({data ,typeList, totalCount} : Props) {
     function handleShowMore() {
         setVisiable(prevVisibleItems => prevVisibleItems + 1);
     }
+    useEffect(()=>{
+        getList()
+    }, [page, type])
 
     return (
         <>
@@ -54,23 +59,26 @@ export default function Portfolio({data ,typeList, totalCount} : Props) {
                             {/* ========== filter section ========== */}
                             <div className="isotope-filter filter mb-10">
                                 <ul>
-                                    <li>
-                                        <a
-                                            onClick={handleFilterKeyChange('*')}
-                                            className={clsx({"filter-item": true, active: '*' === filterKey}) + ' fs-18'}>
+                                    <li 
+                                        onClick={()=>router.push(`/portfolio`)}
+                                    >
+                                        <a>
                                             All
                                         </a>
                                     </li>
                                     {typeList.map((type:any, index:number) => (
-                                        (index !== 5 &&
-                                            <li key={index}>
-                                                <a
-                                                    onClick={handleFilterKeyChange(`.type_${type?.codeId.toString()}`)}
-                                                    className={clsx({"filter-item": true, active: `.type_${type?.codeId.toString()}` === filterKey}) + ' fs-18'}>
+                                        <>
+                                        {type?.codeId !== 9 &&
+                                            <li 
+                                                key={index}
+                                                onClick={()=>router.push(`/portfolio?type=${type?.codeId}`)}
+                                            >
+                                                <a>
                                                     {type?.codeName?.split(',')[0]}
                                                 </a>
                                             </li>
-                                        )
+                                        }
+                                        </>
                                     ))}
                                 </ul>
                             </div>
@@ -78,8 +86,8 @@ export default function Portfolio({data ,typeList, totalCount} : Props) {
                             {/* ========== projects section ========== */}
                             <div className="row gx-md-10 gy-10 gy-md-13 isotope">
                                 {data.map((list: any, index: number) => (
-                                    <div className={`project item col-md-3 type_${list?.businessDivisionType.toString()}`} key={index}>
-                                        <Link href={'#'} onClick={(e)=>handlePage(e, list?.ID)}>
+                                    <div key={index}>
+                                        <Link href={'#'}>
                                             <figure className="lift rounded mb-6">
                                                 <Image
                                                     alt={list?.thumnailFilename}
