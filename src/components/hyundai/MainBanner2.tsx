@@ -21,7 +21,7 @@ export default function MainBanner2() {
                 <SwiperSlide>
                     <div
                         className="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image"
-                        style={{backgroundImage: 'url("/img/photos/bg7.jpg")'}}>
+                        style={{backgroundImage: 'url("/img/hyundai/main-construction-1.jpg")'}}>
                         <div className="container h-100">
                             <div className="row h-100">
                                 <div className="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start">
@@ -40,7 +40,7 @@ export default function MainBanner2() {
                 <SwiperSlide>
                     <div
                         className="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image"
-                        style={{backgroundImage: 'url("/img/photos/bg28.jpg")'}}>
+                        style={{backgroundImage: 'url("/img/hyundai/main-construction-2.jpg")'}}>
                         <div className="container h-100">
                             <div className="row h-100">
                                 <div className="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-10 text-center text-lg-start justify-content-center align-self-center align-items-start">
@@ -59,7 +59,7 @@ export default function MainBanner2() {
                 <SwiperSlide>
                     <div
                         className="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image"
-                        style={{backgroundImage: 'url("/img/photos/bg29.jpg")'}}>
+                        style={{backgroundImage: 'url("/img/hyundai/main-construction-3.jpg")'}}>
                         <div className="container h-100">
                             <div className="row h-100">
                                 <div className="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start">
