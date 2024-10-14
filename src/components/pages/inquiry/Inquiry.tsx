@@ -22,13 +22,14 @@ export default function Inquiry() {
         }
     }
     function save () {
-
+        
     }
     return (
         <>
             <section
                 className="wrapper image-wrapper bg-image bg-overlay text-white"
-                style={{backgroundImage: "url(/img/hyundai/contactUsbanner.png)"}}>
+                style={{backgroundImage: "url(/img/hyundai/contactUsbanner.png)"}}
+            >
                 <div className="container min-vh-60 d-flex align-items-center">
                     <div className="row w-100">
                         <div className="mx-auto">

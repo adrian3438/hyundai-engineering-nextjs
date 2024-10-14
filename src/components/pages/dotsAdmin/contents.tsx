@@ -10,6 +10,7 @@ import { useAppSelector } from "store/hooks"
 import Head from "next/head"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
+import AdminDateBox from "components/DotsAdmin/Element/DateBox"
 interface Props {
     id : any
     lang : any
@@ -276,6 +277,11 @@ export default function ContentsPage ({
                                 }
                             </td>
                         </tr>
+
+                        <AdminDateBox
+                        
+                        />
+                        
                     </tbody>
                 </table>
             </div>
