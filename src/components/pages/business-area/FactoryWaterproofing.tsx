@@ -32,7 +32,7 @@ export default function FactoryWaterproofing() {
                     </div>
                 </div>
 
-                <div className="row mt-10">
+                <div className="row mt-15">
                     <div className="col-md-10 m-auto">
                         <div className="row justify-content-between align-items-center">
                             <div className="col-md-6 text-center">

@@ -14,6 +14,10 @@ export const NavBarData = {
                 "linkUrl": "/company/history",
             },
             {
+                "title": "인증현황",
+                "linkUrl": "/company/certification",
+            },
+            {
                 "title": "오시는길",
                 "linkUrl": "/company/location",
             }

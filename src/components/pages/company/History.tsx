@@ -13,7 +13,7 @@ const HistoryData = [
     {
         "yearMonth": "2002.03",
         "kr": ["남구 사무실 개설", "인천광역시 남동구 고잔동 38"],
-        "imageUrl": "/img/hyundai/company/history/history-2.png"
+        "imageUrl": "/img/hyundai/company/history/history-2002.jpg"
     },
     {
         "yearMonth": "2007.12",
@@ -23,7 +23,7 @@ const HistoryData = [
     {
         "yearMonth": "2012.03",
         "kr": ["법인 설립 및 상호변경", "(주)현대엔지니어링 법인화", "인천광역시 연수구 송도미래로 30 스마트밸리 지식산업센터 D동 1610호"],
-        "imageUrl": "/img/hyundai/company/history/history-4.png"
+        "imageUrl": "/img/hyundai/company/history/history-2012.jpg"
     },
     {
         "yearMonth": "2013.02",
@@ -63,9 +63,6 @@ export default function History() {
                                 고객의 꿈을 현실로 만들어가는 우리의 건설 실적, 그 자체가 신뢰의 증거입니다.
                             </p>
                         </div>
-                        <div className="col-md-9">
-                            <p className="display-2 mb-0 text-end">1997년 창립</p>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -74,7 +71,7 @@ export default function History() {
 
             <div className="container py-17">
                 <div className="row">
-                    <h1 className="text-center mb-15"><span className="text-primary">(주) 현대엔지니어링</span> 성장과정</h1>
+                    <h1 className="text-center mb-15"><span className="text-primary">(주) 현대엔지니어링의</span> 성장과정</h1>
                     <div className="col-md-8 mx-auto">
                         <div className="row border rounded px-10 pt-13 pb-10 justify-content-between position-relative align-items-center">
                             <span className="clip-background">연혁</span>
@@ -96,7 +93,7 @@ export default function History() {
                                                  backgroundImage: `url(${item.imageUrl})`,
                                                  backgroundRepeat: 'no-repeat',
                                                  backgroundSize: `100% auto`,
-                                                 backgroundPosition: `${index === 5 ? 'center 0' : 'center center'}`,
+                                                 backgroundPosition: `${index === 5 || index === 1 ? 'center 0' : 'center center'}`,
                                                  maxWidth: "574px",
                                                  minHeight: "438px"
                                              }}

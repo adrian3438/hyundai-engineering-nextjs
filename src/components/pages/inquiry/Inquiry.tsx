@@ -24,7 +24,7 @@ export default function Inquiry() {
     function save () {
 
     }
-    return ( 
+    return (
         <>
             <section
                 className="wrapper image-wrapper bg-image bg-overlay text-white"
@@ -44,7 +44,7 @@ export default function Inquiry() {
             {/*<NavBar depthId={5}/>*/}
 
             <div className="container py-17">
-                <h2 className="display-4 text-center mb-15">무엇이 궁금하신가요?</h2>
+                <h2 className="display-4 text-center mb-15">(주)현대엔지니어링은 여러분의 연락을 기다립니다</h2>
                 <section className="row my-10 justify-content-center">
                     <div className="row col-md-11">
                         <form className="contact-form needs-validation" method="post">

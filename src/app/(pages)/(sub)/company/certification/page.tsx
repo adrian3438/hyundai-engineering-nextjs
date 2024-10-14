@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import Certification from "../../../../components/pages/certification/Certification";
+import Certification from "../../../../../components/pages/certification/Certification";
 
 
 export default function InquiryPage() {

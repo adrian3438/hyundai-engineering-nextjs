@@ -12,6 +12,7 @@ interface Props {
     type : any
 }
 export default function Portfolio({page, typeList, type} : Props) {
+    const param = useSearchParams().get('type');
     const router = useRouter()
     const [visiable , setVisiable] = useState<number>(1)
     const [data , setData] = useState<any>([])
@@ -59,21 +60,21 @@ export default function Portfolio({page, typeList, type} : Props) {
                             {/* ========== filter section ========== */}
                             <div className="isotope-filter filter mb-10">
                                 <ul>
-                                    <li 
+                                    <li
                                         onClick={()=>router.push(`/portfolio`)}
                                     >
-                                        <a>
+                                        <a className={param === null || undefined ? 'fs-25 active' : 'fs-25 text-ash'}>
                                             All
                                         </a>
                                     </li>
                                     {typeList.map((type:any, index:number) => (
                                         <>
                                         {type?.codeId !== 9 &&
-                                            <li 
+                                            <li
                                                 key={index}
                                                 onClick={()=>router.push(`/portfolio?type=${type?.codeId}`)}
                                             >
-                                                <a>
+                                                <a className={Number(param) === type.codeId ? 'active fs-25 text-ash' : 'fs-25 text-ash'}>
                                                     {type?.codeName?.split(',')[0]}
                                                 </a>
                                             </li>
@@ -86,7 +87,7 @@ export default function Portfolio({page, typeList, type} : Props) {
                             {/* ========== projects section ========== */}
                             <div className="row gx-md-10 gy-10 gy-md-13 isotope">
                                 {data.map((list: any, index: number) => (
-                                    <div key={index}>
+                                    <div key={index} className="project item col-md-3">
                                         <Link href={'#'}>
                                             <figure className="lift rounded mb-6">
                                                 <Image

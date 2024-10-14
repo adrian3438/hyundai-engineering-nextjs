@@ -28,7 +28,7 @@ export default function FactoryMaintenance() {
                         <div className="border rounded px-10 py-10 position-relative fs-20">
                             <span className="clip-background">공장보수</span>
                             <p><strong>공장보수</strong>의 경우에는 리모델링보다는 조금 더 <strong>세부적인 공간을 관리하는 개념</strong>으로써 전반적인 공장을 목표로 하는것이 아닌 <strong>필요한 공간들을 위주로 중점적으로 관리</strong>하는 것을 말합니다.</p>
-                            <p>단순히 공장 건물만을 보수하는 것이 아닌 공장전체를 아우르는 담장(붉은벽돌담벼락)과 주차장 바닥, 공장건물의 외벽 및 천정 노후부분들, 그리고 세부적으로는 사무실, 화장실, 휴개실의 샷시, 판넬, 그리고 문틀과도 같은 <strong>세세한 것까지 관리</strong>합니다.</p>
+                            <p>단순히 공장 건물만을 보수하는 것이 아닌 공장전체를 아우르는 담장(붉은벽돌담벼락)과 주차장 바닥, 공장건물의 외벽 및 천정 노후부분들, 그리고 세부적으로는 사무실, 화장실, 휴게실의 샷시, 판넬, 그리고 문틀과도 같은 <strong>세세한 것까지 관리</strong>합니다.</p>
                             <p className="mb-0">특히, 공장보수는 <strong>전문가의 지식과 경험이 필수적인 작업</strong>이기 때문에 저희 <strong>(주)현대엔지니어링</strong>은 30년 경험의 전문가가 직접 현장을 관리, 감독하여 <strong>최상의 결과물</strong>을 보여드릴 것을 약속합니다.</p>
                         </div>
                     </div>

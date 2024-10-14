@@ -65,6 +65,8 @@ export default function FactoryRemodeling() {
                             </div>
                         </div>
 
+                        <hr/>
+
                         <div className="row my-15 align-items-center flex-row-reverse justify-content-between">
                             <div className="col-md-5">
                                 <Image src="/img/hyundai/business-area/factoryRemodeling-1.png" alt="지속 가능 경영의 중요성" width={375} height={375} className="w-100 h-auto"/>
@@ -75,6 +77,8 @@ export default function FactoryRemodeling() {
                             </div>
                         </div>
 
+                        <hr/>
+
                         <div className="row mb-15 align-items-center justify-content-between">
                             <div className="col-md-5">
                                 <Image src="/img/hyundai/business-area/factoryRemodeling-2.png" alt="지속 가능 경영의 중요성" width={375} height={375} className="w-100 h-auto"/>
@@ -84,6 +88,8 @@ export default function FactoryRemodeling() {
                                 <p className="lead fs-lg mb-0">이러한 리모델링은 단순한 미관 개선 이상의 효과를 제공하며, 공장의 전체적인 가치를 높여주기도 합니다. 현대적인 디자인과 기능이 결합된 리모델링을 통해, 공장의 외관은 더욱 <strong>세련되고 현대적인 느낌</strong>을 줄 수 있습니다.</p>
                             </div>
                         </div>
+
+                        <hr/>
 
                         <div className="row mb-15 align-items-center flex-row-reverse justify-content-between">
                             <div className="col-md-5">

@@ -21,9 +21,6 @@ export default function AboutUs() {
                                 고객의 꿈을 현실로 만들어가는 우리의 건설 실적, 그 자체가 신뢰의 증거입니다.
                             </p>
                         </div>
-                        <div className="col-md-9">
-                            <p className="display-2 mb-0 text-end">1997년 창립</p>
-                        </div>
                     </div>
                 </div>
             </section>

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import NavBar from "../../hyundai/NavBar";
 
 export default function Certification() {
     return (
@@ -18,6 +19,8 @@ export default function Certification() {
                     </div>
                 </div>
             </section>
+
+            <NavBar depthId="menu1" activeId={3}/>
 
             <div className="container py-17">
                 <div className="row">
