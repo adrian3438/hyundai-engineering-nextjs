@@ -19,8 +19,8 @@ export default async function Home({searchParams : {lang}} : 'kr' | 'en' | any) 
   return (
       <Fragment>
           <Main
-            news={news}
-            portFolio={portFolio}
+            /*news={news}
+            portFolio={portFolio}*/
           />
       </Fragment>
   );
