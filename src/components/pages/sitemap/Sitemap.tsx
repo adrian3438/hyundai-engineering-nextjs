@@ -24,6 +24,7 @@ export default function Sitemap() {
                                         <li><Link href="/company/ceo-greeting" className="fs-18">CEO 인사말</Link></li>
                                         <li><Link href="/company/about-us" className="fs-18">소개</Link></li>
                                         <li><Link href="/company/history" className="fs-18">연혁</Link></li>
+                                        <li><Link href="/company/certification" className="fs-18">인증현황</Link></li>
                                         <li><Link href="/company/location" className="fs-18">오시는길</Link></li>
                                     </ul>
                                 </li>
@@ -31,7 +32,7 @@ export default function Sitemap() {
                         </div>
                         <div className="col-md-3 px-4 mb-10">
                             <ul className="p-0">
-                                <li><p className="border text-center fw-bold bg-primary fs-25"><Link href="#" className="text-white">사업분야</Link></p>
+                                <li><p className="border text-center fw-bold bg-primary fs-25"><Link href="/business-area/new-construction" className="text-white">사업분야</Link></p>
                                     <ul className="ps-4">
                                         <li><Link href="/business-area/new-construction" className="fs-18">신축</Link></li>
                                         <li><Link href="/business-area/extension-reconstruction" className="fs-18">증 · 개축</Link></li>
@@ -44,18 +45,25 @@ export default function Sitemap() {
                         </div>
                         <div className="col-md-3 px-4 mb-10">
                             <ul className="p-0">
-                                <li><p className="border text-center fw-bold bg-primary fs-25"><Link href="#" className="text-white">홍보센터</Link></p>
+                                <li><p className="border text-center fw-bold bg-primary fs-25"><Link href="/portfolio" className="text-white">포트폴리오</Link></p>
                                     <ul className="ps-4">
-                                        <li><Link href="/promotion-center/portfolio" className="fs-18">포트폴리오</Link></li>
-                                        <li><Link href="/promotion-center/videos" className="fs-18">영상</Link></li>
-                                        <li><Link href="/promotion-center/news" className="fs-18">소식지</Link></li>
+                                        <li><Link href="/portfolio?type=3" className="fs-18">신축</Link></li>
+                                        <li><Link href="/portfolio?type=4" className="fs-18">증 · 개축</Link></li>
+                                        <li><Link href="/portfolio?type=5" className="fs-18">공장 리모델링</Link></li>
+                                        <li><Link href="/portfolio?type=6" className="fs-18">공장방수</Link></li>
+                                        <li><Link href="/portfolio?type=7" className="fs-18">공장보수</Link></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                         <div className="col-md-3 px-4 mb-10">
                             <ul className="p-0">
-                                <li><p className="border text-center fw-bold bg-primary fs-25"><Link href="/certification" className="text-white">인증현황</Link></p></li>
+                                <li><p className="border text-center fw-bold bg-primary fs-25"><Link href="#" className="text-white">홍보센터</Link></p>
+                                    <ul className="ps-4">
+                                        <li><Link href="/promotion-center/videos" className="fs-18">영상</Link></li>
+                                        <li><Link href="/promotion-center/news" className="fs-18">소식지</Link></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                         <div className="col-md-3 px-4 mb-10">
