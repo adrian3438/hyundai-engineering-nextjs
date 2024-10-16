@@ -47,7 +47,7 @@ export default function Main() {
                                     <Link href="/business-area/new-construction" className="h-100">
                                         <Image src="/img/hyundai/main/business-main-1.jpg" alt="신축" width={560} height={350} className="w-100 h-100"/>
                                         <span style={{backgroundColor:'rgba(0,0,0,0.3)', display: 'block'}} className="w-100 h-100 position-absolute top-0 start-0"></span>
-                                        <span className="position-absolute fs-35 fw-bold top-50 start-50 translate-middle w-100" style={{zIndex: 8}}>신축 <br/><span className="fs-16">MORE <i className="uil uil-arrow-circle-right d-inline align-middle fs-24"></i></span></span>
+                                        <span className="position-absolute fs-35 fw-bold top-50 start-50 translate-middle w-100" style={{zIndex: 8}}>신축 <br/><span className="fs-16">MORE <i className="business-more d-inline-block align-middle"></i></span></span>
                                         {/*<span className="bg" style={{zIndex: 9}}/>*/}
                                     </Link>
 
@@ -61,7 +61,7 @@ export default function Main() {
                                     <Link href="/business-area/extension-reconstruction" className="h-100">
                                         <Image src="/img/hyundai/main/business-main-2.jpg" alt="image title" width={560} height={350} className="w-100 h-100"/>
                                         <span style={{backgroundColor: 'rgba(0,0,0,0.3)', display: 'block'}} className="w-100 h-100 position-absolute top-0 start-0"></span>
-                                        <span className="position-absolute fs-35 fw-bold top-50 start-50 translate-middle w-100" style={{zIndex: 8}}>증 · 개축 <br/><span className="fs-16">MORE <i className="uil uil-arrow-circle-right d-inline align-middle fs-24"></i></span></span>
+                                        <span className="position-absolute fs-35 fw-bold top-50 start-50 translate-middle w-100" style={{zIndex: 8}}>증 · 개축 <br/><span className="fs-16">MORE <i className="business-more d-inline-block align-middle"></i></span></span>
                                         {/*<span className="bg" style={{zIndex: 9}}/>*/}
                                     </Link>
 
@@ -75,7 +75,7 @@ export default function Main() {
                                     <Link href="/business-area/factory-remodeling" className="h-100">
                                         <Image src="/img/hyundai/main/business-main-3.jpg" alt="image title" width={560} height={350} className="w-100 h-100"/>
                                         <span style={{backgroundColor: 'rgba(0,0,0,0.3)', display: 'block'}} className="w-100 h-100 position-absolute top-0 start-0"></span>
-                                        <span className="position-absolute fs-35 fw-bold top-50 start-50 translate-middle w-100" style={{zIndex: 8}}>공장 리모델링 <br/><span className="fs-16">MORE <i className="uil uil-arrow-circle-right d-inline align-middle fs-24"></i></span></span>
+                                        <span className="position-absolute fs-35 fw-bold top-50 start-50 translate-middle w-100" style={{zIndex: 8}}>공장 리모델링 <br/><span className="fs-16">MORE <i className="business-more d-inline-block align-middle"></i></span></span>
                                         {/*<span className="bg" style={{zIndex: 9}}/>*/}
                                     </Link>
 
@@ -89,7 +89,7 @@ export default function Main() {
                                     <Link href="/business-area/factory-waterproofing" className="h-100">
                                         <Image src="/img/hyundai/main/business-main-4.jpg" alt="image title" width={560} height={350} className="w-100 h-100"/>
                                         <span style={{backgroundColor: 'rgba(0,0,0,0.3)', display: 'block'}} className="w-100 h-100 position-absolute top-0 start-0"></span>
-                                        <span className="position-absolute fs-35 fw-bold top-50 start-50 translate-middle w-100" style={{zIndex: 8}}>공장방수 <br/><span className="fs-16">MORE <i className="uil uil-arrow-circle-right d-inline align-middle fs-24"></i></span></span>
+                                        <span className="position-absolute fs-35 fw-bold top-50 start-50 translate-middle w-100" style={{zIndex: 8}}>공장방수 <br/><span className="fs-16">MORE <i className="business-more d-inline-block align-middle"></i></span></span>
                                         {/*<span className="bg" style={{zIndex: 9}}/>*/}
                                     </Link>
 
@@ -103,7 +103,7 @@ export default function Main() {
                                     <Link href="/business-area/factory-maintenance" className="h-100">
                                         <Image src="/img/hyundai/main/business-main-5.jpg" alt="image title" width={560} height={350} className="w-100 h-100"/>
                                         <span style={{backgroundColor: 'rgba(0,0,0,0.3)', display: 'block'}} className="w-100 h-100 position-absolute top-0 start-0"></span>
-                                        <span className="position-absolute fs-35 fw-bold top-50 start-50 translate-middle w-100" style={{zIndex: 8}}>공장보수 <br/><span className="fs-16">MORE <i className="uil uil-arrow-circle-right d-inline align-middle fs-24"></i></span></span>
+                                        <span className="position-absolute fs-35 fw-bold top-50 start-50 translate-middle w-100" style={{zIndex: 8}}>공장보수 <br/><span className="fs-16">MORE <i className="business-more d-inline-block align-middle"></i></span></span>
                                         {/*<span className="bg" style={{zIndex: 9}}/>*/}
                                     </Link>
 
