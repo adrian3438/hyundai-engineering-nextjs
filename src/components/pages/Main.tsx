@@ -225,8 +225,8 @@ export default function Main() {
                                         </a>
                                     </div>
                                     <div className="text-center p-0 h-100">
-                                        <a href="/company/certification" className="text-white d-block h-100 position-relative h-100" style={{height: '78px'}}>
-                                            <i className="uil uil-award fs-43 align-center position-absolute start-50 translate-middle-x" style={{top: '-18px'}}></i>
+                                        <a href="/company/certification" className="text-white d-block h-100 position-relative h-100" style={{height: '78px !important'}}>
+                                            <i className="uil uil-award fs-43 align-center position-absolute start-50 translate-middle-x" style={{top: '-13px'}}></i>
                                             <p className="mb-0 position-absolute w-100 text-center bottom-0">인증현황</p>
                                         </a>
                                     </div>
