@@ -68,12 +68,20 @@ export default function Sitemap() {
                         </div>
                         <div className="col-md-3 px-4 mb-10">
                             <ul className="p-0">
-                                <li><p className="border text-center fw-bold bg-primary fs-25"><Link href="/esg" className="text-white">지속가능경영</Link></p></li>
+                                <li><p className="border text-center fw-bold bg-primary fs-25"><Link href="/esg" className="text-white">지속가능경영</Link></p>
+                                    <ul className="ps-4">
+                                        <li><Link href="/esg" className="fs-18">지속가능경영</Link></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                         <div className="col-md-3 px-4 mb-10">
                             <ul className="p-0">
-                                <li><p className="border text-center fw-bold bg-primary fs-25"><Link href="/inquiry" className="text-white">문의하기</Link></p></li>
+                                <li><p className="border text-center fw-bold bg-primary fs-25"><Link href="/inquiry" className="text-white">문의하기</Link></p>
+                                    <ul className="ps-4">
+                                        <li><Link href="/inquiry" className="fs-18">문의하기</Link></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>

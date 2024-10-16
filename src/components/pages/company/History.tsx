@@ -13,7 +13,7 @@ const HistoryData = [
     {
         "yearMonth": "2002.03",
         "kr": ["남구 사무실 개설", "인천광역시 남동구 고잔동 38"],
-        "imageUrl": "/img/hyundai/company/history/history-2002.jpg"
+        "imageUrl": "/img/hyundai/company/history/history-2012.jpg"
     },
     {
         "yearMonth": "2007.12",
@@ -23,7 +23,7 @@ const HistoryData = [
     {
         "yearMonth": "2012.03",
         "kr": ["법인 설립 및 상호변경", "(주)현대엔지니어링 법인화", "인천광역시 연수구 송도미래로 30 스마트밸리 지식산업센터 D동 1610호"],
-        "imageUrl": "/img/hyundai/company/history/history-2012.jpg"
+        "imageUrl": "/img/hyundai/company/history/history-2002.jpg"
     },
     {
         "yearMonth": "2013.02",

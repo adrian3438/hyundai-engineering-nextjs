@@ -65,7 +65,7 @@ export default function Header({
 
         <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100">
           <ul className="navbar-nav">
-            <li className="nav-item dropdown"><a href="/company/ceo-greeting" className="nav-link fs-22">회사소개</a>
+            <li className="nav-item dropdown"><a href="/company/ceo-greeting" className="nav-link fs-22" data-bs-toggle="dropdown">회사소개</a>
               <ul className="dropdown-menu">
                 <li className="nav-item"><a className="dropdown-item" href="/company/ceo-greeting">CEO 인사말</a></li>
                 <li className="nav-item"><a className="dropdown-item" href="/company/about-us">소개</a></li>
@@ -74,7 +74,7 @@ export default function Header({
                 <li className="nav-item"><a className="dropdown-item" href="/company/location">오시는길</a></li>
               </ul>
             </li>
-            <li className="nav-item dropdown"><a href="/business-area/new-construction" className="nav-link fs-22">사업분야</a>
+            <li className="nav-item dropdown"><a href="/business-area/new-construction" className="nav-link fs-22" data-bs-toggle="dropdown">사업분야</a>
               <ul className="dropdown-menu">
                 <li className="nav-item"><a className="dropdown-item" href="/business-area/new-construction">신축</a></li>
                 <li className="nav-item"><a className="dropdown-item" href="/business-area/extension-reconstruction">증 · 개축</a></li>
@@ -83,7 +83,7 @@ export default function Header({
                 <li className="nav-item"><a className="dropdown-item" href="/business-area/factory-maintenance">공장보수</a></li>
               </ul>
             </li>
-            <li className="nav-item dropdown"><a href="/portfolio" className="nav-link fs-22">포트폴리오</a>
+            <li className="nav-item dropdown"><a href="/portfolio" className="nav-link fs-22" data-bs-toggle="dropdown">포트폴리오</a>
               <ul className="dropdown-menu">
                 <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=3">신축</a></li>
                 <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=4">증 · 개축</a></li>
@@ -92,7 +92,7 @@ export default function Header({
                 <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=7">공장보수</a></li>
               </ul>
             </li>
-            <li className="nav-item dropdown"><a href="/promotion-center/videos" className="nav-link fs-22">홍보센터</a>
+            <li className="nav-item dropdown"><a href="/promotion-center/videos" className="nav-link fs-22" data-bs-toggle="dropdown">홍보센터</a>
               <ul className="dropdown-menu">
                 <li className="nav-item"><a className="dropdown-item" href="/promotion-center/videos">영상</a></li>
                 <li className="nav-item"><a className="dropdown-item" href="/promotion-center/news">소식지</a></li>

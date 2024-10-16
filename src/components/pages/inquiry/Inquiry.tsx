@@ -22,7 +22,7 @@ export default function Inquiry() {
         }
     }
     function save () {
-        
+
     }
     return (
         <>
@@ -44,8 +44,15 @@ export default function Inquiry() {
 
             {/*<NavBar depthId={5}/>*/}
 
-            <div className="container py-17">
-                <h2 className="display-4 text-center mb-15">(주)현대엔지니어링은 여러분의 연락을 기다립니다</h2>
+            <div className="container py-16">
+                <div className="mb-15">
+                    <h2 className="display-4 text-center mb-5">(주)현대엔지니어링은 여러분의 연락을 기다립니다</h2>
+                    <div className="row">
+                        <div className="col-md-8 mx-auto bg-pale-ash display-4 text-center border py-2 rounded">
+                            대표전화번호<br/> <i className="uil uil-phone align-middle"></i> 032-837-5647 / 010-5256-9489
+                        </div>
+                    </div>
+                </div>
                 <section className="row my-10 justify-content-center">
                     <div className="row col-md-11">
                         <form className="contact-form needs-validation" method="post">
