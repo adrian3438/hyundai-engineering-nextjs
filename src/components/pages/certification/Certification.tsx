@@ -39,7 +39,7 @@ export default function Certification() {
                                     </div>
                                     <div className="col-md-6 text-center">
                                         <p className="rounded p-2 bg-gray">
-                                            <Image src="/img/hyundai/certification/certification02.png" alt="건설업등록증" width={425} height={605} className="w-100 h-auto rounded-0"/>
+                                            <Image src="/img/hyundai/certification/certification03.png" alt="건설업등록증" width={425} height={605} className="w-100 h-auto rounded-0" style={{aspectRatio:"425 / 605 !important"}}/>
                                         </p>
                                         <p>건설업등록증</p>
                                     </div>
