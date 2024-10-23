@@ -210,7 +210,7 @@ export default function Main() {
                             </div>
                         </div>
                         <div className="row px-md-15 px-3 position-relative" style={{marginTop: '-100px', zIndex: 10}}>
-                            <div className="col-lg-6 col-md-8 bg-aqua py-10 px-10">
+                            <div className="col-lg-6 col-md-8 bg-aqua py-10 px-10" style={{borderRadius: '15px 0 0 15px'}}>
                                 <h2 className="text-white mb-5 text-center">회사소개</h2>
                                 <div className="row row-cols-3 align-items-center">
                                     <div className="text-center p-0 h-100 border-end">
@@ -241,7 +241,7 @@ export default function Main() {
                                     </p>
                                 </a>
                             </div>
-                            <div className="col-lg-3 col-md-12 bg-pale-ash">
+                            <div className="col-lg-3 col-md-12 bg-pale-ash" style={{borderRadius: '0 15px 15px 0'}}>
                                 <a href="/promotion-center/news" className="d-block py-10 px-xl-10 px-md-7 px-sm-10">
                                     <h2 className="text-center">소식지</h2>
                                     <p className="mt-2 mb-0 text-center"><i className="uil uil-book-open fs-50"></i><br/>바로가기</p>
