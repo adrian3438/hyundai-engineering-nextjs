@@ -225,3 +225,18 @@ body {
   background: url("/img/hyundai/main/main-more-bg.png") no-repeat 0 0;
   background-size: 100% 100%;
 }
+
+
+@media (max-width: 992px) {
+  .rounded-start {
+    &.bg-aqua {
+      border-radius: 0 !important;
+    }
+
+  }
+  .rounded-end {
+    &.bg-pale-ash {
+      border-radius: 0 !important;
+    }
+  }
+}
