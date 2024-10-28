@@ -1,6 +1,7 @@
 'use client'
 
 import Summernote from "components/DotsAdmin/Editor/Summernote"
+import useFileDownLoad from "components/useFileDownload"
 import api from "lib/api"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
@@ -101,11 +102,11 @@ export default function InquiryPage ({id} : any) {
                             <div>
                                 <span>문의 유형</span>
                                 <span>
-                                    {data?.inquiryType === 'S' && '스마일리더 앱'}
-                                    {data?.inquiryType === 'T' && '테스터'}
-                                    {data?.inquiryType === 'N' && '영양제'}
-                                    {data?.inquiryType === 'F' && '식품'}
-                                    {data?.inquiryType === 'O' && '기타'} 
+                                    {data?.inquiryType === 'NB' && '신축'}
+                                    {data?.inquiryType === 'RE' && '증개축'}
+                                    {data?.inquiryType === 'FR' && '공장리모델링'}
+                                    {data?.inquiryType === 'FW' && '공장방수'}
+                                    {data?.inquiryType === 'FP' && '공장보수'} 
                                 </span>
                             </div>
                         </li>
@@ -143,14 +144,8 @@ export default function InquiryPage ({id} : any) {
                         </li>
                         <li>
                             <div>
-                                <span>연락가능시간</span>
-                                <span>{data?.availableTime}</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <span>광고성정보수신동의</span>
-                                <span>{data?.adsAgreeStatus === 'Y' ? '동의' : '미동의'}</span>
+                                <span>개인정보수집 및 동의</span>
+                                <span>{data?.privacyAgree === 'Y' ? '동의' : '미동의'}</span>
                             </div>
                         </li>
                     </ul>
@@ -165,9 +160,20 @@ export default function InquiryPage ({id} : any) {
                     
                     <div className="fileName">
                         <span>첨부파일</span>
-                        {data?.attachedFilename ?
+                        {data?.attachedFile ?
                         <div>
-                            {/* <span onClick={()=>useFileDownLoad(data?.attachedFilename, `https://dklok.com${data?.attachedFile}`)}>{data?.attachedFilename}</span> */}
+                            <span onClick={()=>useFileDownLoad(data?.attachedFilename, data?.attachedFile)}>{data?.attachedFilename}</span>
+                        </div>
+                        :''
+                        }
+                    </div>
+                    
+                    <div className="fileName">
+                        <span>명함파일</span>
+                        {data?.attachedFile ?
+                        <div>
+                            <span style={{marginBottom : '15px'}} onClick={()=>useFileDownLoad(data?.namecardFilename, data?.namecardFile)}>{data?.namecardFilename}</span>
+                            <img src={data?.namecardFile}/>
                         </div>
                         :''
                         }
