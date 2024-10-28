@@ -12,7 +12,19 @@ export default function InquiryPage ({id} : any) {
     const router = useRouter()
     const [data, setData] = useState<any>(null)
     const [isActive , setActive] = useState<boolean>(false)
-   
+    async function Reply () {
+        const confirmMsg = '답변처리를 하시겠습니까?';
+        const confirm = window.confirm(confirmMsg);
+        if(confirm) {
+            try {
+                const formData = new FormData()
+                formData.append('inquiryId' , id)
+                formData.append('replyStatus' , 'R')
+                const response = await api.post(`/admin/inquiry/updInquiryReplyStatus.php`, formData)
+                if(response?.data?.result === true) { alert(response?.data?.resultMsg); router.back(); }
+            }catch { alert('Server Error'); }
+        }
+    }
     useEffect(()=>{
         async function fetchDetail () {
             if(id) {
@@ -71,6 +83,9 @@ export default function InquiryPage ({id} : any) {
                 </div>
                 <div className="btnBox">
                     <button className="blackBtn" onClick={()=>router.back()}>목록으로</button>
+                    {data?.replyStatus === 'U' && 
+                    <button className="blueBtn" onClick={Reply}>답변하기</button>
+                    }
                 </div>
             </div>
 
