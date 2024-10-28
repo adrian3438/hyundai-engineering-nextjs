@@ -92,11 +92,11 @@ export default function InquiryListPage ({
                                 </td>
                                 <td>
                                     <span className="readOnly">
-                                    {list?.inquiryType === 'S' && '스마일리더 앱'}
-                                    {list?.inquiryType === 'T' && '테스터'}
-                                    {list?.inquiryType === 'N' && '영양제'}
-                                    {list?.inquiryType === 'F' && '식품'}
-                                    {list?.inquiryType === 'O' && '기타'} 
+                                    {list?.inquiryType === 'NB' && '신축'}
+                                    {list?.inquiryType === 'RE' && '증개축'}
+                                    {list?.inquiryType === 'FR' && '공장리모델링'}
+                                    {list?.inquiryType === 'FW' && '공장방수'}
+                                    {list?.inquiryType === 'FP' && '공장보수'} 
                                     </span>
                                 </td>
                                 <td>
