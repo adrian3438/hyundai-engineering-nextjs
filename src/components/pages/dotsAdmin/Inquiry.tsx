@@ -12,17 +12,19 @@ export default function InquiryPage ({id} : any) {
     const router = useRouter()
     const [data, setData] = useState<any>(null)
     const [isActive , setActive] = useState<boolean>(false)
-    async function Reply () {
-        const confirmMsg = '답변처리를 하시겠습니까?';
-        const confirm = window.confirm(confirmMsg);
-        if(confirm) {
-            try {
-                const formData = new FormData()
-                formData.append('inquiryId' , id)
-                formData.append('replyStatus' , 'R')
-                const response = await api.post(`/admin/inquiry/updInquiryReplyStatus.php`, formData)
-                if(response?.data?.result === true) { alert(response?.data?.resultMsg); router.back(); }
-            }catch { alert('Server Error'); }
+    async function Reply (status : string) {
+        if(status !== data?.replyStatus){
+            const confirmMsg = status === 'R' ? '답변 처리를 하시겠습니까?' : '답변 전으로 복원하시겠습니까?';
+            const confirm = window.confirm(confirmMsg);
+            if(confirm) {
+                try {
+                    const formData = new FormData()
+                    formData.append('inquiryId' , id)
+                    formData.append('replyStatus' , status)
+                    const response = await api.post(`/admin/inquiry/updInquiryReplyStatus.php`, formData)
+                    if(response?.data?.result === true) { alert(response?.data?.resultMsg); router.back(); }
+                }catch { alert('Server Error'); }
+            }
         }
     }
     useEffect(()=>{
@@ -84,7 +86,7 @@ export default function InquiryPage ({id} : any) {
                 <div className="btnBox">
                     <button className="blackBtn" onClick={()=>router.back()}>목록으로</button>
                     {data?.replyStatus === 'U' && 
-                    <button className="blueBtn" onClick={Reply}>답변하기</button>
+                    <button className="blueBtn" onClick={()=>Reply('R')}>답변처리</button>
                     }
                 </div>
             </div>
@@ -102,8 +104,8 @@ export default function InquiryPage ({id} : any) {
                     :''
                     }
                     <div>
-                        <span>답변전</span>
-                        <span>답변완료</span>
+                        <span onClick={()=>Reply('U')}>답변전</span>
+                        <span onClick={()=>Reply('R')}>답변완료</span>
                     </div>
                 </div>
                 <h5>{}</h5>
