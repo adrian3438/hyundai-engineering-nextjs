@@ -38,7 +38,7 @@ export default function Inquiry() {
         if(!isCheck) { alert('개인정보 수집 및 이용동의를 체크해주시기 바랍니다.'); return; }
         try {
             const formData = new FormData()
-            formData.append('companyName', data?.companyName)
+            formData.append('companyName', data?.company)
             formData.append('inquiryName', data?.name)
             formData.append('inquiryEmail', data?.email)
             formData.append('inquiryPosition', data?.position)
