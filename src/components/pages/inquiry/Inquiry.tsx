@@ -2,7 +2,9 @@
 import React, { useState } from "react";
 import NavBar from "../../hyundai/NavBar";
 import api from "lib/api";
+import { useRouter } from "next/navigation";
 export default function Inquiry() {
+    const router = useRouter()
     const [data, setData] = useState<any>({
         company : '', name : '', position : '', phone : '',
         email : '', type : '', title : '', message : '', attachedFile : null, attachedCard : null
@@ -50,7 +52,7 @@ export default function Inquiry() {
             if(data?.attachedCard) {formData.append('namecardFile' , data?.attachedCard)}
             formData.append('privacyAgree' , isCheck ? 'Y' : 'N')
             const response = await api.post(`/user/inquiry/setInquiry.php` , formData)
-            if(response?.data?.result === true) {alert(response?.data?.resultMsg); window.location.reload()}
+            if(response?.data?.result === true) {alert(response?.data?.resultMsg); router.push('/')}
             else {alert(response?.data?.resultMsg)}
         }catch {alert('Server Error')}
     }

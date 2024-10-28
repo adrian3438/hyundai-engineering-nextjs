@@ -12,12 +12,7 @@ export default function InquiryPage ({id} : any) {
     const router = useRouter()
     const [data, setData] = useState<any>(null)
     const [isActive , setActive] = useState<boolean>(false)
-    async function save () {
-
-    }
-    async function reply () {
-
-    }
+   
     useEffect(()=>{
         async function fetchDetail () {
             if(id) {
@@ -177,40 +172,6 @@ export default function InquiryPage ({id} : any) {
                         :''
                         }
                     </div>
-                </div>
-                
-                {data?.replyStatus === 'U' ?
-
-                <div className="answerBox">
-                    <h5>문의답변</h5>
-                    <Summernote
-                        initData={data?.description}
-                        setData={setData}
-                        name={'description'}
-                    />
-                </div>
-
-                :
-
-                <div className="inquiry_table">
-                    <div className="inquiry_details">
-                        <span>답변내용</span>
-                        <div dangerouslySetInnerHTML={{__html : data?.replyList?.length > 0 && 
-                            data?.replyList[0]?.replyContent}}>
-                        </div>
-                    </div>
-                </div>
-                }
-
-
-                <div className="btnBox">
-                    {/* <button className="blackBtn">초기화</button> */}
-                    {data?.replyStatus === 'U' ?
-                    <>
-                    <button className="blueBtn" onClick={()=>reply()}>답변하기</button>
-                    </>
-                    : ''
-                    }
                 </div>
             </div>
             

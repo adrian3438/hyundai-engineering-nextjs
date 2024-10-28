@@ -4,6 +4,7 @@ import ListInquiryReplyBox from "components/DotsAdmin/List/ListInquiryReplyBox";
 import ListInquiryTypeBox from "components/DotsAdmin/List/ListInquiryTypeBox";
 import ListSearchBox from "components/DotsAdmin/List/ListSearchBox";
 import ListSizeBox from "components/DotsAdmin/List/ListSizeBox";
+import Paginate from "components/DotsAdmin/Paginate/paginate";
 import api from "lib/api";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -149,6 +150,8 @@ export default function InquiryListPage ({
 
             <div className="pagerBox">
                 <p>Showing 1 to 10 of 98 entries</p>
+                <Paginate page={page} totalCount={totalCount} size={25}
+                />
             </div>
         </div>
         </>

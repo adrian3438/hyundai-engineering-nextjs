@@ -11,7 +11,7 @@ export default function InquiryList ({searchParams : {inquiryType, replyStatus, 
             size={size || 25}
             keyword={keyword || ''}
             column={column || 'inquiryName'}
-            order={order || 'asc'}
+            order={order || 'desc'}
         />
         </>
     )
