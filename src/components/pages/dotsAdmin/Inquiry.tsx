@@ -1,7 +1,6 @@
 'use client'
 
-import Summernote from "components/DotsAdmin/Editor/Summernote"
-import useFileDownLoad from "components/useFileDownload"
+import fileDownLoad from "components/fileDownload"
 import api from "lib/api"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
@@ -162,7 +161,7 @@ export default function InquiryPage ({id} : any) {
                         <span>첨부파일</span>
                         {data?.attachedFile ?
                         <div>
-                            <span onClick={()=>useFileDownLoad(data?.attachedFilename, data?.attachedFile)}>{data?.attachedFilename}</span>
+                            <span onClick={()=>fileDownLoad(data?.attachedFilename, data?.attachedFile)}>{data?.attachedFilename}</span>
                         </div>
                         :''
                         }
@@ -172,7 +171,7 @@ export default function InquiryPage ({id} : any) {
                         <span>명함파일</span>
                         {data?.attachedFile ?
                         <div>
-                            <span style={{marginBottom : '15px'}} onClick={()=>useFileDownLoad(data?.namecardFilename, data?.namecardFile)}>{data?.namecardFilename}</span>
+                            <span style={{marginBottom : '15px'}} onClick={()=>fileDownLoad(data?.namecardFilename, data?.namecardFile)}>{data?.namecardFilename}</span>
                             <img src={data?.namecardFile}/>
                         </div>
                         :''

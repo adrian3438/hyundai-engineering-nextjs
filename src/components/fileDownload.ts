@@ -1,4 +1,4 @@
-function useFileDownLoad (fileName : string, fileUrl : any) {
+function fileDownLoad (fileName : string, fileUrl : any) {
     const link = document.createElement('a');
     link.href = fileUrl;
     link.download = fileName;
@@ -8,4 +8,4 @@ function useFileDownLoad (fileName : string, fileUrl : any) {
     document.body.removeChild(link)
 }
 
-export default useFileDownLoad;
+export default fileDownLoad;
