@@ -5,6 +5,7 @@ import { useEffect } from "react"
 import { useCookies } from "react-cookie"
 import Providers from "../redux/provider"
 import AdminSideBar from "./DotsAdmin/SideBar"
+import AdminHeader from "./DotsAdmin/AdminHeader"
 
 export default function Container ({children} : any) {
     const pathname = usePathname()
@@ -21,6 +22,7 @@ export default function Container ({children} : any) {
         {splitPath[1] === 'dotsAdmin' ?
         <Providers>
             <div className="admin_wrap">
+                {splitPath[2] ? <AdminHeader/> : ''}
                 {splitPath[2] ? <AdminSideBar/> : ''}
                 <div className="dotsContentWrap">
                 {children}

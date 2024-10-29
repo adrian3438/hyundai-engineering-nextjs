@@ -6,6 +6,7 @@ import { useAppSelector } from "store/hooks";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ListFilter from "components/DotsAdmin/List/ListFilter";
+import calCulateIndex from "components/calculateIndex";
 
 
 export default function CommonCodeListPage () {
@@ -88,12 +89,12 @@ export default function CommonCodeListPage () {
                                         <div className="toggleSwitchBox">
                                             <span className="toggleSwitch">
                                                 <input 
-                                                type="checkbox" 
-                                                id={`commoncode_${list?.codeId}`}
-                                                className="toggleIpt"
-                                                checked={list?.activeStatus === 'Y'}
-                                                onChange={()=>statusChange(list?.codeId, list?.activeStatus)}
-                                                hidden
+                                                    type="checkbox" 
+                                                    id={`commoncode_${list?.codeId}`}
+                                                    className="toggleIpt"
+                                                    checked={list?.activeStatus === 'Y'}
+                                                    onChange={()=>statusChange(list?.codeId, list?.activeStatus)}
+                                                    hidden
                                                 />
                                                 <label htmlFor={`commoncode_${list?.codeId}`} className="toggleSwitch">
                                                     <span className="toggleButton"></span>
@@ -110,7 +111,6 @@ export default function CommonCodeListPage () {
             
             <div className="pagerBox">
                 <p>Showing 1 to 10 of 98 entries</p>
-                =
             </div>
         </div>
         </>

@@ -1,4 +1,5 @@
 'use client'
+import calCulateIndex from "components/calculateIndex";
 import ListFilter from "components/DotsAdmin/List/ListFilter";
 import ListInquiryReplyBox from "components/DotsAdmin/List/ListInquiryReplyBox";
 import ListInquiryTypeBox from "components/DotsAdmin/List/ListInquiryTypeBox";
@@ -89,7 +90,9 @@ export default function InquiryListPage ({
                             {data?.map((list:any, index:number) => (
                             <tr key={list?.ID}>
                                 <td>
-                                    <span className="readOnly">-</span>
+                                    <span className="readOnly">
+                                        {calCulateIndex(page , size , totalCount , index)}
+                                    </span>
                                 </td>
                                 <td>
                                     <span className="readOnly">

@@ -1,4 +1,5 @@
 'use client'
+import calCulateIndex from "components/calculateIndex";
 import SelectContentsModifyBox from "components/DotsAdmin/Contents/SelectEditBox";
 import ListBussinessTypeBox from "components/DotsAdmin/List/ListBussinessTypeBox";
 import ListContentsTypeBox from "components/DotsAdmin/List/ListContentsTypeBox";
@@ -126,7 +127,7 @@ export default function ContentsListPage ({
                             <tr key={index}>
                                 <td onClick={()=>router.push(`/dotsAdmin/contents-management/contents?c=${contentsType}&id=${list?.contentDetailKrId}&lang=${'KR'}`)}>
                                     <span className="readOnly">
-                                        {1}
+                                        {calCulateIndex( page , size , totalCount , index )}
                                     </span>
                                 </td>
                                 <td onClick={()=>router.push(`/dotsAdmin/contents-management/contents?c=${contentsType}&id=${list?.contentDetailKrId}&lang=${'KR'}`)}>

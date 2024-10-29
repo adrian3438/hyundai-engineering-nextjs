@@ -1,4 +1,5 @@
 'use client'
+import calCulateIndex from "components/calculateIndex";
 import ListFilter from "components/DotsAdmin/List/ListFilter";
 import ListSearchBox from "components/DotsAdmin/List/ListSearchBox";
 import ListSizeBox from "components/DotsAdmin/List/ListSizeBox";
@@ -81,7 +82,7 @@ export default function AdminAccountListPage ({
                             {data?.map((list:any,index:number) => (
                             <tr key={list?.ID}>
                                 <td>
-                                    <span className="readOnly">{1}</span>
+                                    <span className="readOnly">{calCulateIndex(page , size , totalCount , index)}</span>
                                 </td>
                                 <td>
                                     <span className="readOnly">{list?.managerName}</span>

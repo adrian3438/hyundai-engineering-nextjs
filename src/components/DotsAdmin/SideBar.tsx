@@ -51,7 +51,7 @@ export default function AdminSideBar () {
                 <li className={splitPath[2] === 'admin-account-management' ? 'settings active' : 'settings'}>
                     <span onClick={()=>router.push(`/dotsAdmin/admin-account-management/admin-account-list`)}>관리자 계정관리</span>
                     <ul className="subMenu">
-                        <li className={splitPath[3]==='admin-account-list' || splitPath[3]==='admin-account'? 'active' : ''} onClick={()=>router.push(`/dotsAdmin-account-management/dotsAdmin-account-list/`)}>
+                        <li className={splitPath[3]==='admin-account-list' || splitPath[3]==='admin-account'? 'active' : ''} onClick={()=>router.push(`/dotsAdmin/admin-account-management/admin-account-list`)}>
                             <span>관리자 계정</span>
                         </li>
                     </ul>
