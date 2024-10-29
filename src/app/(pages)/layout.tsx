@@ -17,6 +17,7 @@ import "assets/scss/style.scss";
 import Footer from "../../components/hyundai/Footer";
 import Header from "../../components/hyundai/Header";
 import Container from "components/Cotainer";
+import ProviderContainer from "components/ProviderContainer";
 
 export const metadata: Metadata = {
     title: "현대엔지니어링",
@@ -27,10 +28,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     return (
         <html lang="en">
         <body>
-            
-        <Container>
-            {children}
-        </Container>
+        <ProviderContainer>
+            <Container>
+                {children}
+            </Container>
+        </ProviderContainer>
 
         <Footer/>
         </body>
