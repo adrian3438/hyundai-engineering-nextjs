@@ -14,8 +14,10 @@ export default function Container ({children} : any) {
     const [cookie, setCookie] = useCookies(['LANG', 'hessid']);
     console.log(cookie.hessid)
     async function getAdminInfo () {
+        const formData : any = new FormData()
+        formData.append('managerUuid' , cookie.hessid)
         if(splitPath[1] === 'dotsAdmin'){
-            const response = await api.get(`/admin/manager/adminInfo.php?managerUuid=${cookie.hessid}`)
+            const response = await api.post(`/admin/manager/getManagerInfo.php` , formData)
         }
     }
     useEffect(() => {getAdminInfo()} , [splitPath])

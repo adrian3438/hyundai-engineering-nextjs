@@ -39,6 +39,7 @@ export default function AdminAccountPage ({
                 return;
             }
             const formData = new FormData()
+            if(id) {formData.append('ID' , id)}
             formData.append('managerLogin', data?.id)
             if(data?.pass) {formData.append('managerPass', data?.pass)} 
             formData.append('managerName', data?.name)
