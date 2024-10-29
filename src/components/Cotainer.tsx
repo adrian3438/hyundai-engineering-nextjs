@@ -1,26 +1,42 @@
 'use client'
 
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { useCookies } from "react-cookie"
-import Providers from "../redux/provider"
 import AdminSideBar from "./DotsAdmin/SideBar"
 import AdminHeader from "./DotsAdmin/AdminHeader"
 import api from "lib/api"
+import { useAppDispatch } from "store/hooks"
+import { setUser } from "store/Slices/adminInfoSlice"
 
 export default function Container ({children} : any) {
+    const router = useRouter()
     const pathname = usePathname()
     const splitPath = pathname.split('/')
+    const dispatch = useAppDispatch()
     const [cookie, setCookie] = useCookies(['LANG', 'hessid']);
-    console.log(cookie.hessid)
     async function getAdminInfo () {
         const formData : any = new FormData()
-        formData.append('managerUuid' , cookie.hessid)
-        if(splitPath[1] === 'dotsAdmin'){
-            const response = await api.post(`/admin/manager/getManagerInfo.php` , formData)
+        formData.append('managerUuid' , cookie.hessid || '')
+        const response = await api.post(`/admin/manager/getManagerInfo.php` , formData)
+        if(response?.data?.result === true) {
+            if(response?.data?.list?.length > 0) {
+                dispatch(setUser({users : response?.data?.list[0]}))
+            }
+            if(splitPath[1] === 'dotsAdmin' && !splitPath[2]) {
+                router.push(`/dotsAdmin/common-code-management/common-code-list`)
+            }
+        }else{
+            if(splitPath[1] === 'dotsAdmin' && splitPath[2]){
+                alert('로그인이 필요합니다.'); router.push('/dotsAdmin')
+            }
         }
     }
-    useEffect(() => {getAdminInfo()} , [splitPath])
+    useEffect(() => {
+        if(splitPath[1] === 'dotsAdmin'){
+            getAdminInfo()
+        }
+    } , [splitPath])
     useEffect(() => {
         if(cookie.LANG === undefined){
             setCookie('LANG', 'kr', {path : '/'})
@@ -30,18 +46,16 @@ export default function Container ({children} : any) {
     return(
         <>
         {splitPath[1] === 'dotsAdmin' ?
-        <Providers>
-            <div className="admin_wrap">
-                {splitPath[2] ? <AdminHeader/> : ''}
-                {splitPath[2] ? <AdminSideBar/> : ''}
+        <div className="admin_wrap">
+            {splitPath[2] ? <AdminHeader/> : ''}
+            {splitPath[2] ? <AdminSideBar/> : ''}
 
-                <div className="dotsContentWrap">
+            <div className="dotsContentWrap">
 
-                    {children}
+                {children}
 
-                </div>
             </div>
-        </Providers>
+        </div>
 
         :
         <>

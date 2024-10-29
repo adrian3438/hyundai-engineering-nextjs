@@ -14,7 +14,7 @@ export default function AdminAccountPage ({
     
     const [data, setData] = useState<any>({
         id : '', pass : '', name : '', phone : '',
-        mobile : '', email  : '', dept : ''
+        mobile : '', email  : '', dept : '', position : ''
     })
     async function detail () {
         try{
@@ -47,6 +47,7 @@ export default function AdminAccountPage ({
             formData.append('managerMobile', data?.mobile)
             formData.append('managerEmail', data?.email)
             formData.append('managerDept', data?.dept)
+            formData.append('managerPosition' , data?.position)
             if(id){
                 const response = await api.post(`/admin/manager/updManager.php`, formData)
                 if(response?.data?.result === true) {
@@ -77,7 +78,7 @@ export default function AdminAccountPage ({
                         if(response?.data?.List?.length > 0){
                             const data = response?.data?.List[0];
                             setData((prev:any) => ({...prev, id : data?.managerLogin, name : data?.managerName, phone : data?.managerPhone,
-                                mobile : data?.managerMobile, email : data?.managerEmail, dept : data?.managerDept
+                                mobile : data?.managerMobile, email : data?.managerEmail, dept : data?.managerDept , position : data?.managerPosition
                             }))
                         }
                     }else{alert(response?.data?.resultMsg);}
@@ -119,6 +120,12 @@ export default function AdminAccountPage ({
                             title={'이름'}
                             name={'name'}
                             value={data?.name}
+                            setData={setData}
+                        />
+                        <TextBox
+                            title={'직급'}
+                            name={'position'}
+                            value={data?.position}
                             setData={setData}
                         />
                         <TextBox

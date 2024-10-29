@@ -32,6 +32,7 @@
     "isotope-layout": "^3.0.6",
     "itooltip": "^1.1.1",
     "jquery": "^3.7.1",
+    "js-cookie": "^3.0.5",
     "material-ui-chip-input": "^1.1.0",
     "mysql2": "^3.11.3",
     "next": "14.1.0",

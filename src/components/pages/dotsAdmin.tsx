@@ -10,7 +10,7 @@ import { useCookies } from 'react-cookie'
 export default function AdminLoginPage () {
     const router = useRouter()
     const dispatch = useAppDispatch()
-    const [cookie , setCookie] = useCookies(['hessid']);
+    const [cookies , setCookie] = useCookies(['hessid']);
     const [login, setLogin] = useState<{id :string, password : string}>({
         id : '', password : ''
     })
@@ -26,7 +26,6 @@ export default function AdminLoginPage () {
             const res = await api.post(`/admin/manager/adminLogin.php`, formData)
             if(res?.data?.result === true) {
                 setCookie('hessid', res.data.uuid, { path: '/' }); // You can adjust the options as needed
-                dispatch(setUser({users : res.data}));
                 router.push(`/dotsAdmin/common-code-management/common-code-list`);
             }else{
                 alert(res.data.resultMsg);
@@ -50,8 +49,8 @@ export default function AdminLoginPage () {
                     <input 
                         type="text" 
                         onChange={handleChange} 
-                        name="id" 
-                        id="" 
+                        name="id"
+                        id=""
                         onKeyDown={handleEnter}
                         placeholder="아이디"
                     />
