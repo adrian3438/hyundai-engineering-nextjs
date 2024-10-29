@@ -24,8 +24,11 @@ export default function Container ({children} : any) {
             <div className="admin_wrap">
                 {splitPath[2] ? <AdminHeader/> : ''}
                 {splitPath[2] ? <AdminSideBar/> : ''}
+
                 <div className="dotsContentWrap">
-                {children}
+
+                    {children}
+
                 </div>
             </div>
         </Providers>
