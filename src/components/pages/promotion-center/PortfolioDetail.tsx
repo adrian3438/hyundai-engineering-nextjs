@@ -80,7 +80,7 @@ export default function PortfolioDetail({
                             <div className="py-4 px-5 border-top">
                                 <i className="uil uil-angle-down fs-22 me-4"></i>
                                 <span className="text-black fw-bold me-4">다음글</span>
-                                {data?.prev?.nextUrl ?
+                                {data?.next?.nextUrl ?
                                 <a href="#" onClick={(e)=>handlePage(e, data?.next?.nextUrl)} className="text-medium-gray fw-bold">{data?.next?.nextSubject}</a>
                                 :
                                 <a className="text-medium-gray fw-bold">다음 글 없음</a>

@@ -88,7 +88,7 @@ export default function Portfolio({page, typeList, type} : Props) {
                             <div className="row gx-md-10 gy-10 gy-md-13 isotope">
                                 {data.map((list: any, index: number) => (
                                     <div key={index} className="project item col-md-3">
-                                        <Link href={'#'}>
+                                        <Link href={'#'} onClick={(e)=>handlePage(e, list?.ID)}>
                                             <figure className="lift rounded mb-6">
                                                 <Image
                                                     alt={list?.thumnailFilename}

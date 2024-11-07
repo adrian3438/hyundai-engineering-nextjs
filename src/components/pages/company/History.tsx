@@ -27,13 +27,13 @@ const HistoryData = [
     },
     {
         "yearMonth": "2013.02",
-        "kr": ["법인 자본금 증자", "4억원 -> 5억 2천만원"],
+        "kr": ["법인 자본금 증자", "4억원 -> 7억 2천만원"],
         "imageUrl": "/img/hyundai/company/history/history-5.png"
     },
     {
         "yearMonth": "2013.04",
         "kr": ["종합 건설 먼저 취득", "건축공사업 건축-04-649"],
-        "imageUrl": "/img/hyundai/certification/certification02.png"
+        "imageUrl": "/img/hyundai/certification/certification03.png"
     },
     {
         "yearMonth": "2016.06",
@@ -93,7 +93,7 @@ export default function History() {
                                                  backgroundImage: `url(${item.imageUrl})`,
                                                  backgroundRepeat: 'no-repeat',
                                                  backgroundSize: `100% auto`,
-                                                 backgroundPosition: `${index === 5 || index === 1 ? 'center 0' : 'center center'}`,
+                                                 backgroundPosition: `${index === 5 || index === 1 ? 'center 0' : `${index === 3 ? 'center -115px' : 'center center'}`}`,
                                                  maxWidth: "574px",
                                                  minHeight: "438px"
                                              }}

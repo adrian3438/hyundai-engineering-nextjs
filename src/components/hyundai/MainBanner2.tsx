@@ -25,13 +25,13 @@ export default function MainBanner2() {
                         style={{backgroundImage: 'url("/img/hyundai/main-construction-1.jpg")'}}>
                         <div className="container h-100">
                             <div className="row h-100">
-                                <div className="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-6 text-center text-lg-start justify-content-center align-self-center align-items-start">
+                                <div className="col-md-10 offset-md-1 col-lg-9 offset-lg-1 col-xl-8 offset-xl-1 col-xxl-8 offset-xxl-1 text-center text-lg-start justify-content-center align-self-center align-items-start">
                                     <h2 className="display-1 fs-45 mb-4 text-white" style={fadeInAnimate("900ms")}>
-                                        우리는 정직과, 신뢰, 전문성으로 답하는
+                                        우리, 종합건설회사 (주)현대엔지니어링은
                                     </h2>
 
-                                    <p className="lead fs-24 lh-sm mb-7 text-white" style={fadeInAnimate("900ms")}>
-                                        종합건설회사 (주)현대엔지니어링입니다
+                                    <p className="display-1 fs-45 mb-4 text-white" style={fadeInAnimate("900ms")}>
+                                        정직과, 신뢰, 전문성으로 답합니다.
                                     </p>
                                 </div>
                             </div>
@@ -44,12 +44,12 @@ export default function MainBanner2() {
                         style={{backgroundImage: 'url("/img/hyundai/main-construction-2.jpg")'}}>
                         <div className="container h-100">
                             <div className="row h-100">
-                                <div className="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-10 text-center text-lg-start justify-content-center align-self-center align-items-start">
+                                <div className="col-md-10 offset-md-1 col-lg-9 offset-lg-1 col-xl-8 offset-xl-1 col-xxl-8 offset-xxl-1 text-center text-lg-start justify-content-center align-self-center align-items-start">
                                     <h2 className="display-1 fs-45 mb-4 text-white" style={fadeInAnimate("900ms")}>
-                                        우리는
+                                        (주)현대엔지니어링은
                                     </h2>
 
-                                    <p className="lead fs-24 lh-sm mb-7 text-white" style={fadeInAnimate("900ms")}>
+                                    <p className="display-1 fs-45 mb-4 text-white" style={fadeInAnimate("900ms")}>
                                         고객만족을 최우선으로 생각합니다.
                                     </p>
                                 </div>
@@ -63,12 +63,12 @@ export default function MainBanner2() {
                         style={{backgroundImage: 'url("/img/hyundai/main-construction-3.jpg")'}}>
                         <div className="container h-100">
                             <div className="row h-100">
-                                <div className="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start">
+                                <div className="col-md-10 offset-md-1 col-lg-9 offset-lg-1 col-xl-8 offset-xl-1 col-xxl-8 offset-xxl-1 text-center text-lg-start justify-content-center align-self-center align-items-start">
                                     <h2 className="display-1 fs-45 mb-4 text-white" style={fadeInAnimate("900ms")}>
-                                        우리는
+                                        (주)현대엔지니어링은
                                     </h2>
 
-                                    <p className="lead fs-24 lh-sm mb-7 text-white" style={fadeInAnimate("900ms")}>
+                                    <p className="display-1 fs-45 mb-4 text-white" style={fadeInAnimate("900ms")}>
                                         과거와 현재를 통해 더 나은 미래를 약속합니다.
                                     </p>
                                 </div>
