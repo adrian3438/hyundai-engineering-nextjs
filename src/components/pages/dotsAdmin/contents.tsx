@@ -30,14 +30,15 @@ export default function ContentsPage ({
         // 전시기간 , 전시장소 , 전시 사업분야 , 전시 웹사이트 , 발췌내용
         excerpt : '',
         // 컨텐츠 내용 , 썸네일 이미지 , 첨부 파일
-        description : '', thumnailImage : null, attachedFile : null
+        description : '', thumnailImage : null, attachedFile : null,
+        date: '',
         // facebook : '', linkedIn : '', youtube : '', twitter : '', prirorityNews : 'N', noticePrirority : 'N', pressCenter : '', pressUrl : '',
     })
     const [previewImage, setPreviewImage] = useState<any>({thumnailImage : null})
     const [fileName , setFileName] = useState<string>('')
     function handleSelect (e:React.ChangeEvent<HTMLSelectElement>) {
         const {name , value} = e.target;
-        setData((prev:any) => ({...prev, [name] : value}))
+        setData((prev:any) => ({...prev, [name] : value}));
     }
     async function save () {
         try {
@@ -45,7 +46,7 @@ export default function ContentsPage ({
             const formData = new FormData()
             if(id){
                 formData.append('ID', id)
-                formData.append('lang', lang) 
+                formData.append('lang', lang)
             }else{
                 formData.append('managerId', managerInfo?.ID || 1);
                 formData.append('managerName', managerInfo?.name || '관리자')
@@ -62,7 +63,8 @@ export default function ContentsPage ({
             formData.append('searchKeywords', data?.searchKeyword ? data?.searchKeyword : '');
             formData.append('excerpt', data?.excerpt ? data?.excerpt : '');
             formData.append('description', data?.description ? data?.description :'');
-            
+            formData.append('promInsertDate', data?.date ? data?.date :'');
+
             if(id) {
                 const response = await api.post(`/admin/contents/updContent.php`, formData)
                 if(response?.data?.result === true) {
@@ -93,7 +95,7 @@ export default function ContentsPage ({
                         setData((prev:any) => ({...prev, contentType : data?.contentType, subject : data?.contentName,
                             facebook : data?.facebookUrl, linkedIn : data?.linkedinUrl, youtube : data?.youtubeUrl, twitter : data?.twitterUrl,
                             searchKeyword : fomatSearchKeyword, excerpt : data?.promExcerpt, description : data?.promDescription,
-                            bussinessType : data?.businessDivisionType
+                            bussinessType : data?.businessDivisionType, date: data?.mdate,
                         }))
                         setPreviewImage((prev:any) => ({...prev, thumnailImage : data?.thumnailImage}))
                     }else {
@@ -108,8 +110,8 @@ export default function ContentsPage ({
         async function fetchTypeList () {
             const res1 = await api.get(`/admin/code/getContentsTypeList.php`);
             const res2 = await api.get(`/admin/code/getBusinessDivisionTypeList.php`);
-            if(res1?.data?.result === true) {setContentsType(res1?.data?.List)} 
-            if(res2?.data?.result === true) {setBussinessType(res2?.data?.List)} 
+            if(res1?.data?.result === true) {setContentsType(res1?.data?.List)}
+            if(res2?.data?.result === true) {setBussinessType(res2?.data?.List)}
         }
         fetchTypeList()
     }, [])
@@ -148,7 +150,7 @@ export default function ContentsPage ({
     }, []);
     return(
         <>
-        
+
         <div className="contentBox add">
             <h3>Contents</h3>
             <div className="flexBox">
@@ -268,7 +270,7 @@ export default function ContentsPage ({
                                     name={'description'}
                                 /> : ''
                                 }
-                                {!id ? 
+                                {!id ?
                                 <Summernote
                                     initData={data?.description}
                                     setData={setData}
@@ -279,13 +281,14 @@ export default function ContentsPage ({
                         </tr>
 
                         <AdminDateBox
-                        
+                            data={data}
+                            onChange={handleSelect}
                         />
-                        
+
                     </tbody>
                 </table>
             </div>
-            
+
         </div>
         </>
     )

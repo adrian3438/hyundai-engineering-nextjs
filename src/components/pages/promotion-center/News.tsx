@@ -28,6 +28,7 @@ export default function News({data, language, bussinessTypeList, totalCount, pag
         newParams.set('business', idx)
         router.push(`${path}?${newParams?.toString()}`)
     }
+
     return (
         <>
             <section
@@ -78,7 +79,7 @@ export default function News({data, language, bussinessTypeList, totalCount, pag
                                                         <div className="post-content"><p>{list?.excerpt?.length > 70 ? list?.excerpt?.slice(0, 70) + '...' : list?.excerpt}</p></div>
                                                     </div>
                                                     <ul className="post-meta d-flex mb-0 justify-content-end">
-                                                        <li className="post-date"><i className="uil uil-calendar-alt"></i><span>2024. 06. 26</span></li>
+                                                        <li className="post-date"><i className="uil uil-calendar-alt"></i><span>{list?.createDate}</span></li>
                                                     </ul>
                                                 </div>
                                             </div>
