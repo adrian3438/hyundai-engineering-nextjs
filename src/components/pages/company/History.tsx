@@ -23,7 +23,7 @@ const HistoryData = [
     {
         "yearMonth": "2012.03",
         "kr": ["법인 설립 및 상호변경", "(주)현대엔지니어링 법인화", "인천광역시 연수구 송도미래로 30 스마트밸리 지식산업센터 D동 1610호"],
-        "imageUrl": "/img/hyundai/company/history/history-2002.jpg"
+        "imageUrl": "/img/hyundai/company/history/hyundae-engineering-location.jpg"
     },
     {
         "yearMonth": "2013.02",
@@ -33,7 +33,7 @@ const HistoryData = [
     {
         "yearMonth": "2013.04",
         "kr": ["종합 건설 먼저 취득", "건축공사업 건축-04-649"],
-        "imageUrl": "/img/hyundai/certification/certification03.png"
+        "imageUrl": "/img/hyundai/certification/hyundae-engineering-construction-license.png"
     },
     {
         "yearMonth": "2016.06",

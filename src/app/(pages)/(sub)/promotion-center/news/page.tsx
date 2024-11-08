@@ -18,7 +18,7 @@ export default async function PromotionCenterNews({params, searchParams : {lang,
     const popularResponse = await api.get(`/user/promotion/getPopularNews.php?userLang=KR`)
     // 사업영역 갯수 가져오기
     const categoryResponse = await api.get(`/user/promotion/getCategoryList.php`)
-    console.log(categoryResponse?.data)
+
     const data = response?.data?.result === true ? response?.data?.List : null;
     const bussinessTypeList = response1?.data?.result === true ? response1?.data?.List : []
     const totalCount = response?.data?.result === true ? response?.data?.totalCnt : 0
@@ -26,9 +26,9 @@ export default async function PromotionCenterNews({params, searchParams : {lang,
     const categoryList = categoryResponse?.data?.result === true ? categoryResponse?.data?.List : []
     return (
         <Fragment>
-            <News 
-                data={data} 
-                bussinessTypeList={bussinessTypeList} 
+            <News
+                data={data}
+                bussinessTypeList={bussinessTypeList}
                 language={language}
                 page={page || 1}
                 business={business || '0'}
