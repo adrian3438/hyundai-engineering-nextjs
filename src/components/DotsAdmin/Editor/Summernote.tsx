@@ -1,6 +1,7 @@
 'use client'
 import { useRouter } from "next/router";
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import api from "../../../lib/api";
 // import $ from 'jquery';
 
 interface Props {
@@ -15,7 +16,7 @@ export default function Summernote ({
     const summernoteRef = useRef<any>(null);
     useEffect(()=>{
         const config: Summernote.Options = {
-            
+
             tabDisable: true, // 키보드 Tab키를 사용가능할게 할지(Default false)
             height : 300,
             toolbar: [
@@ -52,10 +53,10 @@ export default function Summernote ({
                     for (let file of files) {
                         const formData = new FormData()
                         formData.append('file', file)
-                        // const res = await axios.post('/admin/setToastFileUpload.php', formData)
-                        // if(res) {
-                        //     $('#summernote').summernote('insertImage', res.data.imageUrl)
-                        // }
+                        const res = await api.post('/admin/setToastFileUpload.php', formData)
+                        if(res) {
+                            $('#summernote').summernote('insertImage', res.data.imageUrl)
+                        }
                     }
                 },
                 onKeyup: (ev: KeyboardEvent) => {
@@ -74,7 +75,7 @@ export default function Summernote ({
         // };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [initData, setData])
-    
+
     return(
         <>
         <textarea ref={summernoteRef} id="summernote"></textarea>
