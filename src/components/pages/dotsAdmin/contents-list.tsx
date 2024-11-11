@@ -31,7 +31,7 @@ export default function ContentsListPage ({
     const [popup, setPopup] = useState<any>({id : '', lang : '', contentType : '', status : '', masterId : ''})
     async function getList () {
         try{
-            const response = await api.get(`/admin/contents/getContentsList.php?promLang=KR&contentsType=${contentsType}&businessDivisionType=${0}&page=${page}&size=${size}&keyword=${keyword}&sortColumn=${column}&sortOrder=${order}`)
+            const response = await api.get(`/admin/contents/getContentsList.php?promLang=KR&contentsType=${contentsType}&businessDivisionType=${bussinessType}&page=${page}&size=${size}&keyword=${keyword}&sortColumn=${column}&sortOrder=${order}`)
             if(response.data.result === true) {setData(response.data.list); setTotalCount(response.data.totalCnt)}
             else alert(response.data.resultMsg)
         }catch {alert('Server Error')}
@@ -71,7 +71,7 @@ export default function ContentsListPage ({
     useEffect(()=>{
         getList()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[contentsType, page, size, keyword, column, order])
+    },[contentsType, page, size, keyword, column, order, bussinessType])
     return(
         <>
         <div className="contentBox content_management">
@@ -90,7 +90,7 @@ export default function ContentsListPage ({
                             size={size}
                         />
                     </div>
-                    
+
                     <div>
 
                         <ListContentsTypeBox
@@ -144,8 +144,8 @@ export default function ContentsListPage ({
                                 <td>
                                     <div className="langWrap">
                                         <div className="langBox">
-                                            <button 
-                                            className={list?.publishStatusKr === 'Y' ? 'lang_ko' : 'lang_ko none'} 
+                                            <button
+                                            className={list?.publishStatusKr === 'Y' ? 'lang_ko' : 'lang_ko none'}
                                             onClick={()=>selectContents(list?.contentDetailKrId, 'kr', list?.contentType, list?.publishStatusKr, list?.contentMasterId)}
                                             >
                                             </button>
@@ -163,10 +163,10 @@ export default function ContentsListPage ({
                                             : ''
 
                                             }
-                                            {/* {list?.contentDetailEnId ? 
+                                            {/* {list?.contentDetailEnId ?
                                             <>
-                                                <button 
-                                                className={list?.publishStatusEn === 'Y' ? 'lang_en' : 'lang_en none'} 
+                                                <button
+                                                className={list?.publishStatusEn === 'Y' ? 'lang_en' : 'lang_en none'}
                                                 onClick={()=>selectContents(list?.contentDetailEnId, 'en', list?.contentType, list?.publishStatusEn, list?.contentMasterId)}
                                                 >
                                                 </button>
@@ -201,8 +201,8 @@ export default function ContentsListPage ({
                                     <div className="toggleSwitchBox">
                                         <span className="toggleSwitch">
                                             <input
-                                                type="checkbox" 
-                                                id={`contents_${list?.contentMasterId}`} 
+                                                type="checkbox"
+                                                id={`contents_${list?.contentMasterId}`}
                                                 className="toggleIpt"
                                                 onChange={()=>statusChange(list?.contentMasterId, list?.contentActiveStatus)}
                                                 checked={list?.contentActiveStatus === 'Y'}
@@ -225,11 +225,11 @@ export default function ContentsListPage ({
                     </table>
                 </div>
             </div>
-            
+
 
             <div className="pagerBox">
                 <p>Showing 1 to 10 of 98 entries</p>
-               
+
             </div>
 
         </div>

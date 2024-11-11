@@ -43,6 +43,7 @@ export default function ContentsPage ({
     async function save () {
         try {
             if(!data?.description) {alert('컨텐츠 내용은 필수 입력입니다.'); return;}
+            if(!data?.date) {alert('보도일자 선택은 필수입니다.'); return;}
             const formData = new FormData()
             if(id){
                 formData.append('ID', id)

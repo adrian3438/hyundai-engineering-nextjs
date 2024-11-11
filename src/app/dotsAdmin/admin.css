@@ -258,7 +258,7 @@ html,body,
     border-radius: 5px;
     font-size: 15px; font-weight: 400; color: #666666;
 }
-  
+
   ::-webkit-calendar-picker-indicator {
       position: absolute;
       right: 0;
@@ -269,14 +269,14 @@ html,body,
       cursor: pointer;
 }
   .admin_wrap .dateBox input[type="date"]::-webkit-clear-button,
-  .admin_wrap .dateBox input[type="date"]::-webkit-inner-spin-button { 
+  .admin_wrap .dateBox input[type="date"]::-webkit-inner-spin-button {
       display: none;
 }
-  .admin_wrap .dateBox input[type="date"]::-webkit-calendar-picker-indicator { 
+  .admin_wrap .dateBox input[type="date"]::-webkit-calendar-picker-indicator {
     background: transparent;
     z-index: 1;
-} 
-  
+}
+
   .admin_wrap .dateBox input[type='date']:before{content: ''; display: block; position: absolute; right: 39px; height: 100%; background-color: #EEEEEE; width: 1px; display: block; top: 0;}
 
   .admin_wrap .dateBox input[type='date']:before{z-index: 9999; content: ''; display: block; position: absolute; right: 39px; height: 100%; background-color: #EEEEEE; width: 1px; display: block; top: 0;}
@@ -529,7 +529,7 @@ html,body,
 .admin_wrap .input_tableWrap table tbody tr:not(.top, .catalog, .category) td{vertical-align: middle;}
 .admin_wrap .input_tableWrap table tbody tr.top th{padding-top: 27px;}
 .admin_wrap .input_tableWrap table tbody tr.top td{vertical-align: top;}
-.admin_wrap .input_tableWrap table tbody tr th{width: 180px; font-size: 15px; font-weight: 600; color: #444444; text-align: left; padding-left: 20px; box-sizing: border-box;}
+.admin_wrap .input_tableWrap table tbody tr th{width: 180px; min-width: 160px;font-size: 15px; font-weight: 600; color: #444444; text-align: left; padding-left: 20px; box-sizing: border-box;}
 .admin_wrap .input_tableWrap table tbody tr th .star{font-size: 15px; font-weight: 600; color: #E01E25;}
 .admin_wrap .input_tableWrap table tbody tr td .toggleSwitch{margin: 5px 0;}
 .admin_wrap .input_tableWrap table tbody tr td .checkBox{padding: 10px 0;}
