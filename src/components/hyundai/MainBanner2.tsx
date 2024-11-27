@@ -21,7 +21,7 @@ export default function MainBanner2() {
             >
                 <SwiperSlide>
                     <div
-                        className="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image"
+                        className="swiper-slide bg-overlay bg-overlay-400 bg-image"
                         style={{backgroundImage: 'url("/img/hyundai/main-construction-1.jpg")'}}>
                         <div className="container h-100">
                             <div className="row h-100">
@@ -40,7 +40,7 @@ export default function MainBanner2() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image"
+                        className="swiper-slide bg-overlay bg-overlay-400 bg-image"
                         style={{backgroundImage: 'url("/img/hyundai/main-construction-2.jpg")'}}>
                         <div className="container h-100">
                             <div className="row h-100">
@@ -59,7 +59,7 @@ export default function MainBanner2() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image"
+                        className="swiper-slide bg-overlay bg-overlay-400 bg-image"
                         style={{backgroundImage: 'url("/img/hyundai/main-construction-3.jpg")'}}>
                         <div className="container h-100">
                             <div className="row h-100">
