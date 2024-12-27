@@ -60,13 +60,20 @@ export default function Header({
 
       <div id="offcanvas-nav" data-bs-scroll="true" className="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
         <div className="offcanvas-header d-lg-none">
-          <h3 className="text-white fs-30 mb-0"><NextLink href="/" title={<img alt="logo" src={`/img/hyundai/logo.png`} style={{width: "200px"}} />}/></h3>
+          <h3 className="text-white fs-30 mb-0"><NextLink href="/" title={<img alt="logo" src={`/img/hyundai/logo-light.png`} style={{width: "200px"}} />}/></h3>
           <button type="button" aria-label="Close" data-bs-dismiss="offcanvas" className="btn-close btn-close-white" />
         </div>
 
         <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100">
           <ul className="navbar-nav">
             <li className="nav-item dropdown dropdown-mega"><a href="/company/ceo-greeting" className="nav-link fs-22" data-bs-toggle="dropdown">회사소개</a>
+              <ul className="dropdown-menu d-md-none" style={{width:'auto !important', transform: "translateX(0)"}}>
+                <li className="nav-item"><a className="dropdown-item" href="/company/ceo-greeting">CEO 인사말</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/company/about-us">소개</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/company/history">연혁</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/company/certification">인증현황</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/company/location">오시는길</a></li>
+              </ul>
               <ul className="dropdown-menu mega-menu">
                 <li className="mega-menu-content">
                   <div className="row gx-0 gx-lg-3 row-cols-6">
@@ -118,6 +125,14 @@ export default function Header({
               </ul>
             </li>
             <li className="nav-item dropdown dropdown-mega"><a href="/business-area/new-construction" className="nav-link fs-22" data-bs-toggle="dropdown">사업분야</a>
+              <ul className="dropdown-menu d-md-none" style={{width: 'auto !important', transform: "translateX(0)"}}>
+                <li className="nav-item"><a className="dropdown-item" href="/business-area/new-construction">신축</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/business-area/extension-reconstruction">증 · 개축</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/business-area/factory-remodeling">공장 리모델링</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/business-area/factory-waterproofing">공장방수</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/business-area/factory-maintenance">공장보수</a></li>
+              </ul>
+
               <ul className="dropdown-menu mega-menu">
                 <li className="mega-menu-content">
                   <div className="row gx-0 gx-lg-3 row-cols-6">
@@ -169,6 +184,13 @@ export default function Header({
               </ul>
             </li>
             <li className="nav-item dropdown dropdown-mega"><a href="/portfolio" className="nav-link fs-22" data-bs-toggle="dropdown">포트폴리오</a>
+              <ul className="dropdown-menu d-md-none" style={{width: 'auto !important', transform: "translateX(0)"}}>
+                <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=3">신축</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=4">증 · 개축</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=5">공장 리모델링</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=6">공장방수</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/portfolio?type=7">공장보수</a></li>
+              </ul>
               <ul className="dropdown-menu mega-menu">
                 <li className="mega-menu-content">
                   <div className="row gx-0 gx-lg-3 row-cols-6">
@@ -220,6 +242,10 @@ export default function Header({
               </ul>
             </li>
             <li className="nav-item dropdown dropdown-mega"><a href="/promotion-center/videos" className="nav-link fs-22" data-bs-toggle="dropdown">홍보센터</a>
+              <ul className="dropdown-menu d-md-none" style={{width: 'auto !important', transform: "translateX(0)"}}>
+                <li className="nav-item"><a className="dropdown-item" href="/promotion-center/videos">영상</a></li>
+                <li className="nav-item"><a className="dropdown-item" href="/promotion-center/news">소식지</a></li>
+              </ul>
               <ul className="dropdown-menu mega-menu">
                 <li className="mega-menu-content">
                   <div className="row gx-0 gx-lg-3 row-cols-6">
