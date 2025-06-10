@@ -18,7 +18,13 @@ export default function Portfolio({page, typeList, type} : Props) {
     const [data , setData] = useState<any>([])
     async function getList () {
         const response = await api.get(`/user/promotion/getContentsList.php?contentType=${2}&businessDivisionType=${type || 0}&userLang=KR&page=${page || 1}&size=99&sortColumn=date&sortOrder=desc`)
-        if(response?.data?.result === true) {setData(response?.data?.List)}
+        if(response?.data?.result === true) {
+            if(response?.data !== null) {
+                setData(response?.data?.List)
+            } else {
+                setData([]);
+            }
+        }
     }
     function handlePage (e : any , id : number) {
         e.preventDefault()
@@ -85,17 +91,18 @@ export default function Portfolio({page, typeList, type} : Props) {
                             </div>
 
                             {/* ========== projects section ========== */}
-                            <div className="row gx-md-10 gy-10 gy-md-13 isotope">
-                                {data.map((list: any, index: number) => (
+                            {data?.length > 0 ? (
+                              <div className="row gx-md-10 gy-10 gy-md-13 isotope">
+                                  {data.length > 0 && data.map((list: any, index: number) => (
                                     <div key={index} className="project item col-md-3">
                                         <Link href={'#'} onClick={(e)=>handlePage(e, list?.ID)}>
                                             <figure className="lift rounded mb-6">
                                                 <Image
-                                                    alt={list?.thumnailFilename}
-                                                    src={list?.thumnailFile}
-                                                    width={1300}
-                                                    height={1262}
-                                                    className="w-100 h-auto"
+                                                  alt={list?.thumnailFilename}
+                                                  src={list?.thumnailFile}
+                                                  width={1300}
+                                                  height={1262}
+                                                  className="w-100 h-auto"
                                                 />
                                             </figure>
                                         </Link>
@@ -111,8 +118,11 @@ export default function Portfolio({page, typeList, type} : Props) {
                                             </div>
                                         </div>
                                     </div>
-                                ))}
-                            </div>
+                                  ))}
+                              </div>
+                            ) : (
+                              <p>게시글이 없습니다.</p>
+                            )}
                         </div>
                     </div>
                 </div>
