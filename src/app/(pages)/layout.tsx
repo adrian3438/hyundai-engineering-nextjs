@@ -22,7 +22,7 @@ import ProviderContainer from "components/ProviderContainer";
 export const metadata: Metadata = {
   title: "현대엔지니어링",
   authors: [{ name: "현대엔지니어링", url: "https://hdco97.com" }],
-  description: "1997년부터 다져온 현대엔지니어링의 기술력과 노하우를 바탕으로 고객 여러분이 보다 안전하고 안락한 공간을 누릴 수 있도록 끊임없는 노력과 최선을 다해 시공하도록 하겠습니다.",
+  description: "1997년부터 다져온 기술력의 종합건설회사, 현대엔지니어링",
   keywords: ["신축", "증축", "개축", "공장 리모델링", "공장방수", "공장보수"],
   openGraph: {
     title: "현대엔지니어링",
