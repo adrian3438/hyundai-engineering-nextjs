@@ -52,7 +52,7 @@ export default function Location() {
                             <div className="col-md-6">
                             <iframe
                                     allowFullScreen
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25387.23478654725!2d-122.06115399490332!3d37.309248660190086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb4571bd377ab%3A0x394d3fe1a3e178b4!2sCupertino%2C%20CA%2C%20USA!5e0!3m2!1sen!2str!4v1645437305701!5m2!1sen!2str"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.9803414584785!2d126.64580027639904!3d37.3666420355643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b765949a17d7d%3A0x3e416215c4d0688c!2z7J247LKc6rSR7Jet7IucIOyXsOyImOq1rCDshqHrj4Trr7jrnpjroZwgMzA!5e0!3m2!1sko!2skr!4v1749606338380!5m2!1sko!2skr"
                                     style={{width: "100%", height: "100%", border: 0}}
                                 />
                             </div>
