@@ -60,12 +60,12 @@ export default function PortfolioDetail({
                         <h2 className="text-black fw-600">{data?.list?.promSubject}</h2>
                         <p className="fs-16 fw-500">{data?.list?.createDate}</p>
                         <hr className="mt-5 mb-8"/>
-                        <article className="mb-8"
-                        dangerouslySetInnerHTML={{
-                            __html : data?.list?.description
-                        }}
-                        >
-
+                        <article className="mb-8">
+                            <div className="quill user-quill">
+                                <div className="ql-container ql-snow user-ql">
+                                    <div className="ql-editor ql-size-16px user-ql-inner" dangerouslySetInnerHTML={{__html: data?.list?.description}}/>
+                                </div>
+                            </div>
                         </article>
                         <div className="mt-4 border-bottom">
                             <div className="py-4 px-5 border-top">

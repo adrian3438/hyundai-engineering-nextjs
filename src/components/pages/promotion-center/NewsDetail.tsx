@@ -2,6 +2,8 @@
 import api from "lib/api"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
+import 'quill/dist/quill.core.css';
+// import "../../../assets/admin/editor.css";
 
 interface Props {
     id : any
@@ -55,16 +57,17 @@ export default function NewsDetail({id} : Props) {
                         <h2 className="text-black fw-600">{data?.list?.promSubject}</h2>
                         <p className="fs-16 fw-500">{data?.list?.createDate}</p>
                         <hr className="mt-5 mb-8"/>
-                        <article className="mb-8"
-                        dangerouslySetInnerHTML={{
-                            __html : data?.list?.description
-                        }}
-                        >
-                        </article>
-                        <div className="mt-4 border-bottom">
-                            <div className="py-4 px-5 border-top">
-                                <i className="uil uil-angle-up fs-22 me-4"></i>
-                                <span className="text-black fw-bold me-4">이전글</span>
+                  <article className="mb-8">
+                    <div className="quill user-quill">
+                      <div className="ql-container ql-snow user-ql">
+                        <div className="ql-editor ql-size-16px user-ql-inner" dangerouslySetInnerHTML={{__html: data?.list?.description}}/>
+                      </div>
+                    </div>
+                  </article>
+                  <div className="mt-4 border-bottom">
+                    <div className="py-4 px-5 border-top">
+                      <i className="uil uil-angle-up fs-22 me-4"></i>
+                      <span className="text-black fw-bold me-4">이전글</span>
                                 {data?.prev?.prevUrl ?
                                 <a href="#" onClick={(e)=>handlePage(e, data?.prev?.prevUrl)} className="text-medium-gray fw-bold">{data?.prev?.prevSubject}</a>
                                 :

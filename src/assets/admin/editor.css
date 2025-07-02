@@ -1,0 +1,279 @@
+.quill {
+    width: 1032px;
+}
+.ql-snow .ql-editor {
+    height: 650px;
+    overflow-y: auto;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.ql-snow .ql-picker.ql-size {
+    width: 60px !important;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="10px"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="10px"]::before {
+    content: '10px';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="12px"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="12px"]::before {
+    content: '12px';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="14px"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="14px"]::before {
+    content: '14px';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="16px"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="16px"]::before {
+    content: '16px';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="18px"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="18px"]::before {
+    content: '18px';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="20px"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="20px"]::before {
+    content: '20px';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="22px"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="22px"]::before {
+    content: '22px';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="24px"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="24px"]::before {
+    content: '24px';
+}
+
+.ql-snow .ql-picker.ql-lineheight .ql-picker-label {
+    width: 30px;
+    background: url("/img/admin/editor/line-height.svg") no-repeat 50% 50%;
+}
+
+.ql-snow .ql-picker.ql-lineheight .ql-picker-label svg {
+    display: none;
+}
+
+.ql-snow .ql-picker.ql-lineheight .ql-picker-item::before {
+    content: attr(data-value);
+}
+
+.quill .ql-size-10px {
+    font-size: 10px;
+}
+
+.quill .ql-size-12px {
+    font-size: 12px;
+}
+
+.quill .ql-size-14px {
+    font-size: 14px;
+}
+
+.quill .ql-size-16px {
+    font-size: 16px;
+}
+
+.quill .ql-size-18px {
+    font-size: 18px;
+}
+
+.quill .ql-size-20px {
+    font-size: 20px;
+}
+
+.quill .ql-size-22px {
+    font-size: 22px;
+}
+
+.quill .ql-size-24px {
+    font-size: 24px;
+}
+.quill .ql-editor ol {
+    padding-left: 0;
+}
+
+.ql-htmlEditButton {
+    display: none !important; /* 중복 버튼 숨기기 */
+}
+/*.ql-cell-focused:after {
+  display: none;
+}*/
+.quill-editor-wrapper {
+    display: flex;
+    padding: 15px 20px 30px 0;
+}
+.quill-editor-wrapper > p {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #444444;
+    text-align: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.quill-editor-wrapper > p > span {
+    color: #E01E25;
+}
+
+
+/* 들여쓰기 간격 Customizing */
+.ql-editor .ql-indent-1:not(.ql-direction-rtl) {padding-left: 1em !important;}
+.ql-editor .ql-indent-2:not(.ql-direction-rtl) {padding-left: 2em !important;}
+.ql-editor .ql-indent-3:not(.ql-direction-rtl) {padding-left: 3em !important;}
+.ql-editor .ql-indent-4:not(.ql-direction-rtl) {padding-left: 4em !important;}
+.ql-editor .ql-indent-5:not(.ql-direction-rtl) {padding-left: 5em !important;}
+.ql-editor .ql-indent-6:not(.ql-direction-rtl) {padding-left: 6em !important;}
+.ql-editor .ql-indent-7:not(.ql-direction-rtl) {padding-left: 7em !important;}
+.ql-editor .ql-indent-8:not(.ql-direction-rtl) {padding-left: 8em !important;}
+.ql-editor .ql-indent-1.ql-direction-rtl.ql-align-right {padding-left: 1em !important;}
+.ql-editor .ql-indent-2.ql-direction-rtl.ql-align-right {padding-left: 2em !important;}
+.ql-editor .ql-indent-3.ql-direction-rtl.ql-align-right {padding-left: 3em !important;}
+.ql-editor .ql-indent-4.ql-direction-rtl.ql-align-right {padding-left: 4em !important;}
+.ql-editor .ql-indent-5.ql-direction-rtl.ql-align-right {padding-left: 5em !important;}
+.ql-editor .ql-indent-6.ql-direction-rtl.ql-align-right {padding-left: 6em !important;}
+.ql-editor .ql-indent-7.ql-direction-rtl.ql-align-right {padding-left: 7em !important;}
+.ql-editor .ql-indent-8.ql-direction-rtl.ql-align-right {padding-left: 8em !important;}
+
+
+.user-quill * {
+    all: revert;
+    height: auto !important;
+}
+.user-ql {
+    border: none !important;
+}
+.user-ql-inner {
+    padding: 0 !important;
+}
+
+
+
+.ql-resize-overlay {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px dashed #444;
+    pointer-events: none
+}
+
+.ql-resize-toolbar {
+    position: absolute;
+    top: -12px;
+    right: 0;
+    left: 0;
+    height: 0;
+    min-width: 120px;
+    text-align: center;
+    color: #333;
+    box-sizing: border-box;
+    cursor: default;
+    pointer-events: all
+}
+
+.ql-resize-toolbar button {
+    display: inline-block;
+    min-width: 24px;
+    height: 24px;
+    padding: 2px;
+    background-color: #fff;
+    border: 1px solid #999;
+    vertical-align: middle
+}
+
+.ql-resize-toolbar button:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px
+}
+
+.ql-resize-toolbar button:last-child {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px
+}
+
+.ql-resize-toolbar button:not(:first-child) {
+    border-left: none
+}
+
+.ql-resize-toolbar button.active {
+    filter: invert(20%)
+}
+
+.ql-resize-toolbar svg {
+    width: 18px
+}
+
+.ql-resize-handle {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: #fff;
+    border: 1px solid #777;
+    box-sizing: border-box;
+    opacity: .8;
+    pointer-events: all
+}
+
+.ql-resize-handle.tl {
+    top: -6px;
+    left: -6px;
+    cursor: nwse-resize
+}
+
+.ql-resize-handle.tr {
+    top: -6px;
+    right: -6px;
+    cursor: nesw-resize
+}
+
+.ql-resize-handle.br {
+    right: -6px;
+    bottom: -6px;
+    cursor: nwse-resize
+}
+
+.ql-resize-handle.bl {
+    left: -6px;
+    bottom: -6px;
+    cursor: nwse-resize
+}
+
+.ql-resize-display {
+    position: absolute;
+    padding: 4px 8px;
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #777;
+    box-sizing: border-box;
+    opacity: .8;
+    cursor: default;
+    line-height: 1
+}
+
+.ql-resize-style-left {
+    float: left;
+    margin: 0 1em 1em 0;
+    background-color: red;
+}
+
+.ql-resize-style-center {
+    display: block;
+    margin: auto
+}
+
+.ql-resize-style-right {
+    float: right;
+    margin: 0 0 1em 1em
+}
+
+.ql-resize-style-full {
+    width: 100% !important
+}

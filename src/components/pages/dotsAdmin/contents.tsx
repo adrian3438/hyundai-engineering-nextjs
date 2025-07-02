@@ -11,6 +11,11 @@ import Head from "next/head"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import AdminDateBox from "components/DotsAdmin/Element/DateBox"
+import dynamic from "next/dynamic";
+const Editor = dynamic(() => import('../../../components/DotsAdmin/Editor/Editor'), {
+    ssr: false,
+});
+
 interface Props {
     id : any
     lang : any
@@ -40,6 +45,11 @@ export default function ContentsPage ({
         const {name , value} = e.target;
         setData((prev:any) => ({...prev, [name] : value}));
     }
+
+    function handleEditorChange(value: string) {
+        setData((prev: any) => ({ ...prev, description: value }));
+    }
+
     async function save () {
         try {
             if(!data?.description) {alert('컨텐츠 내용은 필수 입력입니다.'); return;}
@@ -152,7 +162,7 @@ export default function ContentsPage ({
     return(
         <>
 
-        <div className="contentBox add">
+        <div className="contentBox add" style={{paddingBottom: "135px"}}>
             <h3>Contents</h3>
             <div className="flexBox">
                 <div>
@@ -251,7 +261,7 @@ export default function ContentsPage ({
                                     data={data}
                                     setData={setData}
                                 />
-                                <p className="infoTxt">검색 키워드는 디케이락 회원이 등록된 컨텐츠을 검색할 경우 사용됩니다. 개별 키워드 입력 후 엔터키로 등록하시면 됩니다.</p>
+                                <p className="infoTxt">검색 키워드는 등록된 컨텐츠을 검색할 경우 사용됩니다. 개별 키워드 입력 후 엔터키로 등록하시면 됩니다.</p>
                             </td>
                         </tr>
                         <TextAreaBox
@@ -261,7 +271,7 @@ export default function ContentsPage ({
                             description={'발췌 글은 컨텐츠의 요약 내용으로 반드시 입력되어야 합니다.'}
                             setData={setData}
                         />
-                        <tr>
+                        {/*<tr>
                             <th>내용 <span className="star">*</span></th>
                             <td>
                                 {id && data?.description ?
@@ -279,7 +289,7 @@ export default function ContentsPage ({
                                 /> : ""
                                 }
                             </td>
-                        </tr>
+                        </tr>*/}
 
                         <AdminDateBox
                             data={data}
@@ -288,6 +298,7 @@ export default function ContentsPage ({
 
                     </tbody>
                 </table>
+                <Editor data={data} setData={setData} onChange={handleEditorChange}/>
             </div>
 
         </div>
